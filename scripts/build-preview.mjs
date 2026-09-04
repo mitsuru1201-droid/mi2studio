@@ -202,11 +202,17 @@ const dataScript =
 const scripts = `${dataScript}<script>${renderSource}\n${APP}</script>`
 const title = `${messages.en.meta.title}`
 
-const head =
-  `<title>${title}</title>` +
-  `<meta name="description" content="${messages.en.meta.description.replace(/"/g, '&quot;')}">` +
+const description = messages.en.meta.description.replace(/"/g, '&quot;')
+const headFor = (docTitle) =>
+  `<title>${docTitle}</title>` +
+  `<meta name="description" content="${description}">` +
   FONTS +
   `<style>${css}</style>`
+
+// The standalone file carries the full SEO title; the artifact wants a short
+// name, since its <title> becomes the tab and gallery label.
+const head = headFor(title)
+const artifactHead = headFor('REAL JAPAN NOW')
 
 const full = `<!doctype html>
 <html lang="en" data-locale="en">
@@ -224,7 +230,7 @@ ${scripts}
 `
 
 // Artifact hosts supply the document shell, so emit the page contents only.
-const artifact = `${head}
+const artifact = `${artifactHead}
 <script>${BOOT}</script>
 <div id="app">${bakedBody}</div>
 ${scripts}
