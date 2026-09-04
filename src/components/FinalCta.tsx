@@ -11,9 +11,9 @@ export function FinalCta() {
       <div className="shell cta-band__inner">
         <h2 id="cta-title">{t.finalCta.heading}</h2>
         <p>{t.finalCta.body}</p>
-        <a className="btn btn--primary" href="#experiences">
+        <a className="md-btn md-btn--md md-btn--filled md-state" href="#experiences">
           {t.finalCta.button}
-          <Icon name="arrow" className="btn__arrow" strokeWidth={2} />
+          <Icon name="arrow" className="md-btn__arrow" strokeWidth={2} />
         </a>
       </div>
     </section>

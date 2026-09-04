@@ -7,48 +7,384 @@
 document.documentElement.setAttribute('data-js','');
 </script>
 <title>REAL JAPAN NOW — Not tourism. Join everyday life in Japan.</title><meta name="description" content="Vintage shopping, home cooking and JDM night drives in Tokyo, hosted by verified locals. Small groups of 1–4 people. Available in English, 한국어, 繁體中文 and Français."><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap"><style>/* =========================================================================
-   REAL JAPAN NOW — landing page design system
-   Shared verbatim by the Next.js app (src/app/globals.css) and the
-   standalone preview (preview/index.html, inlined by scripts/build-preview.mjs).
-   Keep it framework-free: plain CSS, semantic class names, custom properties.
+   Material 3 colour roles — GENERATED, do not edit by hand.
+   Source: scripts/generate-color-tokens.mjs (npm run tokens)
+   Seeded from the brand palette: primary #e63946, secondary #1d3557,
+   tertiary #d9a441.
    ========================================================================= */
 
 :root {
-  --ink: #14181f;
-  --navy: #1d3557;
-  --red: #e63946;
-  --red-dark: #c92b38;
-  --paper: #ffffff;
-  --mist: #f6f7f9;
-  --sand: #faf8f5;
-  --line: #e6e8ec;
-  --line-strong: #d6dae1;
-  --muted: #6b7280;
+  color-scheme: light dark;
 
-  --shell: 1180px;
-  --gutter: clamp(20px, 5vw, 40px);
-  --radius: 16px;
-  --radius-sm: 10px;
-
-  --shadow-card: 0 1px 2px rgba(20, 24, 31, 0.04), 0 14px 34px -20px rgba(20, 24, 31, 0.3);
-  --shadow-pop: 0 10px 30px -8px rgba(20, 24, 31, 0.18), 0 2px 6px rgba(20, 24, 31, 0.06);
-
-  --font-sans: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
-  --font-display: 'Poppins', var(--font-sans);
-  --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --md-sys-color-background: #f9f9fe;
+  --md-sys-color-error: #ba1a1a;
+  --md-sys-color-error-container: #ffdad6;
+  --md-sys-color-heading: #1d3557;
+  --md-sys-color-inverse-on-surface: #f1f0f5;
+  --md-sys-color-inverse-primary: #ffb3b1;
+  --md-sys-color-inverse-surface: #2f3034;
+  --md-sys-color-neutral-palette-key-color: #76777c;
+  --md-sys-color-neutral-variant-palette-key-color: #74777f;
+  --md-sys-color-on-background: #1a1c1f;
+  --md-sys-color-on-error: #ffffff;
+  --md-sys-color-on-error-container: #93000a;
+  --md-sys-color-on-primary: #ffffff;
+  --md-sys-color-on-primary-container: #92001c;
+  --md-sys-color-on-primary-fixed: #410007;
+  --md-sys-color-on-primary-fixed-variant: #92001c;
+  --md-sys-color-on-secondary: #ffffff;
+  --md-sys-color-on-secondary-container: #30476a;
+  --md-sys-color-on-secondary-fixed: #001b3c;
+  --md-sys-color-on-secondary-fixed-variant: #30476a;
+  --md-sys-color-on-surface: #1a1c1f;
+  --md-sys-color-on-surface-variant: #43474e;
+  --md-sys-color-on-tertiary: #ffffff;
+  --md-sys-color-on-tertiary-container: #5f4100;
+  --md-sys-color-on-tertiary-fixed: #271900;
+  --md-sys-color-on-tertiary-fixed-variant: #5f4100;
+  --md-sys-color-outline: #74777f;
+  --md-sys-color-outline-variant: #c4c6cf;
+  --md-sys-color-primary: #db313f;
+  --md-sys-color-primary-container: #ffdad8;
+  --md-sys-color-primary-fixed: #ffdad8;
+  --md-sys-color-primary-fixed-dim: #ffb3b1;
+  --md-sys-color-primary-palette-key-color: #e63946;
+  --md-sys-color-scrim: #000000;
+  --md-sys-color-secondary: #485f84;
+  --md-sys-color-secondary-container: #d5e3ff;
+  --md-sys-color-secondary-fixed: #d5e3ff;
+  --md-sys-color-secondary-fixed-dim: #b0c7f1;
+  --md-sys-color-secondary-palette-key-color: #1d3557;
+  --md-sys-color-shadow: #000000;
+  --md-sys-color-surface: #f9f9fe;
+  --md-sys-color-surface-bright: #f9f9fe;
+  --md-sys-color-surface-container: #eeedf3;
+  --md-sys-color-surface-container-high: #e8e8ed;
+  --md-sys-color-surface-container-highest: #e2e2e7;
+  --md-sys-color-surface-container-low: #f3f3f8;
+  --md-sys-color-surface-container-lowest: #ffffff;
+  --md-sys-color-surface-dim: #dad9df;
+  --md-sys-color-surface-tint: #bb152c;
+  --md-sys-color-surface-variant: #e0e2ec;
+  --md-sys-color-tertiary: #7d5700;
+  --md-sys-color-tertiary-container: #ffdeaa;
+  --md-sys-color-tertiary-fixed: #ffdeaa;
+  --md-sys-color-tertiary-fixed-dim: #f5bd58;
+  --md-sys-color-tertiary-palette-key-color: #d9a441;
 }
 
-/* Per-language font stacks. Set on <html data-locale="…">. */
+/* Follows the OS unless the page has explicitly opted into light. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    --md-sys-color-background: #121317;
+    --md-sys-color-error: #ffb4ab;
+    --md-sys-color-error-container: #93000a;
+    --md-sys-color-heading: #d5e3ff;
+    --md-sys-color-inverse-on-surface: #2f3034;
+    --md-sys-color-inverse-primary: #bb152c;
+    --md-sys-color-inverse-surface: #e2e2e7;
+    --md-sys-color-neutral-palette-key-color: #76777c;
+    --md-sys-color-neutral-variant-palette-key-color: #74777f;
+    --md-sys-color-on-background: #e2e2e7;
+    --md-sys-color-on-error: #690005;
+    --md-sys-color-on-error-container: #ffdad6;
+    --md-sys-color-on-primary: #680011;
+    --md-sys-color-on-primary-container: #ffdad8;
+    --md-sys-color-on-primary-fixed: #410007;
+    --md-sys-color-on-primary-fixed-variant: #92001c;
+    --md-sys-color-on-secondary: #183153;
+    --md-sys-color-on-secondary-container: #d5e3ff;
+    --md-sys-color-on-secondary-fixed: #001b3c;
+    --md-sys-color-on-secondary-fixed-variant: #30476a;
+    --md-sys-color-on-surface: #e2e2e7;
+    --md-sys-color-on-surface-variant: #c4c6cf;
+    --md-sys-color-on-tertiary: #422c00;
+    --md-sys-color-on-tertiary-container: #ffdeaa;
+    --md-sys-color-on-tertiary-fixed: #271900;
+    --md-sys-color-on-tertiary-fixed-variant: #5f4100;
+    --md-sys-color-outline: #8e9199;
+    --md-sys-color-outline-variant: #43474e;
+    --md-sys-color-primary: #ffb3b1;
+    --md-sys-color-primary-container: #92001c;
+    --md-sys-color-primary-fixed: #ffdad8;
+    --md-sys-color-primary-fixed-dim: #ffb3b1;
+    --md-sys-color-primary-palette-key-color: #e63946;
+    --md-sys-color-scrim: #000000;
+    --md-sys-color-secondary: #b0c7f1;
+    --md-sys-color-secondary-container: #30476a;
+    --md-sys-color-secondary-fixed: #d5e3ff;
+    --md-sys-color-secondary-fixed-dim: #b0c7f1;
+    --md-sys-color-secondary-palette-key-color: #1d3557;
+    --md-sys-color-shadow: #000000;
+    --md-sys-color-surface: #121317;
+    --md-sys-color-surface-bright: #38393d;
+    --md-sys-color-surface-container: #1e2023;
+    --md-sys-color-surface-container-high: #282a2e;
+    --md-sys-color-surface-container-highest: #333539;
+    --md-sys-color-surface-container-low: #1a1c1f;
+    --md-sys-color-surface-container-lowest: #0c0e12;
+    --md-sys-color-surface-dim: #121317;
+    --md-sys-color-surface-tint: #ffb3b1;
+    --md-sys-color-surface-variant: #43474e;
+    --md-sys-color-tertiary: #f5bd58;
+    --md-sys-color-tertiary-container: #5f4100;
+    --md-sys-color-tertiary-fixed: #ffdeaa;
+    --md-sys-color-tertiary-fixed-dim: #f5bd58;
+    --md-sys-color-tertiary-palette-key-color: #d9a441;
+  }
+}
+
+/* Explicit override always wins, in both directions. */
+:root[data-theme='dark'] {
+  --md-sys-color-background: #121317;
+  --md-sys-color-error: #ffb4ab;
+  --md-sys-color-error-container: #93000a;
+  --md-sys-color-heading: #d5e3ff;
+  --md-sys-color-inverse-on-surface: #2f3034;
+  --md-sys-color-inverse-primary: #bb152c;
+  --md-sys-color-inverse-surface: #e2e2e7;
+  --md-sys-color-neutral-palette-key-color: #76777c;
+  --md-sys-color-neutral-variant-palette-key-color: #74777f;
+  --md-sys-color-on-background: #e2e2e7;
+  --md-sys-color-on-error: #690005;
+  --md-sys-color-on-error-container: #ffdad6;
+  --md-sys-color-on-primary: #680011;
+  --md-sys-color-on-primary-container: #ffdad8;
+  --md-sys-color-on-primary-fixed: #410007;
+  --md-sys-color-on-primary-fixed-variant: #92001c;
+  --md-sys-color-on-secondary: #183153;
+  --md-sys-color-on-secondary-container: #d5e3ff;
+  --md-sys-color-on-secondary-fixed: #001b3c;
+  --md-sys-color-on-secondary-fixed-variant: #30476a;
+  --md-sys-color-on-surface: #e2e2e7;
+  --md-sys-color-on-surface-variant: #c4c6cf;
+  --md-sys-color-on-tertiary: #422c00;
+  --md-sys-color-on-tertiary-container: #ffdeaa;
+  --md-sys-color-on-tertiary-fixed: #271900;
+  --md-sys-color-on-tertiary-fixed-variant: #5f4100;
+  --md-sys-color-outline: #8e9199;
+  --md-sys-color-outline-variant: #43474e;
+  --md-sys-color-primary: #ffb3b1;
+  --md-sys-color-primary-container: #92001c;
+  --md-sys-color-primary-fixed: #ffdad8;
+  --md-sys-color-primary-fixed-dim: #ffb3b1;
+  --md-sys-color-primary-palette-key-color: #e63946;
+  --md-sys-color-scrim: #000000;
+  --md-sys-color-secondary: #b0c7f1;
+  --md-sys-color-secondary-container: #30476a;
+  --md-sys-color-secondary-fixed: #d5e3ff;
+  --md-sys-color-secondary-fixed-dim: #b0c7f1;
+  --md-sys-color-secondary-palette-key-color: #1d3557;
+  --md-sys-color-shadow: #000000;
+  --md-sys-color-surface: #121317;
+  --md-sys-color-surface-bright: #38393d;
+  --md-sys-color-surface-container: #1e2023;
+  --md-sys-color-surface-container-high: #282a2e;
+  --md-sys-color-surface-container-highest: #333539;
+  --md-sys-color-surface-container-low: #1a1c1f;
+  --md-sys-color-surface-container-lowest: #0c0e12;
+  --md-sys-color-surface-dim: #121317;
+  --md-sys-color-surface-tint: #ffb3b1;
+  --md-sys-color-surface-variant: #43474e;
+  --md-sys-color-tertiary: #f5bd58;
+  --md-sys-color-tertiary-container: #5f4100;
+  --md-sys-color-tertiary-fixed: #ffdeaa;
+  --md-sys-color-tertiary-fixed-dim: #f5bd58;
+  --md-sys-color-tertiary-palette-key-color: #d9a441;
+}
+
+:root[data-theme='light'] {
+  --md-sys-color-background: #f9f9fe;
+  --md-sys-color-error: #ba1a1a;
+  --md-sys-color-error-container: #ffdad6;
+  --md-sys-color-heading: #1d3557;
+  --md-sys-color-inverse-on-surface: #f1f0f5;
+  --md-sys-color-inverse-primary: #ffb3b1;
+  --md-sys-color-inverse-surface: #2f3034;
+  --md-sys-color-neutral-palette-key-color: #76777c;
+  --md-sys-color-neutral-variant-palette-key-color: #74777f;
+  --md-sys-color-on-background: #1a1c1f;
+  --md-sys-color-on-error: #ffffff;
+  --md-sys-color-on-error-container: #93000a;
+  --md-sys-color-on-primary: #ffffff;
+  --md-sys-color-on-primary-container: #92001c;
+  --md-sys-color-on-primary-fixed: #410007;
+  --md-sys-color-on-primary-fixed-variant: #92001c;
+  --md-sys-color-on-secondary: #ffffff;
+  --md-sys-color-on-secondary-container: #30476a;
+  --md-sys-color-on-secondary-fixed: #001b3c;
+  --md-sys-color-on-secondary-fixed-variant: #30476a;
+  --md-sys-color-on-surface: #1a1c1f;
+  --md-sys-color-on-surface-variant: #43474e;
+  --md-sys-color-on-tertiary: #ffffff;
+  --md-sys-color-on-tertiary-container: #5f4100;
+  --md-sys-color-on-tertiary-fixed: #271900;
+  --md-sys-color-on-tertiary-fixed-variant: #5f4100;
+  --md-sys-color-outline: #74777f;
+  --md-sys-color-outline-variant: #c4c6cf;
+  --md-sys-color-primary: #db313f;
+  --md-sys-color-primary-container: #ffdad8;
+  --md-sys-color-primary-fixed: #ffdad8;
+  --md-sys-color-primary-fixed-dim: #ffb3b1;
+  --md-sys-color-primary-palette-key-color: #e63946;
+  --md-sys-color-scrim: #000000;
+  --md-sys-color-secondary: #485f84;
+  --md-sys-color-secondary-container: #d5e3ff;
+  --md-sys-color-secondary-fixed: #d5e3ff;
+  --md-sys-color-secondary-fixed-dim: #b0c7f1;
+  --md-sys-color-secondary-palette-key-color: #1d3557;
+  --md-sys-color-shadow: #000000;
+  --md-sys-color-surface: #f9f9fe;
+  --md-sys-color-surface-bright: #f9f9fe;
+  --md-sys-color-surface-container: #eeedf3;
+  --md-sys-color-surface-container-high: #e8e8ed;
+  --md-sys-color-surface-container-highest: #e2e2e7;
+  --md-sys-color-surface-container-low: #f3f3f8;
+  --md-sys-color-surface-container-lowest: #ffffff;
+  --md-sys-color-surface-dim: #dad9df;
+  --md-sys-color-surface-tint: #bb152c;
+  --md-sys-color-surface-variant: #e0e2ec;
+  --md-sys-color-tertiary: #7d5700;
+  --md-sys-color-tertiary-container: #ffdeaa;
+  --md-sys-color-tertiary-fixed: #ffdeaa;
+  --md-sys-color-tertiary-fixed-dim: #f5bd58;
+  --md-sys-color-tertiary-palette-key-color: #d9a441;
+}
+
+/* =========================================================================
+   REAL JAPAN NOW — Material 3 design system
+   Shared verbatim by the Next.js app (src/app/globals.css) and the standalone
+   preview (scripts/build-preview.mjs concatenates m3-color.css + this file).
+
+   Colour roles live in the generated m3-color.css. Everything below is the
+   rest of the M3 system — typescale, shape, elevation, state and motion —
+   followed by the components built on it.
+
+   Token values are taken from Google's published @material/web token package
+   (design system version 34.0.21), not from memory.
+   ========================================================================= */
+
+:root {
+  /* --- reference typefaces -------------------------------------------- */
+  /* M3's reference typeface is Roboto; these are the brand substitutes. */
+  --md-ref-typeface-brand: 'Poppins', 'Inter', system-ui, sans-serif;
+  --md-ref-typeface-plain: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  /* --- typescale ------------------------------------------------------- */
+  --md-sys-typescale-display-large-size: 3.5625rem;
+  --md-sys-typescale-display-large-line-height: 4rem;
+  --md-sys-typescale-display-large-tracking: -0.015625rem;
+  --md-sys-typescale-display-medium-size: 2.8125rem;
+  --md-sys-typescale-display-medium-line-height: 3.25rem;
+  --md-sys-typescale-display-medium-tracking: 0rem;
+  --md-sys-typescale-display-small-size: 2.25rem;
+  --md-sys-typescale-display-small-line-height: 2.75rem;
+  --md-sys-typescale-display-small-tracking: 0rem;
+
+  --md-sys-typescale-headline-large-size: 2rem;
+  --md-sys-typescale-headline-large-line-height: 2.5rem;
+  --md-sys-typescale-headline-medium-size: 1.75rem;
+  --md-sys-typescale-headline-medium-line-height: 2.25rem;
+  --md-sys-typescale-headline-small-size: 1.5rem;
+  --md-sys-typescale-headline-small-line-height: 2rem;
+
+  --md-sys-typescale-title-large-size: 1.375rem;
+  --md-sys-typescale-title-large-line-height: 1.75rem;
+  --md-sys-typescale-title-medium-size: 1rem;
+  --md-sys-typescale-title-medium-line-height: 1.5rem;
+  --md-sys-typescale-title-medium-tracking: 0.009375rem;
+  --md-sys-typescale-title-small-size: 0.875rem;
+  --md-sys-typescale-title-small-line-height: 1.25rem;
+  --md-sys-typescale-title-small-tracking: 0.00625rem;
+
+  --md-sys-typescale-body-large-size: 1rem;
+  --md-sys-typescale-body-large-line-height: 1.5rem;
+  --md-sys-typescale-body-large-tracking: 0.03125rem;
+  --md-sys-typescale-body-medium-size: 0.875rem;
+  --md-sys-typescale-body-medium-line-height: 1.25rem;
+  --md-sys-typescale-body-medium-tracking: 0.015625rem;
+  --md-sys-typescale-body-small-size: 0.75rem;
+  --md-sys-typescale-body-small-line-height: 1rem;
+  --md-sys-typescale-body-small-tracking: 0.025rem;
+
+  --md-sys-typescale-label-large-size: 0.875rem;
+  --md-sys-typescale-label-large-line-height: 1.25rem;
+  --md-sys-typescale-label-large-tracking: 0.00625rem;
+  --md-sys-typescale-label-medium-size: 0.75rem;
+  --md-sys-typescale-label-medium-line-height: 1rem;
+  --md-sys-typescale-label-medium-tracking: 0.03125rem;
+  --md-sys-typescale-label-small-size: 0.6875rem;
+  --md-sys-typescale-label-small-line-height: 1rem;
+  --md-sys-typescale-label-small-tracking: 0.03125rem;
+
+  --md-sys-typescale-weight-regular: 400;
+  --md-sys-typescale-weight-medium: 500;
+
+  /* --- shape ----------------------------------------------------------- */
+  --md-sys-shape-corner-none: 0px;
+  --md-sys-shape-corner-extra-small: 4px;
+  --md-sys-shape-corner-small: 8px;
+  --md-sys-shape-corner-medium: 12px;
+  --md-sys-shape-corner-large: 16px;
+  --md-sys-shape-corner-extra-large: 28px;
+  --md-sys-shape-corner-full: 9999px;
+
+  /* --- state layer opacities ------------------------------------------- */
+  --md-sys-state-hover-state-layer-opacity: 0.08;
+  --md-sys-state-focus-state-layer-opacity: 0.1;
+  --md-sys-state-pressed-state-layer-opacity: 0.1;
+
+  /* --- motion ----------------------------------------------------------- */
+  --md-sys-motion-easing-standard: cubic-bezier(0.2, 0, 0, 1);
+  --md-sys-motion-easing-emphasized-decelerate: cubic-bezier(0.05, 0.7, 0.1, 1);
+  --md-sys-motion-easing-emphasized-accelerate: cubic-bezier(0.3, 0, 0.8, 0.15);
+  --md-sys-motion-duration-short2: 100ms;
+  --md-sys-motion-duration-short4: 200ms;
+  --md-sys-motion-duration-medium2: 300ms;
+  --md-sys-motion-duration-medium4: 400ms;
+  --md-sys-motion-duration-long2: 500ms;
+
+  /* --- elevation -------------------------------------------------------- */
+  /* Key shadow at 30% + ambient shadow at 15%, matching @material/web. */
+  --md-sys-elevation-level0: none;
+  --md-sys-elevation-level1: 0px 1px 2px 0px rgb(from var(--md-sys-color-shadow) r g b / 0.3),
+    0px 1px 3px 1px rgb(from var(--md-sys-color-shadow) r g b / 0.15);
+  --md-sys-elevation-level2: 0px 1px 2px 0px rgb(from var(--md-sys-color-shadow) r g b / 0.3),
+    0px 2px 6px 2px rgb(from var(--md-sys-color-shadow) r g b / 0.15);
+  --md-sys-elevation-level3: 0px 1px 3px 0px rgb(from var(--md-sys-color-shadow) r g b / 0.3),
+    0px 4px 8px 3px rgb(from var(--md-sys-color-shadow) r g b / 0.15);
+  --md-sys-elevation-level4: 0px 2px 3px 0px rgb(from var(--md-sys-color-shadow) r g b / 0.3),
+    0px 6px 10px 4px rgb(from var(--md-sys-color-shadow) r g b / 0.15);
+  --md-sys-elevation-level5: 0px 4px 4px 0px rgb(from var(--md-sys-color-shadow) r g b / 0.3),
+    0px 8px 12px 6px rgb(from var(--md-sys-color-shadow) r g b / 0.15);
+
+  /* --- layout ----------------------------------------------------------- */
+  --shell: 1240px;
+  --gutter: clamp(16px, 4vw, 40px);
+}
+
+/* Browsers without relative colour syntax get a plain black shadow. */
+@supports not (color: rgb(from #000 r g b / 1)) {
+  :root {
+    --md-sys-elevation-level1: 0px 1px 2px 0px rgba(0, 0, 0, 0.3), 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+    --md-sys-elevation-level2: 0px 1px 2px 0px rgba(0, 0, 0, 0.3), 0px 2px 6px 2px rgba(0, 0, 0, 0.15);
+    --md-sys-elevation-level3: 0px 1px 3px 0px rgba(0, 0, 0, 0.3), 0px 4px 8px 3px rgba(0, 0, 0, 0.15);
+    --md-sys-elevation-level4: 0px 2px 3px 0px rgba(0, 0, 0, 0.3), 0px 6px 10px 4px rgba(0, 0, 0, 0.15);
+    --md-sys-elevation-level5: 0px 4px 4px 0px rgba(0, 0, 0, 0.3), 0px 8px 12px 6px rgba(0, 0, 0, 0.15);
+  }
+}
+
+/* Per-language typefaces, set on <html data-locale="…">. */
 html[data-locale='ko'] {
-  --font-sans: 'Noto Sans KR', 'Inter', system-ui, sans-serif;
-  --font-display: 'Noto Sans KR', 'Poppins', sans-serif;
+  --md-ref-typeface-brand: 'Noto Sans KR', 'Poppins', sans-serif;
+  --md-ref-typeface-plain: 'Noto Sans KR', 'Inter', system-ui, sans-serif;
 }
 html[data-locale='zh-TW'] {
-  --font-sans: 'Noto Sans TC', 'Inter', system-ui, sans-serif;
-  --font-display: 'Noto Sans TC', 'Poppins', sans-serif;
+  --md-ref-typeface-brand: 'Noto Sans TC', 'Poppins', sans-serif;
+  --md-ref-typeface-plain: 'Noto Sans TC', 'Inter', system-ui, sans-serif;
 }
 
-/* ------------------------------- reset -------------------------------- */
+/* ============================== reset ================================== */
 
 *,
 *::before,
@@ -67,40 +403,256 @@ html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
 
 body {
   margin: 0;
-  background: var(--paper);
-  color: var(--ink);
-  font-family: var(--font-sans);
-  font-size: 16px;
-  line-height: 1.7;
+  background: var(--md-sys-color-surface);
+  color: var(--md-sys-color-on-surface);
+  font-family: var(--md-ref-typeface-plain);
+  font-size: var(--md-sys-typescale-body-large-size);
+  line-height: var(--md-sys-typescale-body-large-line-height);
+  letter-spacing: var(--md-sys-typescale-body-large-tracking);
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
 
 img, svg { display: block; max-width: 100%; }
-h1, h2, h3, h4 { margin: 0; font-family: var(--font-display); line-height: 1.2; letter-spacing: -0.02em; font-weight: 700; }
 p { margin: 0; }
-ul { margin: 0; padding: 0; list-style: none; }
+ul, ol { margin: 0; padding: 0; list-style: none; }
 a { color: inherit; text-decoration: none; }
 button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; }
 
+/* M3 focus indicator: a 3dp ring in the secondary colour, offset 2dp. */
 :focus-visible {
-  outline: 2px solid var(--red);
-  outline-offset: 3px;
-  border-radius: 4px;
+  outline: 3px solid var(--md-sys-color-secondary);
+  outline-offset: 2px;
+}
+
+/* ========================== typescale classes =========================== */
+
+h1, h2, h3, h4 { margin: 0; font-family: var(--md-ref-typeface-brand); font-weight: var(--md-sys-typescale-weight-regular); }
+
+.md-display-large,
+.md-display-medium,
+.md-display-small,
+.md-headline-large,
+.md-headline-medium,
+.md-headline-small {
+  font-family: var(--md-ref-typeface-brand);
+  font-weight: var(--md-sys-typescale-weight-regular);
+}
+
+.md-display-large {
+  font-size: var(--md-sys-typescale-display-large-size);
+  line-height: var(--md-sys-typescale-display-large-line-height);
+  letter-spacing: var(--md-sys-typescale-display-large-tracking);
+}
+.md-display-medium {
+  font-size: var(--md-sys-typescale-display-medium-size);
+  line-height: var(--md-sys-typescale-display-medium-line-height);
+}
+.md-display-small {
+  font-size: var(--md-sys-typescale-display-small-size);
+  line-height: var(--md-sys-typescale-display-small-line-height);
+}
+.md-headline-large {
+  font-size: var(--md-sys-typescale-headline-large-size);
+  line-height: var(--md-sys-typescale-headline-large-line-height);
+}
+.md-headline-medium {
+  font-size: var(--md-sys-typescale-headline-medium-size);
+  line-height: var(--md-sys-typescale-headline-medium-line-height);
+}
+.md-headline-small {
+  font-size: var(--md-sys-typescale-headline-small-size);
+  line-height: var(--md-sys-typescale-headline-small-line-height);
+}
+
+.md-title-large {
+  font-family: var(--md-ref-typeface-brand);
+  font-size: var(--md-sys-typescale-title-large-size);
+  line-height: var(--md-sys-typescale-title-large-line-height);
+  font-weight: var(--md-sys-typescale-weight-regular);
+}
+.md-title-medium {
+  font-size: var(--md-sys-typescale-title-medium-size);
+  line-height: var(--md-sys-typescale-title-medium-line-height);
+  letter-spacing: var(--md-sys-typescale-title-medium-tracking);
+  font-weight: var(--md-sys-typescale-weight-medium);
+}
+.md-title-small {
+  font-size: var(--md-sys-typescale-title-small-size);
+  line-height: var(--md-sys-typescale-title-small-line-height);
+  letter-spacing: var(--md-sys-typescale-title-small-tracking);
+  font-weight: var(--md-sys-typescale-weight-medium);
+}
+
+.md-body-large {
+  font-size: var(--md-sys-typescale-body-large-size);
+  line-height: var(--md-sys-typescale-body-large-line-height);
+  letter-spacing: var(--md-sys-typescale-body-large-tracking);
+}
+.md-body-medium {
+  font-size: var(--md-sys-typescale-body-medium-size);
+  line-height: var(--md-sys-typescale-body-medium-line-height);
+  letter-spacing: var(--md-sys-typescale-body-medium-tracking);
+}
+.md-body-small {
+  font-size: var(--md-sys-typescale-body-small-size);
+  line-height: var(--md-sys-typescale-body-small-line-height);
+  letter-spacing: var(--md-sys-typescale-body-small-tracking);
+}
+
+.md-label-large {
+  font-size: var(--md-sys-typescale-label-large-size);
+  line-height: var(--md-sys-typescale-label-large-line-height);
+  letter-spacing: var(--md-sys-typescale-label-large-tracking);
+  font-weight: var(--md-sys-typescale-weight-medium);
+}
+.md-label-medium {
+  font-size: var(--md-sys-typescale-label-medium-size);
+  line-height: var(--md-sys-typescale-label-medium-line-height);
+  letter-spacing: var(--md-sys-typescale-label-medium-tracking);
+  font-weight: var(--md-sys-typescale-weight-medium);
+}
+.md-label-small {
+  font-size: var(--md-sys-typescale-label-small-size);
+  line-height: var(--md-sys-typescale-label-small-line-height);
+  letter-spacing: var(--md-sys-typescale-label-small-tracking);
+  font-weight: var(--md-sys-typescale-weight-medium);
+}
+
+/* ========================= type role assignments ========================
+   M3's typescale is a set of discrete steps, not a fluid ramp, so the larger
+   roles are stepped up at the medium and expanded window classes rather than
+   interpolated with clamp().
+   ====================================================================== */
+
+.eyebrow,
+.hero-panel__tag,
+.flow-phase-chip .label { font-size: var(--md-sys-typescale-label-large-size); line-height: var(--md-sys-typescale-label-large-line-height); letter-spacing: var(--md-sys-typescale-label-large-tracking); font-weight: var(--md-sys-typescale-weight-medium); }
+
+.lang__heading,
+.exp-list__title,
+.exp-media__index,
+.flow-step__label,
+.footer-heading { font-size: var(--md-sys-typescale-label-medium-size); line-height: var(--md-sys-typescale-label-medium-line-height); letter-spacing: var(--md-sys-typescale-label-medium-tracking); font-weight: var(--md-sys-typescale-weight-medium); }
+
+.hero-title {
+  font-size: var(--md-sys-typescale-display-small-size);
+  line-height: var(--md-sys-typescale-display-small-line-height);
+}
+.sec-title,
+.cta-band h2 {
+  font-size: var(--md-sys-typescale-headline-medium-size);
+  line-height: var(--md-sys-typescale-headline-medium-line-height);
+}
+
+.exp-title {
+  font-family: var(--md-ref-typeface-brand);
+  font-size: var(--md-sys-typescale-title-large-size);
+  line-height: var(--md-sys-typescale-title-large-line-height);
+}
+
+.exp-price,
+.feat__title,
+.flow-step__title,
+.notice__title,
+.faq-item__text,
+.bottom-bar__price .val { font-size: var(--md-sys-typescale-title-medium-size); line-height: var(--md-sys-typescale-title-medium-line-height); letter-spacing: var(--md-sys-typescale-title-medium-tracking); font-weight: var(--md-sys-typescale-weight-medium); }
+
+.hero-sub,
+.sec-lead,
+.cta-band p { font-size: var(--md-sys-typescale-body-large-size); line-height: var(--md-sys-typescale-body-large-line-height); letter-spacing: var(--md-sys-typescale-body-large-tracking); }
+
+.exp-desc,
+.exp-list li,
+.feat__body,
+.flow-phase-chip,
+.flow-step__body,
+.notice__intro,
+.notice__list li,
+.faq-item__a,
+.footer-tagline,
+.footer-links a { font-size: var(--md-sys-typescale-body-medium-size); line-height: var(--md-sys-typescale-body-medium-line-height); letter-spacing: var(--md-sys-typescale-body-medium-tracking); }
+
+.footer-bottom,
+.flow-phase-chip .range { font-size: var(--md-sys-typescale-body-small-size); line-height: var(--md-sys-typescale-body-small-line-height); letter-spacing: var(--md-sys-typescale-body-small-tracking); }
+
+/* ============================ state layer =============================== */
+
+/* M3 interaction feedback: a currentColor wash whose opacity is driven by the
+   state layer tokens. Applied through ::before so no extra DOM is needed. */
+.md-state {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+.md-state::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  background: currentColor;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--md-sys-motion-duration-short4) var(--md-sys-motion-easing-standard);
+}
+.md-state:hover::before { opacity: var(--md-sys-state-hover-state-layer-opacity); }
+.md-state:focus-visible::before { opacity: var(--md-sys-state-focus-state-layer-opacity); }
+.md-state:active::before { opacity: var(--md-sys-state-pressed-state-layer-opacity); }
+
+/* =============================== layout ================================= */
+
+.shell {
+  width: 100%;
+  max-width: var(--shell);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+section[id],
+[id].section { scroll-margin-top: 80px; }
+
+.section { padding-block: clamp(56px, 8vw, 104px); }
+.section--container-low { background: var(--md-sys-color-surface-container-low); }
+.section--container { background: var(--md-sys-color-surface-container); }
+
+.sec-head { max-width: 62ch; margin-bottom: clamp(32px, 5vw, 56px); }
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--md-sys-color-primary);
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+.eyebrow::before {
+  content: '';
+  width: 20px;
+  height: 2px;
+  border-radius: var(--md-sys-shape-corner-full);
+  background: currentColor;
+}
+
+.sec-title { color: var(--md-sys-color-heading); }
+.sec-lead {
+  margin-top: 12px;
+  color: var(--md-sys-color-on-surface-variant);
+  max-width: 56ch;
 }
 
 .skip-link {
   position: absolute;
-  left: 12px;
-  top: -60px;
+  left: 16px;
+  top: -64px;
   z-index: 200;
-  background: var(--navy);
-  color: #fff;
-  padding: 10px 16px;
-  border-radius: 8px;
-  transition: top 0.18s var(--ease);
+  background: var(--md-sys-color-inverse-surface);
+  color: var(--md-sys-color-inverse-on-surface);
+  padding: 12px 20px;
+  border-radius: var(--md-sys-shape-corner-full);
+  transition: top var(--md-sys-motion-duration-short4) var(--md-sys-motion-easing-standard);
 }
-.skip-link:focus { top: 12px; }
+.skip-link:focus { top: 16px; }
 
 .visually-hidden {
   position: absolute !important;
@@ -110,298 +662,335 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   white-space: nowrap; border: 0;
 }
 
-/* ------------------------------ layout -------------------------------- */
-
-.shell {
-  width: 100%;
-  max-width: var(--shell);
-  margin-inline: auto;
-  padding-inline: var(--gutter);
+.md-divider {
+  height: 1px;
+  border: 0;
+  margin: 0;
+  background: var(--md-sys-color-outline-variant);
 }
 
-/* Anchor targets must clear the sticky header when jumped to. */
-section[id],
-[id].section { scroll-margin-top: 84px; }
+/* =============================== buttons ================================ */
 
-.section { padding-block: clamp(64px, 9vw, 116px); }
-.section--mist { background: var(--mist); }
-.section--sand { background: var(--sand); }
-.section--tight { padding-block: clamp(48px, 6vw, 80px); }
-
-.sec-head { max-width: 660px; margin-bottom: clamp(32px, 5vw, 56px); }
-
-.eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--red);
-  margin-bottom: 18px;
-}
-.eyebrow::before {
-  content: '';
-  width: 22px;
-  height: 2px;
-  background: var(--red);
-  border-radius: 2px;
-}
-
-.sec-title {
-  font-size: clamp(1.75rem, 4.2vw, 2.75rem);
-  color: var(--navy);
-}
-.sec-lead {
-  margin-top: 14px;
-  font-size: clamp(1rem, 1.6vw, 1.125rem);
-  color: var(--muted);
-  max-width: 54ch;
-}
-
-/* ------------------------------ buttons ------------------------------- */
-
-.btn {
+/* Common buttons: 40dp tall, fully rounded, label-large. */
+.md-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
-  min-height: 52px;
-  padding: 0 26px;
-  border-radius: 999px;
-  font-weight: 600;
-  font-size: 1rem;
-  letter-spacing: -0.01em;
-  transition: transform 0.18s var(--ease), background-color 0.18s var(--ease),
-    box-shadow 0.18s var(--ease), border-color 0.18s var(--ease);
-  will-change: transform;
+  gap: 8px;
+  height: 40px;
+  padding-inline: 24px;
+  border-radius: var(--md-sys-shape-corner-full);
+  font-size: var(--md-sys-typescale-label-large-size);
+  line-height: var(--md-sys-typescale-label-large-line-height);
+  letter-spacing: var(--md-sys-typescale-label-large-tracking);
+  font-weight: var(--md-sys-typescale-weight-medium);
+  white-space: nowrap;
+  transition: box-shadow var(--md-sys-motion-duration-short4) var(--md-sys-motion-easing-standard),
+    background-color var(--md-sys-motion-duration-short4) var(--md-sys-motion-easing-standard);
 }
-.btn:active { transform: translateY(1px); }
+.md-btn svg { width: 18px; height: 18px; flex: none; }
 
-.btn--primary {
-  background: var(--red);
-  color: #fff;
-  box-shadow: 0 10px 24px -12px rgba(230, 57, 70, 0.85);
+/* M3 Expressive's medium button size, used for the two page-level CTAs. */
+.md-btn--md {
+  height: 56px;
+  padding-inline: 32px;
+  font-size: var(--md-sys-typescale-title-medium-size);
+  line-height: var(--md-sys-typescale-title-medium-line-height);
+  letter-spacing: var(--md-sys-typescale-title-medium-tracking);
 }
-.btn--primary:hover { background: var(--red-dark); box-shadow: 0 14px 30px -12px rgba(230, 57, 70, 0.9); }
+.md-btn--md svg { width: 20px; height: 20px; }
 
-.btn--ghost {
-  border: 1px solid var(--line-strong);
-  color: var(--navy);
-  background: #fff;
+.md-btn--filled {
+  background: var(--md-sys-color-primary);
+  color: var(--md-sys-color-on-primary);
 }
-.btn--ghost:hover { border-color: var(--navy); background: var(--mist); }
+.md-btn--filled:hover { box-shadow: var(--md-sys-elevation-level1); }
 
-.btn--light { background: #fff; color: var(--navy); }
-.btn--light:hover { background: #f0f2f6; }
+.md-btn--tonal {
+  background: var(--md-sys-color-secondary-container);
+  color: var(--md-sys-color-on-secondary-container);
+}
+.md-btn--tonal:hover { box-shadow: var(--md-sys-elevation-level1); }
 
-.btn--block { width: 100%; }
-.btn--sm { min-height: 44px; padding: 0 18px; font-size: 0.9375rem; }
+.md-btn--outlined {
+  border: 1px solid var(--md-sys-color-outline);
+  color: var(--md-sys-color-primary);
+  background: transparent;
+}
+.md-btn--outlined:hover { border-color: var(--md-sys-color-primary); }
 
-.btn__arrow { width: 18px; height: 18px; flex: none; transition: transform 0.18s var(--ease); }
-.btn:hover .btn__arrow { transform: translateX(3px); }
+.md-btn--text {
+  padding-inline: 12px;
+  color: var(--md-sys-color-primary);
+}
 
-/* ------------------------------ header -------------------------------- */
+.md-btn--block { width: 100%; }
 
-.site-header {
+.md-btn__arrow {
+  transition: transform var(--md-sys-motion-duration-short4) var(--md-sys-motion-easing-standard);
+}
+.md-btn:hover .md-btn__arrow { transform: translateX(3px); }
+
+/* Extended FAB — the mobile booking action. */
+.md-fab {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  height: 56px;
+  padding-inline: 16px 20px;
+  border-radius: var(--md-sys-shape-corner-large);
+  background: var(--md-sys-color-primary-container);
+  color: var(--md-sys-color-on-primary-container);
+  box-shadow: var(--md-sys-elevation-level3);
+  font-size: var(--md-sys-typescale-label-large-size);
+  line-height: var(--md-sys-typescale-label-large-line-height);
+  letter-spacing: var(--md-sys-typescale-label-large-tracking);
+  font-weight: var(--md-sys-typescale-weight-medium);
+}
+.md-fab svg { width: 24px; height: 24px; flex: none; }
+.md-fab:hover { box-shadow: var(--md-sys-elevation-level4); }
+
+/* Icon button — 48dp target around a 40dp container. */
+.md-icon-btn {
+  display: inline-grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border-radius: var(--md-sys-shape-corner-full);
+  color: var(--md-sys-color-on-surface-variant);
+}
+.md-icon-btn svg { width: 24px; height: 24px; }
+
+/* ================================ chips ================================= */
+
+.md-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 32px;
+  padding-inline: 12px;
+  border-radius: var(--md-sys-shape-corner-small);
+  border: 1px solid var(--md-sys-color-outline-variant);
+  background: transparent;
+  color: var(--md-sys-color-on-surface-variant);
+  font-size: var(--md-sys-typescale-label-large-size);
+  line-height: var(--md-sys-typescale-label-large-line-height);
+  letter-spacing: var(--md-sys-typescale-label-large-tracking);
+  font-weight: var(--md-sys-typescale-weight-medium);
+}
+.md-chip svg { width: 18px; height: 18px; flex: none; color: var(--md-sys-color-primary); }
+.md-chip--tonal {
+  border-color: transparent;
+  background: var(--md-sys-color-secondary-container);
+  color: var(--md-sys-color-on-secondary-container);
+}
+.md-chip--tonal svg { color: currentColor; }
+
+/* ================================ cards ================================= */
+
+.md-card {
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--md-sys-shape-corner-medium);
+  transition: box-shadow var(--md-sys-motion-duration-medium2) var(--md-sys-motion-easing-standard),
+    background-color var(--md-sys-motion-duration-medium2) var(--md-sys-motion-easing-standard);
+}
+.md-card--elevated {
+  background: var(--md-sys-color-surface-container-low);
+  box-shadow: var(--md-sys-elevation-level1);
+}
+.md-card--elevated:hover { box-shadow: var(--md-sys-elevation-level2); }
+
+.md-card--filled {
+  background: var(--md-sys-color-surface-container-highest);
+  box-shadow: var(--md-sys-elevation-level0);
+}
+.md-card--outlined {
+  background: var(--md-sys-color-surface);
+  border: 1px solid var(--md-sys-color-outline-variant);
+}
+.md-card--outlined:hover { box-shadow: var(--md-sys-elevation-level1); }
+
+/* ============================ top app bar =============================== */
+
+.m3-top-app-bar {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(255, 255, 255, 0.86);
-  backdrop-filter: saturate(180%) blur(14px);
-  -webkit-backdrop-filter: saturate(180%) blur(14px);
-  border-bottom: 1px solid transparent;
-  transition: border-color 0.25s var(--ease), box-shadow 0.25s var(--ease);
+  background: var(--md-sys-color-surface);
+  transition: background-color var(--md-sys-motion-duration-short4) var(--md-sys-motion-easing-standard),
+    box-shadow var(--md-sys-motion-duration-short4) var(--md-sys-motion-easing-standard);
 }
-.site-header[data-scrolled='true'] {
-  border-bottom-color: var(--line);
-  box-shadow: 0 6px 20px -18px rgba(20, 24, 31, 0.5);
+/* On-scroll state: M3 raises the bar to surface-container with elevation 2. */
+.m3-top-app-bar[data-scrolled='true'] {
+  background: var(--md-sys-color-surface-container);
+  box-shadow: var(--md-sys-elevation-level2);
 }
 
-.header-inner {
+.top-app-bar__inner {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  min-height: 66px;
+  gap: 8px;
+  min-height: 64px;
 }
 
 .brand {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  font-family: var(--font-display);
-  font-weight: 800;
-  font-size: 1rem;
-  letter-spacing: 0.02em;
-  color: var(--navy);
+  padding: 4px 8px;
+  margin-inline-start: -8px;
+  border-radius: var(--md-sys-shape-corner-small);
+  font-family: var(--md-ref-typeface-brand);
+  font-size: var(--md-sys-typescale-title-large-size);
+  line-height: var(--md-sys-typescale-title-large-line-height);
+  font-weight: var(--md-sys-typescale-weight-medium);
+  color: var(--md-sys-color-heading);
   white-space: nowrap;
 }
 .brand__seal {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: var(--red);
+  width: 12px;
+  height: 12px;
+  border-radius: var(--md-sys-shape-corner-full);
+  background: var(--md-sys-color-primary);
   flex: none;
 }
-.brand__now { color: var(--red); }
+.brand__now { color: var(--md-sys-color-primary); }
 
 .nav {
   display: none;
   align-items: center;
   gap: 4px;
+  margin-inline: auto;
+}
+.nav a { color: var(--md-sys-color-on-surface-variant); }
+
+.top-app-bar__actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
   margin-inline-start: auto;
 }
-.nav a {
-  padding: 8px 12px;
-  border-radius: 8px;
-  font-size: 0.9375rem;
-  color: var(--muted);
-  transition: color 0.16s var(--ease), background-color 0.16s var(--ease);
-}
-.nav a:hover { color: var(--navy); background: var(--mist); }
+.top-app-bar__cta { display: none; }
 
-.header-actions { display: flex; align-items: center; gap: 8px; }
-.header-cta { display: none; }
-
-/* -------------------------- language switcher ------------------------- */
+/* ========================= language switcher ============================ */
 
 .lang { position: relative; }
 
 .lang__btn {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  min-width: 44px;
-  min-height: 44px;
-  padding: 0 10px;
-  border-radius: 999px;
-  border: 1px solid var(--line);
-  background: #fff;
-  color: var(--navy);
-  transition: border-color 0.16s var(--ease), background-color 0.16s var(--ease);
+  gap: 4px;
+  height: 40px;
+  padding-inline: 12px;
+  border-radius: var(--md-sys-shape-corner-full);
+  border: 1px solid var(--md-sys-color-outline);
+  color: var(--md-sys-color-on-surface-variant);
+  font-size: var(--md-sys-typescale-label-large-size);
+  letter-spacing: var(--md-sys-typescale-label-large-tracking);
+  font-weight: var(--md-sys-typescale-weight-medium);
 }
-.lang__btn:hover { border-color: var(--line-strong); background: var(--mist); }
-.lang__btn[aria-expanded='true'] { border-color: var(--navy); }
-.lang__globe { width: 20px; height: 20px; flex: none; }
-.lang__code {
-  font-size: 0.8125rem;
-  font-weight: 600;
-  letter-spacing: 0.04em;
+.lang__btn[aria-expanded='true'] {
+  border-color: var(--md-sys-color-primary);
+  color: var(--md-sys-color-primary);
 }
-.lang__caret { width: 12px; height: 12px; opacity: 0.5; transition: transform 0.2s var(--ease); }
+.lang__globe { width: 24px; height: 24px; flex: none; }
+.lang__caret {
+  width: 18px;
+  height: 18px;
+  opacity: 0.7;
+  transition: transform var(--md-sys-motion-duration-short4) var(--md-sys-motion-easing-standard);
+}
 .lang__btn[aria-expanded='true'] .lang__caret { transform: rotate(180deg); }
 
+/* M3 menu: surface-container, 4dp corner, elevation 2. */
 .lang__menu {
   position: absolute;
-  top: calc(100% + 10px);
-  right: 0;
-  min-width: 216px;
-  background: #ffffff;
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  box-shadow: var(--shadow-pop);
+  top: calc(100% + 8px);
+  inset-inline-end: 0;
+  min-width: 224px;
+  max-width: calc(100vw - 2 * var(--gutter));
   padding-block: 8px;
+  background: var(--md-sys-color-surface-container);
+  border-radius: var(--md-sys-shape-corner-extra-small);
+  box-shadow: var(--md-sys-elevation-level2);
   z-index: 120;
   transform-origin: top right;
 }
 .lang__menu[hidden] { display: none; }
-/* CSS-driven open animation. The React build animates with Framer Motion
-   instead and omits this class. */
-.lang__menu--anim { animation: lang-in 0.18s var(--ease) both; }
 
-@keyframes lang-in {
-  from { opacity: 0; transform: translateY(-6px) scale(0.97); }
+/* CSS-driven open animation; the React build animates with Framer Motion
+   instead and omits this class. */
+.lang__menu--anim {
+  animation: md-menu-in var(--md-sys-motion-duration-medium2) var(--md-sys-motion-easing-emphasized-decelerate) both;
+}
+@keyframes md-menu-in {
+  from { opacity: 0; transform: scaleY(0.8) translateY(-8px); }
   to { opacity: 1; transform: none; }
 }
 
 .lang__heading {
-  padding: 4px 16px 8px;
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.14em;
+  padding: 8px 12px;
+  color: var(--md-sys-color-on-surface-variant);
   text-transform: uppercase;
-  color: var(--muted);
 }
 
+/* M3 menu item: 48dp tall, 12dp inline padding, body-large label. */
 .lang__option {
   display: flex;
   align-items: center;
   gap: 12px;
   width: 100%;
-  min-height: 44px;
-  padding: 0 16px;
-  font-size: 0.9375rem;
+  min-height: 48px;
+  padding-inline: 12px;
+  color: var(--md-sys-color-on-surface);
+  font-size: var(--md-sys-typescale-body-large-size);
+  line-height: var(--md-sys-typescale-body-large-line-height);
+  letter-spacing: var(--md-sys-typescale-body-large-tracking);
   text-align: start;
-  transition: background-color 0.14s var(--ease);
 }
-.lang__option:hover { background: #f3f4f6; }
-.lang__option[aria-selected='true'] { color: var(--red); font-weight: 600; }
-.lang__flag { font-size: 1.125rem; line-height: 1; flex: none; }
+.lang__option[aria-selected='true'] {
+  color: var(--md-sys-color-primary);
+  font-weight: var(--md-sys-typescale-weight-medium);
+}
+.lang__flag { font-size: 1.25rem; line-height: 1; flex: none; }
 .lang__name { flex: 1; }
-.lang__check { width: 16px; height: 16px; flex: none; color: var(--red); }
+.lang__check { width: 20px; height: 20px; flex: none; }
 
-/* -------------------------------- hero -------------------------------- */
+/* ================================ hero ================================== */
 
 .hero {
   position: relative;
   overflow: hidden;
-  padding-block: clamp(40px, 7vw, 84px) clamp(56px, 8vw, 96px);
+  padding-block: clamp(32px, 6vw, 72px) clamp(48px, 7vw, 88px);
 }
 .hero::before {
-  /* soft warm wash behind the artwork */
   content: '';
   position: absolute;
-  inset: -20% -30% auto auto;
-  width: 780px;
-  height: 780px;
-  background: radial-gradient(circle, rgba(230, 57, 70, 0.07), transparent 62%);
+  inset: -34% -22% auto auto;
+  width: 620px;
+  height: 620px;
+  border-radius: var(--md-sys-shape-corner-full);
+  background: var(--md-sys-color-primary-container);
+  opacity: 0.45;
+  filter: blur(90px);
   pointer-events: none;
 }
 
 .hero-grid {
   position: relative;
   display: grid;
-  gap: clamp(36px, 6vw, 56px);
+  gap: clamp(32px, 5vw, 56px);
   align-items: center;
 }
 
-.hero-eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 0.8125rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  color: var(--navy);
-  background: var(--mist);
-  border: 1px solid var(--line);
-  border-radius: 999px;
-  padding: 6px 14px;
-  margin-bottom: 22px;
-}
-.hero-eyebrow .dot {
-  width: 7px; height: 7px; border-radius: 50%; background: var(--red); flex: none;
-}
+.hero-eyebrow { margin-bottom: 20px; }
 
-.hero-title {
-  font-size: clamp(2.25rem, 7.4vw, 4rem);
-  line-height: 1.08;
-  letter-spacing: -0.035em;
-  color: var(--navy);
-  text-wrap: balance;
-}
-.hero-title em {
-  font-style: normal;
-  color: var(--red);
-}
-
+.hero-title { color: var(--md-sys-color-heading); text-wrap: balance; }
 .hero-sub {
-  margin-top: 22px;
-  font-size: clamp(1rem, 1.7vw, 1.1875rem);
-  color: var(--muted);
-  max-width: 46ch;
+  margin-top: 20px;
+  color: var(--md-sys-color-on-surface-variant);
+  max-width: 48ch;
 }
 
 .hero-actions {
@@ -414,39 +1003,26 @@ section[id],
 .trust {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px 10px;
-  margin-top: 30px;
-  padding-top: 26px;
-  border-top: 1px solid var(--line);
+  gap: 8px;
+  margin-top: 32px;
 }
-.trust li {
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
-  font-size: 0.8125rem;
-  color: var(--navy);
-  font-weight: 500;
-}
-.trust svg { width: 15px; height: 15px; color: var(--red); flex: none; }
 
-/* hero artwork — three staggered scene panels */
+/* Scene panels. */
 .hero-art {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: auto auto;
-  gap: 14px;
+  gap: 12px;
 }
 .hero-panel {
   position: relative;
-  border-radius: var(--radius);
+  border-radius: var(--md-sys-shape-corner-large);
   overflow: hidden;
-  border: 1px solid var(--line);
-  box-shadow: var(--shadow-card);
-  background: var(--mist);
+  background: var(--md-sys-color-surface-container-high);
+  box-shadow: var(--md-sys-elevation-level1);
 }
-.hero-panel:nth-child(1) { grid-column: 1 / 2; grid-row: 1 / 3; }
-.hero-panel:nth-child(2) { grid-column: 2 / 3; }
-.hero-panel:nth-child(3) { grid-column: 2 / 3; }
+.hero-panel:nth-child(1) { grid-column: 1 / 2; grid-row: 1 / 3; min-height: 260px; }
+.hero-panel:nth-child(2),
+.hero-panel:nth-child(3) { grid-column: 2 / 3; aspect-ratio: 4 / 3; }
 .hero-panel svg,
 .hero-panel img {
   position: absolute;
@@ -455,51 +1031,37 @@ section[id],
   height: 100%;
   object-fit: cover;
 }
-/* Panel 1 is a tall portrait spanning both rows; 2 and 3 stack beside it. */
-.hero-panel:nth-child(2),
-.hero-panel:nth-child(3) { aspect-ratio: 4 / 3; }
-.hero-panel:nth-child(1) { min-height: 260px; }
+/* The tall vintage panel has empty floor at the bottom; the two short panels
+   have empty sky / table at the top. Put each label where it covers least. */
 .hero-panel__tag {
   position: absolute;
   z-index: 1;
-  left: 12px;
-  bottom: 12px;
-  background: rgba(255, 255, 255, 0.94);
-  color: var(--navy);
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 0.02em;
-  padding: 5px 11px;
-  border-radius: 999px;
-  backdrop-filter: blur(6px);
+  inset-inline-start: 8px;
+  bottom: 8px;
+  display: inline-flex;
+  align-items: center;
+  height: 32px;
+  padding-inline: 12px;
+  border-radius: var(--md-sys-shape-corner-small);
+  background: var(--md-sys-color-surface);
+  color: var(--md-sys-color-on-surface);
+  font-size: var(--md-sys-typescale-label-large-size);
+  letter-spacing: var(--md-sys-typescale-label-large-tracking);
+  font-weight: var(--md-sys-typescale-weight-medium);
 }
+.hero-panel:nth-child(2) .hero-panel__tag,
+.hero-panel:nth-child(3) .hero-panel__tag { bottom: auto; top: 8px; }
 
-/* ---------------------------- experiences ----------------------------- */
+/* ============================ experiences =============================== */
 
-.exp-grid {
-  display: grid;
-  gap: 22px;
-}
+.exp-grid { display: grid; gap: 20px; }
 
-.exp-card {
-  display: flex;
-  flex-direction: column;
-  background: #fff;
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  overflow: hidden;
-  transition: transform 0.24s var(--ease), box-shadow 0.24s var(--ease), border-color 0.24s var(--ease);
-}
-.exp-card:hover {
-  transform: translateY(-4px);
-  border-color: var(--line-strong);
-  box-shadow: var(--shadow-card);
-}
+.exp-card { overflow: hidden; height: 100%; }
 
 .exp-media {
   position: relative;
   aspect-ratio: 4 / 3;
-  background: var(--mist);
+  background: var(--md-sys-color-surface-container-high);
   overflow: hidden;
 }
 .exp-media svg,
@@ -507,470 +1069,384 @@ section[id],
 .exp-media__index {
   position: absolute;
   top: 12px;
-  left: 12px;
-  width: 30px;
-  height: 30px;
+  inset-inline-start: 12px;
   display: grid;
   place-items: center;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.95);
-  color: var(--navy);
-  font-size: 0.75rem;
-  font-weight: 700;
+  width: 32px;
+  height: 32px;
+  border-radius: var(--md-sys-shape-corner-full);
+  background: var(--md-sys-color-surface);
+  color: var(--md-sys-color-on-surface);
+  font-size: var(--md-sys-typescale-label-medium-size);
+  font-weight: var(--md-sys-typescale-weight-medium);
   font-variant-numeric: tabular-nums;
 }
 
-.exp-body { display: flex; flex-direction: column; flex: 1; padding: 22px; gap: 14px; }
+.exp-body { display: flex; flex-direction: column; flex: 1; gap: 16px; padding: 20px; }
+.exp-title { color: var(--md-sys-color-heading); }
+.exp-price { color: var(--md-sys-color-primary); font-variant-numeric: tabular-nums; }
+.exp-facts { display: flex; flex-wrap: wrap; gap: 8px; }
+.exp-desc { color: var(--md-sys-color-on-surface-variant); }
 
-.exp-title { font-size: 1.25rem; color: var(--navy); }
-
-.exp-price {
-  font-size: 1.0625rem;
-  font-weight: 700;
-  color: var(--red);
-  font-variant-numeric: tabular-nums;
-}
-
-.exp-facts {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-.exp-facts li {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 0.8125rem;
-  color: var(--navy);
-  background: var(--mist);
-  border-radius: 999px;
-  padding: 5px 11px;
-}
-.exp-facts svg { width: 14px; height: 14px; color: var(--muted); flex: none; }
-
-.exp-desc { font-size: 0.9375rem; color: var(--muted); }
-
-.exp-lists { display: grid; gap: 14px; padding-top: 4px; border-top: 1px solid var(--line); }
-
+.exp-lists { display: grid; gap: 16px; padding-top: 16px; border-top: 1px solid var(--md-sys-color-outline-variant); }
 .exp-list__title {
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.12em;
+  color: var(--md-sys-color-on-surface-variant);
   text-transform: uppercase;
-  color: var(--muted);
   margin-bottom: 8px;
 }
+/* The bullet is two layers: ::before is the container circle, ::after is the
+   glyph drawn with a mask so its colour comes from a token rather than being
+   baked into a data URI (a baked black glyph vanished on dark containers). */
 .exp-list li {
-  display: flex;
-  align-items: flex-start;
-  gap: 8px;
-  font-size: 0.875rem;
-  color: var(--ink);
+  position: relative;
+  padding-inline-start: 24px;
   padding-block: 2px;
+  color: var(--md-sys-color-on-surface);
+}
+.exp-list li::before,
+.exp-list li::after {
+  content: '';
+  position: absolute;
+  inset-inline-start: 0;
 }
 .exp-list li::before {
-  content: '';
-  flex: none;
-  width: 14px;
-  height: 14px;
-  margin-top: 5px;
-  border-radius: 50%;
-  background: no-repeat center / 9px 9px;
+  top: 4px;
+  width: 16px;
+  height: 16px;
+  border-radius: var(--md-sys-shape-corner-full);
 }
-.exp-list--yes li::before {
-  background-color: rgba(29, 53, 87, 0.08);
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' fill='none' stroke='%231d3557' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M2 6.4 4.6 9 10 3'/%3E%3C/svg%3E");
+.exp-list li::after {
+  top: 7px;
+  margin-inline-start: 3px;
+  width: 10px;
+  height: 10px;
+  -webkit-mask: var(--glyph) center / contain no-repeat;
+  mask: var(--glyph) center / contain no-repeat;
 }
-.exp-list--no li { color: var(--muted); }
-.exp-list--no li::before {
-  background-color: rgba(107, 114, 128, 0.1);
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' fill='none' stroke='%236b7280' stroke-width='2.2' stroke-linecap='round'%3E%3Cpath d='M3 6h6'/%3E%3C/svg%3E");
+
+.exp-list--yes li {
+  --glyph: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M2 6.4 4.6 9 10 3'/%3E%3C/svg%3E");
 }
+.exp-list--yes li::before { background: var(--md-sys-color-secondary-container); }
+.exp-list--yes li::after { background: var(--md-sys-color-on-secondary-container); }
+
+.exp-list--no {
+  --glyph: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round'%3E%3Cpath d='M3 6h6'/%3E%3C/svg%3E");
+}
+.exp-list--no li { color: var(--md-sys-color-on-surface-variant); }
+.exp-list--no li::before { background: var(--md-sys-color-surface-container-highest); }
+.exp-list--no li::after { background: var(--md-sys-color-on-surface-variant); }
 
 .exp-cta { margin-top: auto; padding-top: 4px; }
 
-/* ------------------------------ features ------------------------------ */
+/* ============================== features ================================ */
 
-.feat-grid { display: grid; gap: 18px; }
-
-.feat {
-  background: #fff;
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  padding: 26px 22px;
-  transition: border-color 0.2s var(--ease), transform 0.2s var(--ease);
-}
-.feat:hover { border-color: var(--line-strong); transform: translateY(-2px); }
-
+.feat-grid { display: grid; gap: 16px; }
+.feat { height: 100%; padding: 24px; gap: 12px; }
 .feat__icon {
-  width: 44px;
-  height: 44px;
   display: grid;
   place-items: center;
-  border-radius: 12px;
-  background: rgba(230, 57, 70, 0.09);
-  color: var(--red);
-  margin-bottom: 16px;
+  width: 48px;
+  height: 48px;
+  border-radius: var(--md-sys-shape-corner-full);
+  background: var(--md-sys-color-primary-container);
+  color: var(--md-sys-color-on-primary-container);
+  margin-bottom: 8px;
 }
-.feat__icon svg { width: 22px; height: 22px; }
-.feat__title { font-size: 1.0625rem; color: var(--navy); margin-bottom: 8px; }
-.feat__body { font-size: 0.9375rem; color: var(--muted); }
+.feat__icon svg { width: 24px; height: 24px; }
+.feat__title { color: var(--md-sys-color-heading); margin-bottom: 6px; }
+.feat__body { color: var(--md-sys-color-on-surface-variant); }
 
-/* ---------------------------- booking flow ---------------------------- */
+/* =========================== booking flow =============================== */
 
-.flow { position: relative; }
-
-.flow-phases {
-  display: grid;
-  gap: 10px;
-  margin-bottom: 36px;
-}
+.flow-phases { display: grid; gap: 8px; margin-bottom: 32px; }
 .flow-phase-chip {
   display: flex;
   align-items: center;
   gap: 12px;
-  padding: 12px 16px;
-  background: #fff;
-  border: 1px solid var(--line);
-  border-radius: 999px;
-  font-size: 0.875rem;
-  font-weight: 600;
-  color: var(--navy);
+  min-height: 56px;
+  padding: 8px 16px;
+  border-radius: var(--md-sys-shape-corner-full);
+  background: var(--md-sys-color-secondary-container);
+  color: var(--md-sys-color-on-secondary-container);
 }
 .flow-phase-chip .num {
   display: inline-grid;
   place-items: center;
-  width: 24px; height: 24px;
-  border-radius: 50%;
-  background: var(--navy);
-  color: #fff;
-  font-size: 0.6875rem;
-  font-weight: 700;
+  width: 28px;
+  height: 28px;
   flex: none;
+  border-radius: var(--md-sys-shape-corner-full);
+  background: var(--md-sys-color-secondary);
+  color: var(--md-sys-color-on-secondary);
+  font-size: var(--md-sys-typescale-label-medium-size);
+  font-weight: var(--md-sys-typescale-weight-medium);
 }
-.flow-phase-chip .range {
-  margin-inline-start: auto;
-  font-size: 0.75rem;
-  font-weight: 500;
-  color: var(--muted);
-  font-variant-numeric: tabular-nums;
-}
+.flow-phase-chip .label { font-weight: var(--md-sys-typescale-weight-medium); }
+.flow-phase-chip .range { margin-inline-start: auto; opacity: 0.8; font-variant-numeric: tabular-nums; }
 
-.flow-rail { position: relative; display: grid; gap: 0; }
+.flow-rail { display: grid; }
 
+/* Each step is an M3 list item with a leading numbered avatar, joined by a
+   rail so the sequence reads as one path. */
 .flow-step {
   position: relative;
   display: grid;
-  grid-template-columns: 46px 1fr;
-  gap: 18px;
-  padding-bottom: 26px;
+  grid-template-columns: 40px 1fr;
+  gap: 16px;
+  padding-bottom: 20px;
 }
 .flow-step:last-child { padding-bottom: 0; }
-
-/* the connecting line */
 .flow-step::before {
   content: '';
   position: absolute;
-  left: 22px;
-  top: 46px;
+  inset-inline-start: 19px;
+  top: 44px;
   bottom: -4px;
   width: 2px;
-  background: linear-gradient(var(--line-strong), var(--line-strong));
-  border-radius: 2px;
+  border-radius: var(--md-sys-shape-corner-full);
+  background: var(--md-sys-color-outline-variant);
 }
 .flow-step:last-child::before { display: none; }
 
 .flow-step__node {
   position: relative;
   z-index: 1;
-  width: 46px;
-  height: 46px;
   display: grid;
   place-items: center;
-  border-radius: 50%;
-  background: #fff;
-  border: 2px solid var(--line-strong);
-  color: var(--navy);
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: 1rem;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--md-sys-shape-corner-full);
+  background: var(--md-sys-color-primary-container);
+  color: var(--md-sys-color-on-primary-container);
+  font-family: var(--md-ref-typeface-brand);
+  font-size: var(--md-sys-typescale-title-medium-size);
+  font-weight: var(--md-sys-typescale-weight-medium);
   font-variant-numeric: tabular-nums;
-  transition: border-color 0.2s var(--ease), background-color 0.2s var(--ease), color 0.2s var(--ease);
+  transition: background-color var(--md-sys-motion-duration-short4) var(--md-sys-motion-easing-standard),
+    color var(--md-sys-motion-duration-short4) var(--md-sys-motion-easing-standard);
 }
-.flow-step:hover .flow-step__node,
-.flow-step:focus-within .flow-step__node {
-  border-color: var(--red);
-  background: var(--red);
-  color: #fff;
+.flow-step:hover .flow-step__node {
+  background: var(--md-sys-color-primary);
+  color: var(--md-sys-color-on-primary);
 }
 
-.flow-step__card {
-  background: #fff;
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  padding: 18px 20px;
-  transition: border-color 0.2s var(--ease), box-shadow 0.2s var(--ease);
-}
-.flow-step:hover .flow-step__card { border-color: var(--line-strong); box-shadow: var(--shadow-card); }
-
-.flow-step__head {
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  margin-bottom: 6px;
-}
-.flow-step__icon {
-  width: 20px;
-  height: 20px;
-  margin-top: 3px;
-  color: var(--red);
-  flex: none;
-}
-.flow-step__title { font-size: 1.0625rem; color: var(--navy); }
+.flow-step__card { padding: 16px 20px; }
 .flow-step__label {
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--muted);
-  margin-bottom: 4px;
   display: block;
+  color: var(--md-sys-color-on-surface-variant);
+  text-transform: uppercase;
+  margin-bottom: 2px;
 }
-.flow-step__body { font-size: 0.9375rem; color: var(--muted); }
+.flow-step__head { display: flex; align-items: flex-start; gap: 8px; margin-bottom: 4px; }
+.flow-step__icon { width: 20px; height: 20px; margin-top: 2px; flex: none; color: var(--md-sys-color-primary); }
+.flow-step__title { color: var(--md-sys-color-heading); }
+.flow-step__body { color: var(--md-sys-color-on-surface-variant); }
 
-.flow-cta { margin-top: 34px; }
+.flow-cta { margin-top: 32px; }
 
-/* ------------------------------ notices ------------------------------- */
+/* =============================== notices ================================ */
 
-.notice-grid { display: grid; gap: 18px; }
-
-.notice {
-  background: #fff;
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  padding: 24px 22px;
-  border-top: 3px solid var(--red);
-}
-.notice__head { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; }
-.notice__icon { width: 20px; height: 20px; color: var(--red); flex: none; }
-.notice__title { font-size: 1.0625rem; color: var(--navy); }
-.notice__intro { font-size: 0.9375rem; color: var(--muted); margin-bottom: 10px; }
-
+.notice-grid { display: grid; gap: 16px; }
+.notice { height: 100%; padding: 24px; }
+.notice__head { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+.notice__icon { width: 24px; height: 24px; flex: none; color: var(--md-sys-color-primary); }
+.notice__title { color: var(--md-sys-color-heading); }
+.notice__intro { color: var(--md-sys-color-on-surface-variant); margin-bottom: 8px; }
 .notice__list li {
   position: relative;
   padding-inline-start: 20px;
-  font-size: 0.9375rem;
-  color: var(--ink);
-  padding-block: 5px;
+  padding-block: 4px;
+  color: var(--md-sys-color-on-surface);
 }
 .notice__list li::before {
   content: '';
   position: absolute;
   inset-inline-start: 4px;
-  top: 15px;
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-  background: var(--red);
+  top: 13px;
+  width: 6px;
+  height: 6px;
+  border-radius: var(--md-sys-shape-corner-full);
+  background: var(--md-sys-color-primary);
 }
 .notice--conduct .notice__list {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-  gap: 0 12px;
+  gap: 0 16px;
 }
 
-/* -------------------------------- FAQ --------------------------------- */
+/* ================================= FAQ ================================== */
 
-.faq-list {
-  border-top: 1px solid var(--line);
-  max-width: 860px;
+.faq-list { max-width: 900px; display: grid; gap: 8px; }
+
+.faq-item {
+  border-radius: var(--md-sys-shape-corner-medium);
+  background: var(--md-sys-color-surface-container-low);
+  overflow: hidden;
+  transition: background-color var(--md-sys-motion-duration-short4) var(--md-sys-motion-easing-standard);
 }
-
-.faq-item { border-bottom: 1px solid var(--line); }
+.faq-item[open] { background: var(--md-sys-color-surface-container); }
 
 .faq-item summary {
   display: flex;
   align-items: flex-start;
-  gap: 14px;
-  padding: 20px 4px;
+  gap: 16px;
+  min-height: 64px;
+  padding: 16px 20px;
   cursor: pointer;
   list-style: none;
-  font-weight: 600;
-  font-size: 1.0625rem;
-  color: var(--navy);
-  transition: color 0.16s var(--ease);
+  color: var(--md-sys-color-heading);
 }
 .faq-item summary::-webkit-details-marker { display: none; }
-.faq-item summary:hover { color: var(--red); }
 
 .faq-item__q {
   flex: none;
-  color: var(--red);
-  font-family: var(--font-display);
-  font-weight: 700;
-  line-height: 1.5;
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border-radius: var(--md-sys-shape-corner-full);
+  background: var(--md-sys-color-primary-container);
+  color: var(--md-sys-color-on-primary-container);
+  font-size: var(--md-sys-typescale-label-medium-size);
+  font-weight: var(--md-sys-typescale-weight-medium);
 }
-.faq-item__text { flex: 1; }
+.faq-item__text { flex: 1; padding-top: 2px; }
 
 .faq-item__sign {
   flex: none;
-  width: 22px;
-  height: 22px;
-  margin-top: 3px;
   position: relative;
+  width: 24px;
+  height: 24px;
+  margin-top: 2px;
+  color: var(--md-sys-color-on-surface-variant);
 }
 .faq-item__sign::before,
 .faq-item__sign::after {
   content: '';
   position: absolute;
-  inset: 50% 2px auto 2px;
+  inset: 50% 3px auto 3px;
   height: 2px;
+  border-radius: var(--md-sys-shape-corner-full);
   background: currentColor;
-  border-radius: 2px;
   transform: translateY(-50%);
-  transition: transform 0.22s var(--ease), opacity 0.22s var(--ease);
+  transition: transform var(--md-sys-motion-duration-medium2) var(--md-sys-motion-easing-standard),
+    opacity var(--md-sys-motion-duration-medium2) var(--md-sys-motion-easing-standard);
 }
 .faq-item__sign::after { transform: translateY(-50%) rotate(90deg); }
-.faq-item[open] .faq-item__sign::after { transform: translateY(-50%) rotate(0deg); opacity: 0; }
+.faq-item[open] .faq-item__sign::after { transform: translateY(-50%); opacity: 0; }
 
 .faq-item__a {
   display: flex;
-  gap: 14px;
-  padding: 0 4px 22px;
-  font-size: 0.9375rem;
-  color: var(--muted);
-  animation: faq-in 0.24s var(--ease) both;
+  gap: 16px;
+  padding: 0 20px 20px 64px;
+  color: var(--md-sys-color-on-surface-variant);
+  animation: md-faq-in var(--md-sys-motion-duration-medium2) var(--md-sys-motion-easing-emphasized-decelerate) both;
 }
-.faq-item__a .mark {
-  flex: none;
-  color: var(--navy);
-  font-family: var(--font-display);
-  font-weight: 700;
-  opacity: 0.4;
-}
-@keyframes faq-in {
+@keyframes md-faq-in {
   from { opacity: 0; transform: translateY(-4px); }
   to { opacity: 1; transform: none; }
 }
 
-/* ------------------------------ CTA band ------------------------------ */
+/* ============================== CTA band ================================ */
 
 .cta-band {
   position: relative;
   overflow: hidden;
-  background: var(--navy);
-  color: #fff;
+  background: var(--md-sys-color-secondary-container);
+  color: var(--md-sys-color-on-secondary-container);
   text-align: center;
   padding-block: clamp(56px, 8vw, 96px);
 }
-.cta-band::before {
-  content: '';
-  position: absolute;
-  left: 50%;
-  top: -140px;
-  width: 420px;
-  height: 420px;
-  transform: translateX(-50%);
-  background: radial-gradient(circle, rgba(230, 57, 70, 0.4), transparent 62%);
-  pointer-events: none;
-}
-.cta-band__inner { position: relative; }
-.cta-band h2 { font-size: clamp(1.75rem, 4.6vw, 2.75rem); text-wrap: balance; }
+.cta-band h2 { color: inherit; text-wrap: balance; }
 .cta-band p {
-  margin: 16px auto 30px;
-  max-width: 46ch;
-  color: rgba(255, 255, 255, 0.76);
-  font-size: 1.0625rem;
+  margin: 16px auto 32px;
+  max-width: 52ch;
+  opacity: 0.86;
 }
 
-/* ------------------------------- footer ------------------------------- */
+/* =============================== footer ================================= */
 
 .site-footer {
-  background: #0f1319;
-  color: rgba(255, 255, 255, 0.66);
-  padding-block: clamp(48px, 6vw, 72px) 32px;
-  font-size: 0.9375rem;
+  background: var(--md-sys-color-surface-container-highest);
+  color: var(--md-sys-color-on-surface-variant);
+  padding-block: clamp(48px, 6vw, 72px) 24px;
 }
-.footer-grid { display: grid; gap: 36px; }
-.footer-brand .brand { color: #fff; font-size: 1.0625rem; }
-.footer-tagline { margin-top: 14px; max-width: 34ch; color: rgba(255, 255, 255, 0.6); }
+.footer-grid { display: grid; gap: 32px; }
+.footer-brand .brand { margin-inline-start: 0; padding-inline: 0; }
+.footer-tagline { margin-top: 12px; max-width: 34ch; }
 
 .footer-heading {
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.14em;
+  color: var(--md-sys-color-on-surface);
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.45);
-  margin-bottom: 14px;
+  margin-bottom: 12px;
 }
-.footer-links { display: grid; gap: 10px; }
-.footer-links a { transition: color 0.16s var(--ease); }
-.footer-links a:hover { color: #fff; }
-
-.footer-social { display: flex; flex-wrap: wrap; gap: 10px; }
-.footer-social a {
+.footer-links { display: grid; gap: 4px; }
+.footer-links a {
   display: inline-flex;
   align-items: center;
   min-height: 40px;
-  padding: 0 14px;
-  border: 1px solid rgba(255, 255, 255, 0.16);
-  border-radius: 999px;
-  font-size: 0.875rem;
-  transition: border-color 0.16s var(--ease), color 0.16s var(--ease), background-color 0.16s var(--ease);
+  padding-inline: 12px;
+  margin-inline-start: -12px;
+  border-radius: var(--md-sys-shape-corner-small);
 }
-.footer-social a:hover { color: #fff; border-color: rgba(255, 255, 255, 0.4); background: rgba(255, 255, 255, 0.06); }
+
+.footer-social { display: flex; flex-wrap: wrap; gap: 8px; }
 
 .footer-bottom {
-  margin-top: 40px;
-  padding-top: 22px;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin-top: 32px;
+  padding-top: 20px;
+  border-top: 1px solid var(--md-sys-color-outline-variant);
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
   justify-content: space-between;
-  font-size: 0.8125rem;
-  color: rgba(255, 255, 255, 0.45);
+  color: var(--md-sys-color-on-surface-variant);
 }
 
-/* --------------------------- sticky mobile CTA ------------------------ */
+/* ====================== bottom app bar (mobile) ========================= */
 
-/* Two rows rather than one: the price string runs long in several languages
-   and a single row truncated it. */
-.sticky-cta {
+.bottom-bar {
   position: fixed;
-  left: 0;
-  right: 0;
+  inset-inline: 0;
   bottom: 0;
   z-index: 90;
   display: flex;
-  flex-direction: column;
-  gap: 8px;
-  padding: 10px var(--gutter) calc(10px + env(safe-area-inset-bottom));
-  background: rgba(255, 255, 255, 0.94);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  border-top: 1px solid var(--line);
+  align-items: center;
+  gap: 16px;
+  min-height: 80px;
+  padding: 12px var(--gutter) calc(12px + env(safe-area-inset-bottom));
+  background: var(--md-sys-color-surface-container);
+  box-shadow: var(--md-sys-elevation-level2);
   transform: translateY(120%);
-  transition: transform 0.28s var(--ease);
+  transition: transform var(--md-sys-motion-duration-medium4) var(--md-sys-motion-easing-emphasized-decelerate);
 }
-.sticky-cta[data-visible='true'] { transform: none; }
-.sticky-cta__price {
-  display: flex;
-  align-items: baseline;
-  gap: 8px;
-  min-width: 0;
-}
-.sticky-cta__price .val {
-  font-weight: 700;
-  font-size: 0.9375rem;
-  color: var(--navy);
+.bottom-bar[data-visible='true'] { transform: none; }
+.bottom-bar__price { flex: 1; min-width: 0; color: var(--md-sys-color-on-surface); }
+.bottom-bar__price .val {
+  display: block;
+  font-weight: var(--md-sys-typescale-weight-medium);
   font-variant-numeric: tabular-nums;
 }
 
-/* ------------------------------ reveal -------------------------------- */
+/* =============================== reveal ================================= */
 
-/* Reveal wrappers sit between a grid and its card, so they must not collapse
-   the card's stretch behaviour. */
+/* Progressive enhancement: visible by default, only hidden once a script has
+   confirmed it can reveal it again. */
+.reveal { opacity: 1; transform: none; }
+
+html[data-js] .reveal {
+  transition: opacity var(--md-sys-motion-duration-long2) var(--md-sys-motion-easing-emphasized-decelerate),
+    transform var(--md-sys-motion-duration-long2) var(--md-sys-motion-easing-emphasized-decelerate);
+}
+html[data-js] .reveal:not(.is-in) { opacity: 0; transform: translateY(16px); }
+
+@media (prefers-reduced-motion: reduce) {
+  html[data-js] .reveal:not(.is-in) { opacity: 1; transform: none; }
+}
+
+/* Reveal wrappers sit between a grid and its card and must not collapse the
+   card's stretch behaviour. */
 .exp-grid > .reveal,
 .feat-grid > .reveal,
 .notice-grid > .reveal { display: flex; }
@@ -978,52 +1454,48 @@ section[id],
 .feat-grid > .reveal > .feat,
 .notice-grid > .reveal > .notice { flex: 1; }
 
-/* Progressive enhancement: content is visible by default, and only hidden
-   once a script has confirmed it can reveal it again (html[data-js]). */
-.reveal { opacity: 1; transform: none; }
+/* ============================= breakpoints ============================== */
 
-html[data-js] .reveal {
-  transition: opacity 0.6s var(--ease), transform 0.6s var(--ease);
-}
-html[data-js] .reveal:not(.is-in) {
-  opacity: 0;
-  transform: translateY(16px);
-}
-
-@media (prefers-reduced-motion: reduce) {
-  html[data-js] .reveal:not(.is-in) { opacity: 1; transform: none; }
-}
-
-/* ============================ breakpoints ============================== */
-
-@media (min-width: 640px) {
-  .exp-facts { gap: 8px 10px; }
+@media (min-width: 600px) {
+  .hero-title {
+    font-size: var(--md-sys-typescale-display-medium-size);
+    line-height: var(--md-sys-typescale-display-medium-line-height);
+  }
   .flow-phases { grid-template-columns: repeat(3, 1fr); }
-  .flow-phase-chip { border-radius: 12px; }
   .feat-grid { grid-template-columns: repeat(2, 1fr); }
   .notice-grid { grid-template-columns: repeat(2, 1fr); }
   .footer-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
-@media (min-width: 900px) {
+@media (min-width: 905px) {
+  .hero-title {
+    font-size: var(--md-sys-typescale-display-large-size);
+    line-height: var(--md-sys-typescale-display-large-line-height);
+    letter-spacing: var(--md-sys-typescale-display-large-tracking);
+  }
+  .sec-title,
+  .cta-band h2 {
+    font-size: var(--md-sys-typescale-headline-large-size);
+    line-height: var(--md-sys-typescale-headline-large-line-height);
+  }
   .nav { display: flex; }
   .hero-grid { grid-template-columns: 1.05fr 0.95fr; }
   .exp-grid { grid-template-columns: repeat(3, 1fr); }
-  .flow-step { grid-template-columns: 56px 1fr; gap: 22px; }
-  .flow-step::before { left: 27px; top: 56px; }
-  .flow-step__node { width: 56px; height: 56px; font-size: 1.125rem; }
+  .flow-step { grid-template-columns: 56px 1fr; gap: 20px; }
+  .flow-step::before { inset-inline-start: 27px; top: 60px; }
+  .flow-step__node { width: 56px; height: 56px; font-size: var(--md-sys-typescale-title-large-size); }
   .footer-grid { grid-template-columns: 1.6fr 1fr 1fr; gap: 48px; }
-  .sticky-cta { display: none; }
+  .bottom-bar { display: none; }
 }
 
-@media (min-width: 1024px) {
-  .header-cta { display: inline-flex; }
+@media (min-width: 1240px) {
+  .top-app-bar__cta { display: inline-flex; }
   .feat-grid { grid-template-columns: repeat(4, 1fr); }
 }
 </style>
 </head>
 <body>
-<div id="app"><a class="skip-link" href="#main">Skip to content</a><header class="site-header" data-scrolled="false"><div class="shell header-inner"><a class="brand" href="#top"><span class="brand__seal" aria-hidden="true"></span><span>REAL JAPAN <span class="brand__now">NOW</span></span></a><nav class="nav" aria-label="Primary"><a href="#experiences">Experiences</a><a href="#why">Why us</a><a href="#how">How to book</a><a href="#notices">Before booking</a><a href="#faq">FAQ</a></nav><div class="header-actions"><a class="btn btn--primary btn--sm header-cta" href="#how">Book an Experience</a><div class="lang"><button type="button" class="lang__btn" id="langBtn" aria-label="Change language" aria-haspopup="listbox" aria-expanded="false" aria-controls="langMenu"><svg viewBox="0 0 24 24" class="lang__globe" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18"/><path d="M3.5 9h17M3.5 15h17"/><path d="M12 3a14 14 0 0 1 0 18"/><path d="M12 3a14 14 0 0 0 0 18"/></svg><span class="lang__code">EN</span><svg viewBox="0 0 24 24" class="lang__caret" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg></button><div class="lang__menu lang__menu--anim" id="langMenu" role="listbox" aria-label="Language" hidden><p class="lang__heading">Language</p><button type="button" class="lang__option" role="option" aria-selected="true" lang="en" data-locale="en"><span class="lang__flag" aria-hidden="true">🇺🇸</span><span class="lang__name">English</span><svg viewBox="0 0 24 24" class="lang__check" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m5 13 4 4L19 7"/></svg></button><button type="button" class="lang__option" role="option" aria-selected="false" lang="ko" data-locale="ko"><span class="lang__flag" aria-hidden="true">🇰🇷</span><span class="lang__name">한국어</span></button><button type="button" class="lang__option" role="option" aria-selected="false" lang="zh-Hant-TW" data-locale="zh-TW"><span class="lang__flag" aria-hidden="true">🇹🇼</span><span class="lang__name">繁體中文</span></button><button type="button" class="lang__option" role="option" aria-selected="false" lang="fr" data-locale="fr"><span class="lang__flag" aria-hidden="true">🇫🇷</span><span class="lang__name">Français</span></button></div></div></div></div></header><main id="main"><section class="hero" id="top"><div class="shell hero-grid"><div class="hero-copy"><p class="hero-eyebrow"><span class="dot" aria-hidden="true"></span>Tokyo · Hosted by locals</p><h1 class="hero-title">Not tourism. Join everyday life in Japan.</h1><p class="hero-sub">Vintage shops with locals, home-cooked Japanese meals, midnight highway drives with JDM car owners. Experience the real Japan, at your own pace.</p><div class="hero-actions"><a class="btn btn--primary" href="#how">Book an Experience<svg viewBox="0 0 24 24" class="btn__arrow" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 12h15"/><path d="m13 6 6 6-6 6"/></svg></a><a class="btn btn--ghost" href="#experiences">See the 3 experiences</a></div><ul class="trust"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3.2 19 6v5.6c0 4.5-3 7.8-7 9.2-4-1.4-7-4.7-7-9.2V6z"/><path d="m9.2 12 2 2 3.8-4"/></svg>ID-verified hosts</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M13.6 7.6a3.4 3.4 0 1 1-6.8 0 3.4 3.4 0 0 1 6.8 0"/><path d="M16.4 19.5v-1.6a3.6 3.6 0 0 0-3.6-3.6H7.6A3.6 3.6 0 0 0 4 17.9v1.6"/><path d="M16.6 5.4a3.2 3.2 0 0 1 0 6.1"/><path d="M20 19.5v-1.4a3.4 3.4 0 0 0-2.6-3.3"/></svg>1–4 people</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3.5 6.4h9"/><path d="M8 4.4v2"/><path d="M10.6 6.4c-.6 3.6-3 6.6-6.3 8"/><path d="M6.2 9.4c1 2 2.8 3.6 5 4.4"/><path d="m12.4 20 3.9-9.4L20.2 20"/><path d="M13.8 16.8h5"/></svg>4 languages</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18"/><path d="M12 7.2v5.1l3.2 1.9"/></svg>Free cancellation 48h before</li></ul></div><div class="hero-art" aria-hidden="true"><figure class="hero-panel"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Illustration of a Tokyo vintage clothing shop interior">
+<div id="app"><a class="skip-link" href="#main">Skip to content</a><header class="m3-top-app-bar" data-scrolled="false"><div class="shell top-app-bar__inner"><a class="brand md-state" href="#top"><span class="brand__seal" aria-hidden="true"></span><span>REAL JAPAN <span class="brand__now">NOW</span></span></a><nav class="nav" aria-label="Primary"><a class="md-btn md-btn--text md-state" href="#experiences">Experiences</a><a class="md-btn md-btn--text md-state" href="#why">Why us</a><a class="md-btn md-btn--text md-state" href="#how">How to book</a><a class="md-btn md-btn--text md-state" href="#notices">Before booking</a><a class="md-btn md-btn--text md-state" href="#faq">FAQ</a></nav><div class="top-app-bar__actions"><a class="md-btn md-btn--filled md-state top-app-bar__cta" href="#how">Book an Experience</a><div class="lang"><button type="button" class="lang__btn md-state" id="langBtn" aria-label="Change language" aria-haspopup="listbox" aria-expanded="false" aria-controls="langMenu"><svg viewBox="0 0 24 24" class="lang__globe" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18"/><path d="M3.5 9h17M3.5 15h17"/><path d="M12 3a14 14 0 0 1 0 18"/><path d="M12 3a14 14 0 0 0 0 18"/></svg><span class="lang__code">EN</span><svg viewBox="0 0 24 24" class="lang__caret" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg></button><div class="lang__menu lang__menu--anim" id="langMenu" role="listbox" aria-label="Language" hidden><p class="lang__heading">Language</p><button type="button" class="lang__option md-state" role="option" aria-selected="true" lang="en" data-locale="en"><span class="lang__flag" aria-hidden="true">🇺🇸</span><span class="lang__name">English</span><svg viewBox="0 0 24 24" class="lang__check" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m5 13 4 4L19 7"/></svg></button><button type="button" class="lang__option md-state" role="option" aria-selected="false" lang="ko" data-locale="ko"><span class="lang__flag" aria-hidden="true">🇰🇷</span><span class="lang__name">한국어</span></button><button type="button" class="lang__option md-state" role="option" aria-selected="false" lang="zh-Hant-TW" data-locale="zh-TW"><span class="lang__flag" aria-hidden="true">🇹🇼</span><span class="lang__name">繁體中文</span></button><button type="button" class="lang__option md-state" role="option" aria-selected="false" lang="fr" data-locale="fr"><span class="lang__flag" aria-hidden="true">🇫🇷</span><span class="lang__name">Français</span></button></div></div></div></div></header><main id="main"><section class="hero" id="top"><div class="shell hero-grid"><div class="hero-copy"><p class="md-chip md-chip--tonal hero-eyebrow">Tokyo · Hosted by locals</p><h1 class="hero-title">Not tourism. Join everyday life in Japan.</h1><p class="hero-sub">Vintage shops with locals, home-cooked Japanese meals, midnight highway drives with JDM car owners. Experience the real Japan, at your own pace.</p><div class="hero-actions"><a class="md-btn md-btn--md md-btn--filled md-state" href="#how">Book an Experience<svg viewBox="0 0 24 24" class="md-btn__arrow" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 12h15"/><path d="m13 6 6 6-6 6"/></svg></a><a class="md-btn md-btn--md md-btn--outlined md-state" href="#experiences">See the 3 experiences</a></div><ul class="trust"><li class="md-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3.2 19 6v5.6c0 4.5-3 7.8-7 9.2-4-1.4-7-4.7-7-9.2V6z"/><path d="m9.2 12 2 2 3.8-4"/></svg>ID-verified hosts</li><li class="md-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M13.6 7.6a3.4 3.4 0 1 1-6.8 0 3.4 3.4 0 0 1 6.8 0"/><path d="M16.4 19.5v-1.6a3.6 3.6 0 0 0-3.6-3.6H7.6A3.6 3.6 0 0 0 4 17.9v1.6"/><path d="M16.6 5.4a3.2 3.2 0 0 1 0 6.1"/><path d="M20 19.5v-1.4a3.4 3.4 0 0 0-2.6-3.3"/></svg>1–4 people</li><li class="md-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3.5 6.4h9"/><path d="M8 4.4v2"/><path d="M10.6 6.4c-.6 3.6-3 6.6-6.3 8"/><path d="M6.2 9.4c1 2 2.8 3.6 5 4.4"/><path d="m12.4 20 3.9-9.4L20.2 20"/><path d="M13.8 16.8h5"/></svg>4 languages</li><li class="md-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18"/><path d="M12 7.2v5.1l3.2 1.9"/></svg>Free cancellation 48h before</li></ul></div><div class="hero-art" aria-hidden="true"><figure class="hero-panel"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Illustration of a Tokyo vintage clothing shop interior">
   <defs>
     <linearGradient id="v-wall-hero" x1="0" y1="0" x2="0" y2="1">
       <stop offset="0" stop-color="#f7f0e6"/><stop offset="1" stop-color="#eee3d3"/>
@@ -1296,7 +1768,7 @@ html[data-js] .reveal:not(.is-in) {
 
   <!-- foreground ground reflection -->
   <rect y="286" width="400" height="14" fill="#0d1219" opacity=".5"/>
-</svg><figcaption class="hero-panel__tag">Night drive</figcaption></figure></div></div></section><section class="section" id="experiences" aria-labelledby="experiences-title"><div class="shell"><div class="sec-head"><p class="eyebrow">Experiences</p><h2 class="sec-title" id="experiences-title">3 Experiences</h2><p class="sec-lead">Pick one. Three to four hours with someone who actually lives here.</p></div><div class="exp-grid"><div class="reveal" style="transition-delay:0ms"><article class="exp-card"><div class="exp-media"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Illustration of a Tokyo vintage clothing shop interior">
+</svg><figcaption class="hero-panel__tag">Night drive</figcaption></figure></div></div></section><section class="section" id="experiences" aria-labelledby="experiences-title"><div class="shell"><div class="sec-head"><p class="eyebrow">Experiences</p><h2 class="sec-title" id="experiences-title">3 Experiences</h2><p class="sec-lead">Pick one. Three to four hours with someone who actually lives here.</p></div><div class="exp-grid"><div class="reveal" style="transition-delay:0ms"><article class="md-card md-card--elevated exp-card"><div class="exp-media"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Illustration of a Tokyo vintage clothing shop interior">
   <defs>
     <linearGradient id="v-wall-card" x1="0" y1="0" x2="0" y2="1">
       <stop offset="0" stop-color="#f7f0e6"/><stop offset="1" stop-color="#eee3d3"/>
@@ -1367,7 +1839,7 @@ html[data-js] .reveal:not(.is-in) {
   <path d="M128 232v-26" stroke="#5f7a4f" stroke-width="3"/>
   <path d="M128 208c-15-6-21-21-15-33 13 2 21 13 15 33zM128 214c13-8 18-23 12-33-13 3-19 15-12 33z" fill="#6f8f5c"/>
   <path d="M114 232h28l-4 20h-20z" fill="#c96f4a"/>
-</svg><span class="exp-media__index" aria-hidden="true">01</span></div><div class="exp-body"><h3 class="exp-title">Vintage Hunting in Tokyo</h3><p class="exp-price">From ¥18,750 / person</p><ul class="exp-facts"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18"/><path d="M12 7.2v5.1l3.2 1.9"/></svg><span class="visually-hidden">Duration: </span>3 hours</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M13.6 7.6a3.4 3.4 0 1 1-6.8 0 3.4 3.4 0 0 1 6.8 0"/><path d="M16.4 19.5v-1.6a3.6 3.6 0 0 0-3.6-3.6H7.6A3.6 3.6 0 0 0 4 17.9v1.6"/><path d="M16.6 5.4a3.2 3.2 0 0 1 0 6.1"/><path d="M20 19.5v-1.4a3.4 3.4 0 0 0-2.6-3.3"/></svg><span class="visually-hidden">Group size: </span>1–4 people</li></ul><p class="exp-desc">Explore 5-7 vintage shops unknown to tourists with a local fashion enthusiast. Includes coordination advice to find your own unique Japanese style.</p><div class="exp-lists"><div><p class="exp-list__title">What's included</p><ul class="exp-list exp-list--yes"><li>5–7 vintage shops</li><li>Coordination advice</li><li>Photo spot guidance</li></ul></div><div><p class="exp-list__title">Not included</p><ul class="exp-list exp-list--no"><li>Purchase cost</li><li>Food and drinks</li><li>Transportation</li></ul></div></div><div class="exp-cta"><a class="btn btn--ghost btn--sm btn--block" href="#how">Book this experience</a></div></div></article></div><div class="reveal" style="transition-delay:80ms"><article class="exp-card"><div class="exp-media"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Illustration of a Japanese home-cooked meal laid out on a wooden table">
+</svg><span class="exp-media__index" aria-hidden="true">01</span></div><div class="exp-body"><h3 class="exp-title">Vintage Hunting in Tokyo</h3><p class="exp-price">From ¥18,750 / person</p><ul class="exp-facts"><li class="md-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18"/><path d="M12 7.2v5.1l3.2 1.9"/></svg><span class="visually-hidden">Duration: </span>3 hours</li><li class="md-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M13.6 7.6a3.4 3.4 0 1 1-6.8 0 3.4 3.4 0 0 1 6.8 0"/><path d="M16.4 19.5v-1.6a3.6 3.6 0 0 0-3.6-3.6H7.6A3.6 3.6 0 0 0 4 17.9v1.6"/><path d="M16.6 5.4a3.2 3.2 0 0 1 0 6.1"/><path d="M20 19.5v-1.4a3.4 3.4 0 0 0-2.6-3.3"/></svg><span class="visually-hidden">Group size: </span>1–4 people</li></ul><p class="exp-desc">Explore 5-7 vintage shops unknown to tourists with a local fashion enthusiast. Includes coordination advice to find your own unique Japanese style.</p><div class="exp-lists"><div><p class="exp-list__title">What's included</p><ul class="exp-list exp-list--yes"><li>5–7 vintage shops</li><li>Coordination advice</li><li>Photo spot guidance</li></ul></div><div><p class="exp-list__title">Not included</p><ul class="exp-list exp-list--no"><li>Purchase cost</li><li>Food and drinks</li><li>Transportation</li></ul></div></div><div class="exp-cta"><a class="md-btn md-btn--outlined md-btn--block md-state" href="#how">Book this experience</a></div></div></article></div><div class="reveal" style="transition-delay:80ms"><article class="md-card md-card--elevated exp-card"><div class="exp-media"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Illustration of a Japanese home-cooked meal laid out on a wooden table">
   <defs>
     <linearGradient id="c-table-card" x1="0" y1="0" x2="0" y2="1">
       <stop offset="0" stop-color="#e9d8bf"/><stop offset="1" stop-color="#d8c2a2"/>
@@ -1450,7 +1922,7 @@ html[data-js] .reveal:not(.is-in) {
     <path d="M124 130c-7-8 7-13 0-20"/>
     <path d="M226 136c-7-8 7-14 0-22"/>
   </g>
-</svg><span class="exp-media__index" aria-hidden="true">02</span></div><div class="exp-body"><h3 class="exp-title">Home Cooking Experience</h3><p class="exp-price">From ¥22,500 / person</p><ul class="exp-facts"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18"/><path d="M12 7.2v5.1l3.2 1.9"/></svg><span class="visually-hidden">Duration: </span>3 hours</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M13.6 7.6a3.4 3.4 0 1 1-6.8 0 3.4 3.4 0 0 1 6.8 0"/><path d="M16.4 19.5v-1.6a3.6 3.6 0 0 0-3.6-3.6H7.6A3.6 3.6 0 0 0 4 17.9v1.6"/><path d="M16.6 5.4a3.2 3.2 0 0 1 0 6.1"/><path d="M20 19.5v-1.4a3.4 3.4 0 0 0-2.6-3.3"/></svg><span class="visually-hidden">Group size: </span>1–4 people</li></ul><p class="exp-desc">Cook and eat with a Japanese family at home. Experience &quot;authentic home cooking&quot; and Japanese food culture that you can't get from tourism.</p><div class="exp-lists"><div><p class="exp-list__title">What's included</p><ul class="exp-list exp-list--yes"><li>Cooking 2–3 dishes</li><li>The meal</li><li>Food culture explanation</li><li>Recipes to take home</li></ul></div><div><p class="exp-list__title">Not included</p><ul class="exp-list exp-list--no"><li>Transportation</li><li>Alcohol (available to order)</li></ul></div></div><div class="exp-cta"><a class="btn btn--ghost btn--sm btn--block" href="#how">Book this experience</a></div></div></article></div><div class="reveal" style="transition-delay:160ms"><article class="exp-card"><div class="exp-media"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Illustration of a JDM sports car on the Tokyo Metropolitan Expressway at night">
+</svg><span class="exp-media__index" aria-hidden="true">02</span></div><div class="exp-body"><h3 class="exp-title">Home Cooking Experience</h3><p class="exp-price">From ¥22,500 / person</p><ul class="exp-facts"><li class="md-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18"/><path d="M12 7.2v5.1l3.2 1.9"/></svg><span class="visually-hidden">Duration: </span>3 hours</li><li class="md-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M13.6 7.6a3.4 3.4 0 1 1-6.8 0 3.4 3.4 0 0 1 6.8 0"/><path d="M16.4 19.5v-1.6a3.6 3.6 0 0 0-3.6-3.6H7.6A3.6 3.6 0 0 0 4 17.9v1.6"/><path d="M16.6 5.4a3.2 3.2 0 0 1 0 6.1"/><path d="M20 19.5v-1.4a3.4 3.4 0 0 0-2.6-3.3"/></svg><span class="visually-hidden">Group size: </span>1–4 people</li></ul><p class="exp-desc">Cook and eat with a Japanese family at home. Experience &quot;authentic home cooking&quot; and Japanese food culture that you can't get from tourism.</p><div class="exp-lists"><div><p class="exp-list__title">What's included</p><ul class="exp-list exp-list--yes"><li>Cooking 2–3 dishes</li><li>The meal</li><li>Food culture explanation</li><li>Recipes to take home</li></ul></div><div><p class="exp-list__title">Not included</p><ul class="exp-list exp-list--no"><li>Transportation</li><li>Alcohol (available to order)</li></ul></div></div><div class="exp-cta"><a class="md-btn md-btn--outlined md-btn--block md-state" href="#how">Book this experience</a></div></div></article></div><div class="reveal" style="transition-delay:160ms"><article class="md-card md-card--elevated exp-card"><div class="exp-media"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Illustration of a JDM sports car on the Tokyo Metropolitan Expressway at night">
   <defs>
     <linearGradient id="j-sky-card" x1="0" y1="0" x2="0" y2="1">
       <stop offset="0" stop-color="#0b1020"/><stop offset="0.55" stop-color="#16233f"/><stop offset="1" stop-color="#243654"/>
@@ -1569,7 +2041,7 @@ html[data-js] .reveal:not(.is-in) {
 
   <!-- foreground ground reflection -->
   <rect y="286" width="400" height="14" fill="#0d1219" opacity=".5"/>
-</svg><span class="exp-media__index" aria-hidden="true">03</span></div><div class="exp-body"><h3 class="exp-title">JDM Night Drive &amp; Photo Session</h3><p class="exp-price">From ¥37,500 / person</p><ul class="exp-facts"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18"/><path d="M12 7.2v5.1l3.2 1.9"/></svg><span class="visually-hidden">Duration: </span>4 hours (19:00–23:00)</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M13.6 7.6a3.4 3.4 0 1 1-6.8 0 3.4 3.4 0 0 1 6.8 0"/><path d="M16.4 19.5v-1.6a3.6 3.6 0 0 0-3.6-3.6H7.6A3.6 3.6 0 0 0 4 17.9v1.6"/><path d="M16.6 5.4a3.2 3.2 0 0 1 0 6.1"/><path d="M20 19.5v-1.4a3.4 3.4 0 0 0-2.6-3.3"/></svg><span class="visually-hidden">Group size: </span>1–3 people</li></ul><p class="exp-desc">Night drive on the Metropolitan Expressway with a JDM car owner. Take professional-level photos at photo spots and deeply experience Japanese car culture.</p><div class="exp-lists"><div><p class="exp-list__title">What's included</p><ul class="exp-list exp-list--yes"><li>Metropolitan Expressway night drive</li><li>3–4 photo spots</li><li>Car talk</li><li>Photo advice</li><li>Light snacks and drinks</li></ul></div><div><p class="exp-list__title">Not included</p><ul class="exp-list exp-list--no"><li>Meals (light snacks excluded)</li><li>Hotel transfer</li></ul></div></div><div class="exp-cta"><a class="btn btn--ghost btn--sm btn--block" href="#how">Book this experience</a></div></div></article></div></div></div></section><section class="section section--mist" id="why" aria-labelledby="why-title"><div class="shell"><div class="sec-head"><p class="eyebrow">Why us</p><h2 class="sec-title" id="why-title">Why Choose REAL JAPAN NOW</h2><p class="sec-lead">Small, safe, and genuinely local.</p></div><div class="feat-grid"><div class="reveal" style="transition-delay:0ms"><div class="feat"><div class="feat__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4.5 7.5h11.8v5.2a5.2 5.2 0 0 1-5.2 5.2h-1.4a5.2 5.2 0 0 1-5.2-5.2z"/><path d="M16.3 9h1.9a2.6 2.6 0 0 1 0 5.2h-1.9"/><path d="M4 21h13.5"/><path d="M8.5 4.6c.8-.7.8-1.4 0-2.1M12 4.6c.8-.7.8-1.4 0-2.1"/></svg></div><h3 class="feat__title">Authentic Everyday Experience</h3><p class="feat__body">Not tourist spots, but places only locals know. Relaxed atmosphere like spending time with friends.</p></div></div><div class="reveal" style="transition-delay:70ms"><div class="feat"><div class="feat__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3.2 19 6v5.6c0 4.5-3 7.8-7 9.2-4-1.4-7-4.7-7-9.2V6z"/><path d="m9.2 12 2 2 3.8-4"/></svg></div><h3 class="feat__title">Safety &amp; Security</h3><p class="feat__body">ID verification required for all participants. Only verified hosts provide experiences. 24-hour support system.</p></div></div><div class="reveal" style="transition-delay:140ms"><div class="feat"><div class="feat__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M13.6 7.6a3.4 3.4 0 1 1-6.8 0 3.4 3.4 0 0 1 6.8 0"/><path d="M16.4 19.5v-1.6a3.6 3.6 0 0 0-3.6-3.6H7.6A3.6 3.6 0 0 0 4 17.9v1.6"/><path d="M16.6 5.4a3.2 3.2 0 0 1 0 6.1"/><path d="M20 19.5v-1.4a3.4 3.4 0 0 0-2.6-3.3"/></svg></div><h3 class="feat__title">Small Group</h3><p class="feat__body">Small groups of 1-4 people for personalized attention. Enjoy at your own pace.</p></div></div><div class="reveal" style="transition-delay:210ms"><div class="feat"><div class="feat__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20.5 11.6c0 4.2-3.8 7.6-8.5 7.6-.9 0-1.8-.1-2.6-.4L4.5 20.5l1.3-3.7a7.2 7.2 0 0 1-2.3-5.2C3.5 7.4 7.3 4 12 4s8.5 3.4 8.5 7.6"/><path d="M9 11.6h.01M12 11.6h.01M15 11.6h.01"/></svg></div><h3 class="feat__title">Multilingual Support</h3><p class="feat__body">Support in English, Korean, Traditional Chinese, and French. LINE customer support available.</p></div></div></div></div></section><section class="section flow" id="how" aria-labelledby="how-title"><div class="shell"><div class="sec-head"><p class="eyebrow">How to book</p><h2 class="sec-title" id="how-title">How to Book</h2><p class="sec-lead">Seven clear steps, from choosing an experience to leaving a review.</p></div><ul class="flow-phases"><li class="flow-phase-chip"><span class="num" aria-hidden="true">1</span><span>Book online</span><span class="range">Step 1–2</span></li><li class="flow-phase-chip"><span class="num" aria-hidden="true">2</span><span>Verify &amp; pay</span><span class="range">Step 3–5</span></li><li class="flow-phase-chip"><span class="num" aria-hidden="true">3</span><span>On the day &amp; after</span><span class="range">Step 6–7</span></li></ul><ol class="flow-rail"><li class="flow-step"><span class="flow-step__node" aria-hidden="true">1</span><div class="reveal flow-step__card" style="transition-delay:0ms"><span class="flow-step__label">Step 1</span><div class="flow-step__head"><svg viewBox="0 0 24 24" class="flow-step__icon" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18"/><path d="m15.2 8.8-2 5.4-5.4 2 2-5.4z"/></svg><h3 class="flow-step__title">Choose Experience</h3></div><p class="flow-step__body">Choose your favorite from 3 experiences. Select date and number of people.</p></div></li><li class="flow-step"><span class="flow-step__node" aria-hidden="true">2</span><div class="reveal flow-step__card" style="transition-delay:40ms"><span class="flow-step__label">Step 2</span><div class="flow-step__head"><svg viewBox="0 0 24 24" class="flow-step__icon" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M16 7.6a4 4 0 1 1-8 0 4 4 0 0 1 8 0"/><path d="M20 20.2v-1.4a5.6 5.6 0 0 0-5.6-5.6H9.6A5.6 5.6 0 0 0 4 18.8v1.4"/></svg><h3 class="flow-step__title">Enter Personal Information</h3></div><p class="flow-step__body">Enter name, date of birth, nationality, and contact information.</p></div></li><li class="flow-step"><span class="flow-step__node" aria-hidden="true">3</span><div class="reveal flow-step__card" style="transition-delay:80ms"><span class="flow-step__label">Step 3</span><div class="flow-step__head"><svg viewBox="0 0 24 24" class="flow-step__icon" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4.2 5h15.6A1.7 1.7 0 0 1 21.5 6.7v10.6a1.7 1.7 0 0 1-1.7 1.7H4.2a1.7 1.7 0 0 1-1.7-1.7V6.7A1.7 1.7 0 0 1 4.2 5z"/><path d="M13.8 10h4.2M13.8 14h4.2"/><path d="M10.6 10.4a1.9 1.9 0 1 1-3.8 0 1.9 1.9 0 0 1 3.8 0"/><path d="M5.9 15.6c.4-1.4 1.6-2.2 2.8-2.2s2.4.8 2.8 2.2"/></svg><h3 class="flow-step__title">Submit ID</h3></div><p class="flow-step__body">Upload passport, residence card, or driver's license image. Encrypted and securely stored (automatically deleted after 30 days).</p></div></li><li class="flow-step"><span class="flow-step__node" aria-hidden="true">4</span><div class="reveal flow-step__card" style="transition-delay:120ms"><span class="flow-step__label">Step 4</span><div class="flow-step__head"><svg viewBox="0 0 24 24" class="flow-step__icon" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4.5 6h15A1.5 1.5 0 0 1 21 7.5v9a1.5 1.5 0 0 1-1.5 1.5h-15A1.5 1.5 0 0 1 3 16.5v-9A1.5 1.5 0 0 1 4.5 6z"/><path d="M3 10.4h18"/><path d="M6.4 14.4h3.2"/></svg><h3 class="flow-step__title">Payment</h3></div><p class="flow-step__body">Full payment by credit card, LINE Pay, Apple Pay, or Google Pay.</p></div></li><li class="flow-step"><span class="flow-step__node" aria-hidden="true">5</span><div class="reveal flow-step__card" style="transition-delay:160ms"><span class="flow-step__label">Step 5</span><div class="flow-step__head"><svg viewBox="0 0 24 24" class="flow-step__icon" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 7.4a1.4 1.4 0 0 1 1.4-1.4h15.2A1.4 1.4 0 0 1 21 7.4v5"/><path d="m20.6 7-8.6 5.8L3.4 7"/><path d="M3 7.4v9.2A1.4 1.4 0 0 0 4.4 18h8.2"/><path d="m15.6 18.4 2 2 3.9-4"/></svg><h3 class="flow-step__title">Booking Confirmation</h3></div><p class="flow-step__body">Confirmation email sent. LINE reminder the day before the experience.</p></div></li><li class="flow-step"><span class="flow-step__node" aria-hidden="true">6</span><div class="reveal flow-step__card" style="transition-delay:200ms"><span class="flow-step__label">Step 6</span><div class="flow-step__head"><svg viewBox="0 0 24 24" class="flow-step__icon" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 21.2s6.8-5.6 6.8-10.8a6.8 6.8 0 1 0-13.6 0c0 5.2 6.8 10.8 6.8 10.8z"/><path d="M14.4 10.2a2.4 2.4 0 1 1-4.8 0 2.4 2.4 0 0 1 4.8 0"/></svg><h3 class="flow-step__title">Enjoy the Experience</h3></div><p class="flow-step__body">Meet your host on the day. Enjoy the experience to the fullest.</p></div></li><li class="flow-step"><span class="flow-step__node" aria-hidden="true">7</span><div class="reveal flow-step__card" style="transition-delay:240ms"><span class="flow-step__label">Step 7</span><div class="flow-step__head"><svg viewBox="0 0 24 24" class="flow-step__icon" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m12 3.6 2.6 5.3 5.8.9-4.2 4.1 1 5.8-5.2-2.7-5.2 2.7 1-5.8-4.2-4.1 5.8-.9z"/></svg><h3 class="flow-step__title">Submit Review</h3></div><p class="flow-step__body">Submit a review after the experience. Get a discount coupon for next time.</p></div></li></ol><div class="flow-cta"><a class="btn btn--primary" href="#experiences">Start booking<svg viewBox="0 0 24 24" class="btn__arrow" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 12h15"/><path d="m13 6 6 6-6 6"/></svg></a></div></div></section><section class="section section--sand" id="notices" aria-labelledby="notices-title"><div class="shell"><div class="sec-head"><p class="eyebrow">Before booking</p><h2 class="sec-title" id="notices-title">Important Notices Before Booking</h2><p class="sec-lead">Please read this before you book.</p></div><div class="notice-grid"><div class="reveal" style="transition-delay:0ms"><div class="notice"><div class="notice__head"><svg viewBox="0 0 24 24" class="notice__icon" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4.2 5h15.6A1.7 1.7 0 0 1 21.5 6.7v10.6a1.7 1.7 0 0 1-1.7 1.7H4.2a1.7 1.7 0 0 1-1.7-1.7V6.7A1.7 1.7 0 0 1 4.2 5z"/><path d="M13.8 10h4.2M13.8 14h4.2"/><path d="M10.6 10.4a1.9 1.9 0 1 1-3.8 0 1.9 1.9 0 0 1 3.8 0"/><path d="M5.9 15.6c.4-1.4 1.6-2.2 2.8-2.2s2.4.8 2.8 2.2"/></svg><h3 class="notice__title">Required Items</h3></div><ul class="notice__list"><li>ID submission is required for all participants (passport, residence card, driver's license, or My Number card).</li><li>Vintage shopping &amp; home cooking: 18 years and older.</li><li>JDM car experience: 20 years and older (driver's license required).</li><li>Full payment at booking. The cancellation policy applies.</li><li>Free cancellation up to 48 hours before the experience; 50% after that; 100% on the day.</li></ul></div></div><div class="reveal" style="transition-delay:60ms"><div class="notice"><div class="notice__head"><svg viewBox="0 0 24 24" class="notice__icon" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 20.2s-7.6-4.6-7.6-9.8a4.4 4.4 0 0 1 7.6-3 4.4 4.4 0 0 1 7.6 3c0 5.2-7.6 9.8-7.6 9.8z"/></svg><h3 class="notice__title">Health &amp; Allergies</h3></div><ul class="notice__list"><li>Home cooking: allergies and religious dietary restrictions must be declared in advance.</li><li>JDM car experience: pre-existing conditions and medication use must be declared in advance.</li></ul></div></div><div class="reveal" style="transition-delay:120ms"><div class="notice"><div class="notice__head"><svg viewBox="0 0 24 24" class="notice__icon" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 8.2h2.9l1.6-2.3h7l1.6 2.3H20a1.4 1.4 0 0 1 1.4 1.4v8a1.4 1.4 0 0 1-1.4 1.4H4a1.4 1.4 0 0 1-1.4-1.4v-8A1.4 1.4 0 0 1 4 8.2z"/><path d="M15.5 13.6a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0"/></svg><h3 class="notice__title">Photo &amp; Video Recording</h3></div><ul class="notice__list"><li>Photos and video during the experience require the host's permission.</li><li>Posting on social media requires individual consent.</li></ul></div></div><div class="reveal" style="transition-delay:180ms"><div class="notice notice--conduct"><div class="notice__head"><svg viewBox="0 0 24 24" class="notice__icon" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3.2 19 6v5.6c0 4.5-3 7.8-7 9.2-4-1.4-7-4.7-7-9.2V6z"/><path d="m9.2 12 2 2 3.8-4"/></svg><h3 class="notice__title">Code of Conduct</h3></div><p class="notice__intro">The following are prohibited during all experiences:</p><ul class="notice__list"><li>Alcohol and drugs</li><li>Violence and threats</li><li>Unauthorized photography or recording</li><li>Theft and damage</li><li>Sexual harassment</li><li>Political or religious solicitation</li><li>Commercial activity</li></ul></div></div></div></div></section><section class="section" id="faq" aria-labelledby="faq-title"><div class="shell"><div class="sec-head"><p class="eyebrow">FAQ</p><h2 class="sec-title" id="faq-title">Frequently Asked Questions</h2><p class="sec-lead">Still wondering about something? Start here.</p></div><div class="faq-list"><details class="faq-item"><summary><span class="faq-item__q" aria-hidden="true">Q</span><span class="faq-item__text">Is ID submission required?</span><span class="faq-item__sign" aria-hidden="true"></span></summary><div class="faq-item__a"><span class="mark" aria-hidden="true">A</span><p>Yes, ID submission is required for all participants for safety. Please submit a passport, residence card, driver's license, or My Number card.</p></div></details><details class="faq-item"><summary><span class="faq-item__q" aria-hidden="true">Q</span><span class="faq-item__text">Can I cancel?</span><span class="faq-item__sign" aria-hidden="true"></span></summary><div class="faq-item__a"><span class="mark" aria-hidden="true">A</span><p>Free cancellation up to 48 hours before the experience. A 50% cancellation fee applies after that, and 100% on the day.</p></div></details><details class="faq-item"><summary><span class="faq-item__q" aria-hidden="true">Q</span><span class="faq-item__text">What languages are supported?</span><span class="faq-item__sign" aria-hidden="true"></span></summary><div class="faq-item__a"><span class="mark" aria-hidden="true">A</span><p>English, Korean, Traditional Chinese, and French. LINE customer support is also available.</p></div></details><details class="faq-item"><summary><span class="faq-item__q" aria-hidden="true">Q</span><span class="faq-item__text">Is it a small group?</span><span class="faq-item__sign" aria-hidden="true"></span></summary><div class="faq-item__a"><span class="mark" aria-hidden="true">A</span><p>Yes, small groups of 1-4 people for personalized attention.</p></div></details><details class="faq-item"><summary><span class="faq-item__q" aria-hidden="true">Q</span><span class="faq-item__text">What happens in case of rain?</span><span class="faq-item__sign" aria-hidden="true"></span></summary><div class="faq-item__a"><span class="mark" aria-hidden="true">A</span><p>Vintage shopping and the JDM car experience will be changed to indoor-focused plans. Home cooking is indoors, so there is no impact.</p></div></details><details class="faq-item"><summary><span class="faq-item__q" aria-hidden="true">Q</span><span class="faq-item__text">I have allergies, can you accommodate?</span><span class="faq-item__sign" aria-hidden="true"></span></summary><div class="faq-item__a"><span class="mark" aria-hidden="true">A</span><p>Yes, please declare allergies at booking. The host will adjust the ingredients.</p></div></details><details class="faq-item"><summary><span class="faq-item__q" aria-hidden="true">Q</span><span class="faq-item__text">Can I take photos?</span><span class="faq-item__sign" aria-hidden="true"></span></summary><div class="faq-item__a"><span class="mark" aria-hidden="true">A</span><p>Yes, taking photos during the experience is possible. However, the host's permission is required, and individual consent is obtained for social media posting.</p></div></details><details class="faq-item"><summary><span class="faq-item__q" aria-hidden="true">Q</span><span class="faq-item__text">What payment methods are accepted?</span><span class="faq-item__sign" aria-hidden="true"></span></summary><div class="faq-item__a"><span class="mark" aria-hidden="true">A</span><p>Credit cards (Visa, Mastercard, JCB, Amex), LINE Pay, Apple Pay, and Google Pay.</p></div></details></div></div></section><section class="cta-band" aria-labelledby="cta-title"><div class="shell cta-band__inner"><h2 id="cta-title">Ready to leave the tourist trail?</h2><p>Three experiences. Small groups. Real people who actually live here.</p><a class="btn btn--primary" href="#experiences">Book an Experience<svg viewBox="0 0 24 24" class="btn__arrow" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 12h15"/><path d="m13 6 6 6-6 6"/></svg></a></div></section></main><footer class="site-footer"><div class="shell"><div class="footer-grid"><div class="footer-brand"><span class="brand"><span class="brand__seal" aria-hidden="true"></span><span>REAL JAPAN <span class="brand__now">NOW</span></span></span><p class="footer-tagline">Not tourism. Join everyday life in Japan.</p></div><nav aria-labelledby="footer-legal"><p class="footer-heading" id="footer-legal">Information</p><ul class="footer-links"><li><a href="/terms">Terms of Service</a></li><li><a href="/privacy">Privacy Policy</a></li><li><a href="/cancellation-policy">Cancellation Policy</a></li><li><a href="/code-of-conduct">Code of Conduct</a></li><li><a href="/disclaimer">Disclaimer</a></li><li><a href="/contact">Contact Us</a></li></ul></nav><div><p class="footer-heading" id="footer-social">Follow</p><div class="footer-social" role="list" aria-labelledby="footer-social"><a role="listitem" href="#instagram">Instagram</a><a role="listitem" href="#tiktok">TikTok</a><a role="listitem" href="#x">X (Twitter)</a><a role="listitem" href="#line">LINE</a></div></div></div><div class="footer-bottom"><span>© 2026 REAL JAPAN NOW. All rights reserved.</span><span>Tokyo, Japan</span></div></div></footer><div class="sticky-cta" data-visible="false" aria-hidden="true"><div class="sticky-cta__price"><span class="val">From ¥18,750 / person</span></div><a class="btn btn--primary btn--sm btn--block" href="#how" tabindex="-1">Book an Experience</a></div></div>
+</svg><span class="exp-media__index" aria-hidden="true">03</span></div><div class="exp-body"><h3 class="exp-title">JDM Night Drive &amp; Photo Session</h3><p class="exp-price">From ¥37,500 / person</p><ul class="exp-facts"><li class="md-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18"/><path d="M12 7.2v5.1l3.2 1.9"/></svg><span class="visually-hidden">Duration: </span>4 hours (19:00–23:00)</li><li class="md-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M13.6 7.6a3.4 3.4 0 1 1-6.8 0 3.4 3.4 0 0 1 6.8 0"/><path d="M16.4 19.5v-1.6a3.6 3.6 0 0 0-3.6-3.6H7.6A3.6 3.6 0 0 0 4 17.9v1.6"/><path d="M16.6 5.4a3.2 3.2 0 0 1 0 6.1"/><path d="M20 19.5v-1.4a3.4 3.4 0 0 0-2.6-3.3"/></svg><span class="visually-hidden">Group size: </span>1–3 people</li></ul><p class="exp-desc">Night drive on the Metropolitan Expressway with a JDM car owner. Take professional-level photos at photo spots and deeply experience Japanese car culture.</p><div class="exp-lists"><div><p class="exp-list__title">What's included</p><ul class="exp-list exp-list--yes"><li>Metropolitan Expressway night drive</li><li>3–4 photo spots</li><li>Car talk</li><li>Photo advice</li><li>Light snacks and drinks</li></ul></div><div><p class="exp-list__title">Not included</p><ul class="exp-list exp-list--no"><li>Meals (light snacks excluded)</li><li>Hotel transfer</li></ul></div></div><div class="exp-cta"><a class="md-btn md-btn--outlined md-btn--block md-state" href="#how">Book this experience</a></div></div></article></div></div></div></section><section class="section section--container-low" id="why" aria-labelledby="why-title"><div class="shell"><div class="sec-head"><p class="eyebrow">Why us</p><h2 class="sec-title" id="why-title">Why Choose REAL JAPAN NOW</h2><p class="sec-lead">Small, safe, and genuinely local.</p></div><div class="feat-grid"><div class="reveal" style="transition-delay:0ms"><div class="md-card md-card--filled feat"><div class="feat__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4.5 7.5h11.8v5.2a5.2 5.2 0 0 1-5.2 5.2h-1.4a5.2 5.2 0 0 1-5.2-5.2z"/><path d="M16.3 9h1.9a2.6 2.6 0 0 1 0 5.2h-1.9"/><path d="M4 21h13.5"/><path d="M8.5 4.6c.8-.7.8-1.4 0-2.1M12 4.6c.8-.7.8-1.4 0-2.1"/></svg></div><h3 class="feat__title">Authentic Everyday Experience</h3><p class="feat__body">Not tourist spots, but places only locals know. Relaxed atmosphere like spending time with friends.</p></div></div><div class="reveal" style="transition-delay:70ms"><div class="md-card md-card--filled feat"><div class="feat__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3.2 19 6v5.6c0 4.5-3 7.8-7 9.2-4-1.4-7-4.7-7-9.2V6z"/><path d="m9.2 12 2 2 3.8-4"/></svg></div><h3 class="feat__title">Safety &amp; Security</h3><p class="feat__body">ID verification required for all participants. Only verified hosts provide experiences. 24-hour support system.</p></div></div><div class="reveal" style="transition-delay:140ms"><div class="md-card md-card--filled feat"><div class="feat__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M13.6 7.6a3.4 3.4 0 1 1-6.8 0 3.4 3.4 0 0 1 6.8 0"/><path d="M16.4 19.5v-1.6a3.6 3.6 0 0 0-3.6-3.6H7.6A3.6 3.6 0 0 0 4 17.9v1.6"/><path d="M16.6 5.4a3.2 3.2 0 0 1 0 6.1"/><path d="M20 19.5v-1.4a3.4 3.4 0 0 0-2.6-3.3"/></svg></div><h3 class="feat__title">Small Group</h3><p class="feat__body">Small groups of 1-4 people for personalized attention. Enjoy at your own pace.</p></div></div><div class="reveal" style="transition-delay:210ms"><div class="md-card md-card--filled feat"><div class="feat__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20.5 11.6c0 4.2-3.8 7.6-8.5 7.6-.9 0-1.8-.1-2.6-.4L4.5 20.5l1.3-3.7a7.2 7.2 0 0 1-2.3-5.2C3.5 7.4 7.3 4 12 4s8.5 3.4 8.5 7.6"/><path d="M9 11.6h.01M12 11.6h.01M15 11.6h.01"/></svg></div><h3 class="feat__title">Multilingual Support</h3><p class="feat__body">Support in English, Korean, Traditional Chinese, and French. LINE customer support available.</p></div></div></div></div></section><section class="section flow" id="how" aria-labelledby="how-title"><div class="shell"><div class="sec-head"><p class="eyebrow">How to book</p><h2 class="sec-title" id="how-title">How to Book</h2><p class="sec-lead">Seven clear steps, from choosing an experience to leaving a review.</p></div><ul class="flow-phases"><li class="flow-phase-chip"><span class="num" aria-hidden="true">1</span><span class="label">Book online</span><span class="range">Step 1–2</span></li><li class="flow-phase-chip"><span class="num" aria-hidden="true">2</span><span class="label">Verify &amp; pay</span><span class="range">Step 3–5</span></li><li class="flow-phase-chip"><span class="num" aria-hidden="true">3</span><span class="label">On the day &amp; after</span><span class="range">Step 6–7</span></li></ul><ol class="flow-rail"><li class="flow-step"><span class="flow-step__node" aria-hidden="true">1</span><div class="reveal md-card md-card--outlined flow-step__card" style="transition-delay:0ms"><span class="flow-step__label">Step 1</span><div class="flow-step__head"><svg viewBox="0 0 24 24" class="flow-step__icon" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18"/><path d="m15.2 8.8-2 5.4-5.4 2 2-5.4z"/></svg><h3 class="flow-step__title">Choose Experience</h3></div><p class="flow-step__body">Choose your favorite from 3 experiences. Select date and number of people.</p></div></li><li class="flow-step"><span class="flow-step__node" aria-hidden="true">2</span><div class="reveal md-card md-card--outlined flow-step__card" style="transition-delay:40ms"><span class="flow-step__label">Step 2</span><div class="flow-step__head"><svg viewBox="0 0 24 24" class="flow-step__icon" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M16 7.6a4 4 0 1 1-8 0 4 4 0 0 1 8 0"/><path d="M20 20.2v-1.4a5.6 5.6 0 0 0-5.6-5.6H9.6A5.6 5.6 0 0 0 4 18.8v1.4"/></svg><h3 class="flow-step__title">Enter Personal Information</h3></div><p class="flow-step__body">Enter name, date of birth, nationality, and contact information.</p></div></li><li class="flow-step"><span class="flow-step__node" aria-hidden="true">3</span><div class="reveal md-card md-card--outlined flow-step__card" style="transition-delay:80ms"><span class="flow-step__label">Step 3</span><div class="flow-step__head"><svg viewBox="0 0 24 24" class="flow-step__icon" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4.2 5h15.6A1.7 1.7 0 0 1 21.5 6.7v10.6a1.7 1.7 0 0 1-1.7 1.7H4.2a1.7 1.7 0 0 1-1.7-1.7V6.7A1.7 1.7 0 0 1 4.2 5z"/><path d="M13.8 10h4.2M13.8 14h4.2"/><path d="M10.6 10.4a1.9 1.9 0 1 1-3.8 0 1.9 1.9 0 0 1 3.8 0"/><path d="M5.9 15.6c.4-1.4 1.6-2.2 2.8-2.2s2.4.8 2.8 2.2"/></svg><h3 class="flow-step__title">Submit ID</h3></div><p class="flow-step__body">Upload passport, residence card, or driver's license image. Encrypted and securely stored (automatically deleted after 30 days).</p></div></li><li class="flow-step"><span class="flow-step__node" aria-hidden="true">4</span><div class="reveal md-card md-card--outlined flow-step__card" style="transition-delay:120ms"><span class="flow-step__label">Step 4</span><div class="flow-step__head"><svg viewBox="0 0 24 24" class="flow-step__icon" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4.5 6h15A1.5 1.5 0 0 1 21 7.5v9a1.5 1.5 0 0 1-1.5 1.5h-15A1.5 1.5 0 0 1 3 16.5v-9A1.5 1.5 0 0 1 4.5 6z"/><path d="M3 10.4h18"/><path d="M6.4 14.4h3.2"/></svg><h3 class="flow-step__title">Payment</h3></div><p class="flow-step__body">Full payment by credit card, LINE Pay, Apple Pay, or Google Pay.</p></div></li><li class="flow-step"><span class="flow-step__node" aria-hidden="true">5</span><div class="reveal md-card md-card--outlined flow-step__card" style="transition-delay:160ms"><span class="flow-step__label">Step 5</span><div class="flow-step__head"><svg viewBox="0 0 24 24" class="flow-step__icon" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 7.4a1.4 1.4 0 0 1 1.4-1.4h15.2A1.4 1.4 0 0 1 21 7.4v5"/><path d="m20.6 7-8.6 5.8L3.4 7"/><path d="M3 7.4v9.2A1.4 1.4 0 0 0 4.4 18h8.2"/><path d="m15.6 18.4 2 2 3.9-4"/></svg><h3 class="flow-step__title">Booking Confirmation</h3></div><p class="flow-step__body">Confirmation email sent. LINE reminder the day before the experience.</p></div></li><li class="flow-step"><span class="flow-step__node" aria-hidden="true">6</span><div class="reveal md-card md-card--outlined flow-step__card" style="transition-delay:200ms"><span class="flow-step__label">Step 6</span><div class="flow-step__head"><svg viewBox="0 0 24 24" class="flow-step__icon" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 21.2s6.8-5.6 6.8-10.8a6.8 6.8 0 1 0-13.6 0c0 5.2 6.8 10.8 6.8 10.8z"/><path d="M14.4 10.2a2.4 2.4 0 1 1-4.8 0 2.4 2.4 0 0 1 4.8 0"/></svg><h3 class="flow-step__title">Enjoy the Experience</h3></div><p class="flow-step__body">Meet your host on the day. Enjoy the experience to the fullest.</p></div></li><li class="flow-step"><span class="flow-step__node" aria-hidden="true">7</span><div class="reveal md-card md-card--outlined flow-step__card" style="transition-delay:240ms"><span class="flow-step__label">Step 7</span><div class="flow-step__head"><svg viewBox="0 0 24 24" class="flow-step__icon" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m12 3.6 2.6 5.3 5.8.9-4.2 4.1 1 5.8-5.2-2.7-5.2 2.7 1-5.8-4.2-4.1 5.8-.9z"/></svg><h3 class="flow-step__title">Submit Review</h3></div><p class="flow-step__body">Submit a review after the experience. Get a discount coupon for next time.</p></div></li></ol><div class="flow-cta"><a class="md-btn md-btn--filled md-state" href="#experiences">Start booking<svg viewBox="0 0 24 24" class="md-btn__arrow" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 12h15"/><path d="m13 6 6 6-6 6"/></svg></a></div></div></section><section class="section section--container" id="notices" aria-labelledby="notices-title"><div class="shell"><div class="sec-head"><p class="eyebrow">Before booking</p><h2 class="sec-title" id="notices-title">Important Notices Before Booking</h2><p class="sec-lead">Please read this before you book.</p></div><div class="notice-grid"><div class="reveal" style="transition-delay:0ms"><div class="md-card md-card--outlined notice"><div class="notice__head"><svg viewBox="0 0 24 24" class="notice__icon" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4.2 5h15.6A1.7 1.7 0 0 1 21.5 6.7v10.6a1.7 1.7 0 0 1-1.7 1.7H4.2a1.7 1.7 0 0 1-1.7-1.7V6.7A1.7 1.7 0 0 1 4.2 5z"/><path d="M13.8 10h4.2M13.8 14h4.2"/><path d="M10.6 10.4a1.9 1.9 0 1 1-3.8 0 1.9 1.9 0 0 1 3.8 0"/><path d="M5.9 15.6c.4-1.4 1.6-2.2 2.8-2.2s2.4.8 2.8 2.2"/></svg><h3 class="notice__title">Required Items</h3></div><ul class="notice__list"><li>ID submission is required for all participants (passport, residence card, driver's license, or My Number card).</li><li>Vintage shopping &amp; home cooking: 18 years and older.</li><li>JDM car experience: 20 years and older (driver's license required).</li><li>Full payment at booking. The cancellation policy applies.</li><li>Free cancellation up to 48 hours before the experience; 50% after that; 100% on the day.</li></ul></div></div><div class="reveal" style="transition-delay:60ms"><div class="md-card md-card--outlined notice"><div class="notice__head"><svg viewBox="0 0 24 24" class="notice__icon" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 20.2s-7.6-4.6-7.6-9.8a4.4 4.4 0 0 1 7.6-3 4.4 4.4 0 0 1 7.6 3c0 5.2-7.6 9.8-7.6 9.8z"/></svg><h3 class="notice__title">Health &amp; Allergies</h3></div><ul class="notice__list"><li>Home cooking: allergies and religious dietary restrictions must be declared in advance.</li><li>JDM car experience: pre-existing conditions and medication use must be declared in advance.</li></ul></div></div><div class="reveal" style="transition-delay:120ms"><div class="md-card md-card--outlined notice"><div class="notice__head"><svg viewBox="0 0 24 24" class="notice__icon" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 8.2h2.9l1.6-2.3h7l1.6 2.3H20a1.4 1.4 0 0 1 1.4 1.4v8a1.4 1.4 0 0 1-1.4 1.4H4a1.4 1.4 0 0 1-1.4-1.4v-8A1.4 1.4 0 0 1 4 8.2z"/><path d="M15.5 13.6a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0"/></svg><h3 class="notice__title">Photo &amp; Video Recording</h3></div><ul class="notice__list"><li>Photos and video during the experience require the host's permission.</li><li>Posting on social media requires individual consent.</li></ul></div></div><div class="reveal" style="transition-delay:180ms"><div class="md-card md-card--outlined notice notice--conduct"><div class="notice__head"><svg viewBox="0 0 24 24" class="notice__icon" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3.2 19 6v5.6c0 4.5-3 7.8-7 9.2-4-1.4-7-4.7-7-9.2V6z"/><path d="m9.2 12 2 2 3.8-4"/></svg><h3 class="notice__title">Code of Conduct</h3></div><p class="notice__intro">The following are prohibited during all experiences:</p><ul class="notice__list"><li>Alcohol and drugs</li><li>Violence and threats</li><li>Unauthorized photography or recording</li><li>Theft and damage</li><li>Sexual harassment</li><li>Political or religious solicitation</li><li>Commercial activity</li></ul></div></div></div></div></section><section class="section" id="faq" aria-labelledby="faq-title"><div class="shell"><div class="sec-head"><p class="eyebrow">FAQ</p><h2 class="sec-title" id="faq-title">Frequently Asked Questions</h2><p class="sec-lead">Still wondering about something? Start here.</p></div><div class="faq-list"><details class="faq-item"><summary class="md-state"><span class="faq-item__q" aria-hidden="true">Q</span><span class="faq-item__text">Is ID submission required?</span><span class="faq-item__sign" aria-hidden="true"></span></summary><div class="faq-item__a"><span class="mark" aria-hidden="true">A</span><p>Yes, ID submission is required for all participants for safety. Please submit a passport, residence card, driver's license, or My Number card.</p></div></details><details class="faq-item"><summary class="md-state"><span class="faq-item__q" aria-hidden="true">Q</span><span class="faq-item__text">Can I cancel?</span><span class="faq-item__sign" aria-hidden="true"></span></summary><div class="faq-item__a"><span class="mark" aria-hidden="true">A</span><p>Free cancellation up to 48 hours before the experience. A 50% cancellation fee applies after that, and 100% on the day.</p></div></details><details class="faq-item"><summary class="md-state"><span class="faq-item__q" aria-hidden="true">Q</span><span class="faq-item__text">What languages are supported?</span><span class="faq-item__sign" aria-hidden="true"></span></summary><div class="faq-item__a"><span class="mark" aria-hidden="true">A</span><p>English, Korean, Traditional Chinese, and French. LINE customer support is also available.</p></div></details><details class="faq-item"><summary class="md-state"><span class="faq-item__q" aria-hidden="true">Q</span><span class="faq-item__text">Is it a small group?</span><span class="faq-item__sign" aria-hidden="true"></span></summary><div class="faq-item__a"><span class="mark" aria-hidden="true">A</span><p>Yes, small groups of 1-4 people for personalized attention.</p></div></details><details class="faq-item"><summary class="md-state"><span class="faq-item__q" aria-hidden="true">Q</span><span class="faq-item__text">What happens in case of rain?</span><span class="faq-item__sign" aria-hidden="true"></span></summary><div class="faq-item__a"><span class="mark" aria-hidden="true">A</span><p>Vintage shopping and the JDM car experience will be changed to indoor-focused plans. Home cooking is indoors, so there is no impact.</p></div></details><details class="faq-item"><summary class="md-state"><span class="faq-item__q" aria-hidden="true">Q</span><span class="faq-item__text">I have allergies, can you accommodate?</span><span class="faq-item__sign" aria-hidden="true"></span></summary><div class="faq-item__a"><span class="mark" aria-hidden="true">A</span><p>Yes, please declare allergies at booking. The host will adjust the ingredients.</p></div></details><details class="faq-item"><summary class="md-state"><span class="faq-item__q" aria-hidden="true">Q</span><span class="faq-item__text">Can I take photos?</span><span class="faq-item__sign" aria-hidden="true"></span></summary><div class="faq-item__a"><span class="mark" aria-hidden="true">A</span><p>Yes, taking photos during the experience is possible. However, the host's permission is required, and individual consent is obtained for social media posting.</p></div></details><details class="faq-item"><summary class="md-state"><span class="faq-item__q" aria-hidden="true">Q</span><span class="faq-item__text">What payment methods are accepted?</span><span class="faq-item__sign" aria-hidden="true"></span></summary><div class="faq-item__a"><span class="mark" aria-hidden="true">A</span><p>Credit cards (Visa, Mastercard, JCB, Amex), LINE Pay, Apple Pay, and Google Pay.</p></div></details></div></div></section><section class="cta-band" aria-labelledby="cta-title"><div class="shell cta-band__inner"><h2 id="cta-title">Ready to leave the tourist trail?</h2><p>Three experiences. Small groups. Real people who actually live here.</p><a class="md-btn md-btn--md md-btn--filled md-state" href="#experiences">Book an Experience<svg viewBox="0 0 24 24" class="md-btn__arrow" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 12h15"/><path d="m13 6 6 6-6 6"/></svg></a></div></section></main><footer class="site-footer"><div class="shell"><div class="footer-grid"><div class="footer-brand"><span class="brand"><span class="brand__seal" aria-hidden="true"></span><span>REAL JAPAN <span class="brand__now">NOW</span></span></span><p class="footer-tagline">Not tourism. Join everyday life in Japan.</p></div><nav aria-labelledby="footer-legal"><p class="footer-heading" id="footer-legal">Information</p><ul class="footer-links"><li><a class="md-state" href="/terms">Terms of Service</a></li><li><a class="md-state" href="/privacy">Privacy Policy</a></li><li><a class="md-state" href="/cancellation-policy">Cancellation Policy</a></li><li><a class="md-state" href="/code-of-conduct">Code of Conduct</a></li><li><a class="md-state" href="/disclaimer">Disclaimer</a></li><li><a class="md-state" href="/contact">Contact Us</a></li></ul></nav><div><p class="footer-heading" id="footer-social">Follow</p><div class="footer-social" role="list" aria-labelledby="footer-social"><a class="md-chip md-state" role="listitem" href="#instagram">Instagram</a><a class="md-chip md-state" role="listitem" href="#tiktok">TikTok</a><a class="md-chip md-state" role="listitem" href="#x">X (Twitter)</a><a class="md-chip md-state" role="listitem" href="#line">LINE</a></div></div></div><div class="footer-bottom"><span>© 2026 REAL JAPAN NOW. All rights reserved.</span><span>Tokyo, Japan</span></div></div></footer><div class="bottom-bar" data-visible="false" aria-hidden="true"><div class="bottom-bar__price"><span class="val">From ¥18,750 / person</span></div><a class="md-fab md-state" href="#how" tabindex="-1">Book an Experience</a></div></div>
 <script>window.__RJN={"messages":{"en":{"meta":{"title":"REAL JAPAN NOW — Not tourism. Join everyday life in Japan.","description":"Vintage shopping, home cooking and JDM night drives in Tokyo, hosted by verified locals. Small groups of 1–4 people. Available in English, 한국어, 繁體中文 and Français.","keywords":"Tokyo experience, local experience Japan, vintage shopping Tokyo, Japanese home cooking, JDM night drive, things to do in Tokyo"},"nav":{"experiences":"Experiences","why":"Why us","how":"How to book","notices":"Before booking","faq":"FAQ"},"langSwitcher":{"label":"Change language","heading":"Language"},"hero":{"eyebrow":"Tokyo · Hosted by locals","title":"Not tourism. Join everyday life in Japan.","subtitle":"Vintage shops with locals, home-cooked Japanese meals, midnight highway drives with JDM car owners. Experience the real Japan, at your own pace.","cta":"Book an Experience","ctaSecondary":"See the 3 experiences","trust":["ID-verified hosts","1–4 people","4 languages","Free cancellation 48h before"],"scenes":["Vintage","Home cooking","Night drive"]},"experiences":{"eyebrow":"Experiences","heading":"3 Experiences","lead":"Pick one. Three to four hours with someone who actually lives here.","labels":{"duration":"Duration","group":"Group size","included":"What's included","notIncluded":"Not included","book":"Book this experience"},"items":[{"id":"vintage","title":"Vintage Hunting in Tokyo","price":"From ¥18,750 / person","duration":"3 hours","group":"1–4 people","description":"Explore 5-7 vintage shops unknown to tourists with a local fashion enthusiast. Includes coordination advice to find your own unique Japanese style.","included":["5–7 vintage shops","Coordination advice","Photo spot guidance"],"notIncluded":["Purchase cost","Food and drinks","Transportation"]},{"id":"cooking","title":"Home Cooking Experience","price":"From ¥22,500 / person","duration":"3 hours","group":"1–4 people","description":"Cook and eat with a Japanese family at home. Experience \"authentic home cooking\" and Japanese food culture that you can't get from tourism.","included":["Cooking 2–3 dishes","The meal","Food culture explanation","Recipes to take home"],"notIncluded":["Transportation","Alcohol (available to order)"]},{"id":"jdm","title":"JDM Night Drive & Photo Session","price":"From ¥37,500 / person","duration":"4 hours (19:00–23:00)","group":"1–3 people","description":"Night drive on the Metropolitan Expressway with a JDM car owner. Take professional-level photos at photo spots and deeply experience Japanese car culture.","included":["Metropolitan Expressway night drive","3–4 photo spots","Car talk","Photo advice","Light snacks and drinks"],"notIncluded":["Meals (light snacks excluded)","Hotel transfer"]}]},"features":{"eyebrow":"Why us","heading":"Why Choose REAL JAPAN NOW","lead":"Small, safe, and genuinely local.","items":[{"title":"Authentic Everyday Experience","body":"Not tourist spots, but places only locals know. Relaxed atmosphere like spending time with friends."},{"title":"Safety & Security","body":"ID verification required for all participants. Only verified hosts provide experiences. 24-hour support system."},{"title":"Small Group","body":"Small groups of 1-4 people for personalized attention. Enjoy at your own pace."},{"title":"Multilingual Support","body":"Support in English, Korean, Traditional Chinese, and French. LINE customer support available."}]},"flow":{"eyebrow":"How to book","heading":"How to Book","lead":"Seven clear steps, from choosing an experience to leaving a review.","phases":["Book online","Verify & pay","On the day & after"],"stepLabel":"Step","cta":"Start booking","steps":[{"title":"Choose Experience","body":"Choose your favorite from 3 experiences. Select date and number of people."},{"title":"Enter Personal Information","body":"Enter name, date of birth, nationality, and contact information."},{"title":"Submit ID","body":"Upload passport, residence card, or driver's license image. Encrypted and securely stored (automatically deleted after 30 days)."},{"title":"Payment","body":"Full payment by credit card, LINE Pay, Apple Pay, or Google Pay."},{"title":"Booking Confirmation","body":"Confirmation email sent. LINE reminder the day before the experience."},{"title":"Enjoy the Experience","body":"Meet your host on the day. Enjoy the experience to the fullest."},{"title":"Submit Review","body":"Submit a review after the experience. Get a discount coupon for next time."}]},"notices":{"eyebrow":"Before booking","heading":"Important Notices Before Booking","lead":"Please read this before you book.","groups":[{"icon":"id","title":"Required Items","items":["ID submission is required for all participants (passport, residence card, driver's license, or My Number card).","Vintage shopping & home cooking: 18 years and older.","JDM car experience: 20 years and older (driver's license required).","Full payment at booking. The cancellation policy applies.","Free cancellation up to 48 hours before the experience; 50% after that; 100% on the day."]},{"icon":"health","title":"Health & Allergies","items":["Home cooking: allergies and religious dietary restrictions must be declared in advance.","JDM car experience: pre-existing conditions and medication use must be declared in advance."]},{"icon":"camera","title":"Photo & Video Recording","items":["Photos and video during the experience require the host's permission.","Posting on social media requires individual consent."]},{"icon":"shield","title":"Code of Conduct","intro":"The following are prohibited during all experiences:","items":["Alcohol and drugs","Violence and threats","Unauthorized photography or recording","Theft and damage","Sexual harassment","Political or religious solicitation","Commercial activity"]}]},"faq":{"eyebrow":"FAQ","heading":"Frequently Asked Questions","lead":"Still wondering about something? Start here.","items":[{"q":"Is ID submission required?","a":"Yes, ID submission is required for all participants for safety. Please submit a passport, residence card, driver's license, or My Number card."},{"q":"Can I cancel?","a":"Free cancellation up to 48 hours before the experience. A 50% cancellation fee applies after that, and 100% on the day."},{"q":"What languages are supported?","a":"English, Korean, Traditional Chinese, and French. LINE customer support is also available."},{"q":"Is it a small group?","a":"Yes, small groups of 1-4 people for personalized attention."},{"q":"What happens in case of rain?","a":"Vintage shopping and the JDM car experience will be changed to indoor-focused plans. Home cooking is indoors, so there is no impact."},{"q":"I have allergies, can you accommodate?","a":"Yes, please declare allergies at booking. The host will adjust the ingredients."},{"q":"Can I take photos?","a":"Yes, taking photos during the experience is possible. However, the host's permission is required, and individual consent is obtained for social media posting."},{"q":"What payment methods are accepted?","a":"Credit cards (Visa, Mastercard, JCB, Amex), LINE Pay, Apple Pay, and Google Pay."}]},"finalCta":{"heading":"Ready to leave the tourist trail?","body":"Three experiences. Small groups. Real people who actually live here.","button":"Book an Experience"},"footer":{"tagline":"Not tourism. Join everyday life in Japan.","legalHeading":"Information","legal":["Terms of Service","Privacy Policy","Cancellation Policy","Code of Conduct","Disclaimer","Contact Us"],"followHeading":"Follow","social":["Instagram","TikTok","X (Twitter)","LINE"],"copyright":"© 2026 REAL JAPAN NOW. All rights reserved."}},"ko":{"meta":{"title":"REAL JAPAN NOW — 관광이 아닙니다. 일본의 일상에 참여하세요.","description":"본인 확인을 마친 현지 호스트와 함께하는 도쿄 빈티지 쇼핑, 가정식 요리, JDM 야간 드라이브. 1–4명 소규모 그룹. 영어·한국어·번체 중국어·프랑스어 지원.","keywords":"도쿄 체험, 일본 현지 체험, 도쿄 빈티지 쇼핑, 일본 가정식, JDM 드라이브, 도쿄 가볼 만한 곳"},"nav":{"experiences":"체험","why":"선택 이유","how":"예약 방법","notices":"예약 전 확인","faq":"자주 묻는 질문"},"langSwitcher":{"label":"언어 변경","heading":"언어"},"hero":{"eyebrow":"도쿄 · 현지인 호스트","title":"관광이 아닙니다. 일본의 일상에 참여하세요.","subtitle":"현지인과 함께 하는 빈티지 쇼핑, 가정식 일본 요리, JDM 오너와의 수도고속도로 야간 드라이브. 진정한 일본을 당신의 페이스로 경험하세요.","cta":"체험 예약하기","ctaSecondary":"3가지 체험 보기","trust":["본인 확인된 호스트","1–4명 소그룹","4개 국어 지원","48시간 전 무료 취소"],"scenes":["빈티지","가정식 요리","야간 드라이브"]},"experiences":{"eyebrow":"체험","heading":"3가지 체험","lead":"하나만 고르세요. 실제로 이곳에 사는 사람과 함께하는 3~4시간이에요.","labels":{"duration":"소요 시간","group":"참여 인원","included":"포함 사항","notIncluded":"불포함 사항","book":"이 체험 예약하기"},"items":[{"id":"vintage","title":"도쿄 빈티지 헌팅","price":"1인 ¥18,750부터","duration":"3시간","group":"1–4명","description":"현지 패션 애호가와 함께 관광객이 모르는 빈티지 샵 5~7곳을 돌아봐요. 나만의 일본 스타일을 찾을 수 있는 코디 조언도 함께 드려요.","included":["빈티지 샵 5~7곳 방문","코디네이트 조언","포토 스팟 안내"],"notIncluded":["구매 비용","식음료","교통비"]},{"id":"cooking","title":"가정식 요리 체험","price":"1인 ¥22,500부터","duration":"3시간","group":"1–4명","description":"일본 가정에서 가족과 함께 요리를 만들고 나눠 먹어요. 관광으로는 맛볼 수 없는 '진짜 집밥'과 일본 식문화를 경험할 수 있어요.","included":["2~3가지 요리 실습","식사","식문화 해설","레시피 제공"],"notIncluded":["교통비","주류 (추가 주문 가능)"]},{"id":"jdm","title":"JDM 나이트 드라이브 & 포토 세션","price":"1인 ¥37,500부터","duration":"4시간 (19:00–23:00)","group":"1–3명","description":"JDM 오너와 함께 수도고속도로를 야간 드라이브해요. 포토 스팟에서 프로급 사진을 찍고 일본 자동차 문화를 깊이 경험해 보세요.","included":["수도고속도로 야간 드라이브","포토 스팟 3~4곳","카 토크","촬영 조언","간단한 스낵·음료"],"notIncluded":["식사 (간단한 스낵 제외)","호텔 픽업·드롭"]}]},"features":{"eyebrow":"선택 이유","heading":"REAL JAPAN NOW를 선택해야 하는 이유","lead":"작고, 안전하고, 진짜 로컬이에요.","items":[{"title":"진짜 일상 체험","body":"관광지가 아니라 현지인만 아는 장소로 안내해요. 친구와 함께 보내는 듯한 편안한 분위기예요."},{"title":"안전과 안심","body":"전 참가자 신분증 제출을 의무화하고 있어요. 본인 확인을 마친 호스트만 체험을 제공하며, 24시간 지원 체계를 갖추고 있어요."},{"title":"소수 정예","body":"1~4명 소그룹이라 세심하게 챙겨 드려요. 나만의 페이스로 즐길 수 있어요."},{"title":"4개 국어 지원","body":"영어, 한국어, 번체 중국어, 프랑스어를 지원해요. LINE 고객 지원도 이용할 수 있어요."}]},"flow":{"eyebrow":"예약 방법","heading":"예약 방법","lead":"체험 선택부터 리뷰 작성까지, 명확한 7단계예요.","phases":["온라인 예약","본인 확인 & 결제","당일 그리고 그 이후"],"stepLabel":"단계","cta":"예약 시작하기","steps":[{"title":"체험 선택","body":"3가지 체험 중 마음에 드는 것을 고르고, 날짜와 인원을 선택해요."},{"title":"개인정보 입력","body":"이름, 생년월일, 국적, 연락처를 입력해요."},{"title":"신분증 제출","body":"여권, 재류카드, 또는 운전면허증 이미지를 업로드해요. 암호화되어 안전하게 보관되고 30일 후 자동으로 삭제돼요."},{"title":"결제","body":"신용카드, LINE Pay, Apple Pay, Google Pay로 전액 결제해요."},{"title":"예약 확정","body":"예약 확인 이메일을 보내 드려요. 체험 전날에는 LINE으로 리마인드해 드려요."},{"title":"체험 당일","body":"당일 호스트와 만나요. 체험을 마음껏 즐기세요."},{"title":"리뷰 작성","body":"체험 후 리뷰를 남겨 주세요. 다음에 쓸 수 있는 할인 쿠폰을 드려요."}]},"notices":{"eyebrow":"예약 전 확인","heading":"예약 전 주의사항","lead":"예약하기 전에 꼭 읽어 주세요.","groups":[{"icon":"id","title":"필수 사항","items":["전 참가자 신분증 제출이 필수예요 (여권, 재류카드, 운전면허증, My Number 카드 중 하나).","빈티지 쇼핑 & 가정식 요리: 만 18세 이상.","JDM 차 체험: 만 20세 이상 (운전면허증 필요).","예약 시 전액 결제하며, 취소 정책이 적용돼요.","체험 48시간 전까지 무료 취소, 이후 50%, 당일 100%의 취소 수수료가 발생해요."]},{"icon":"health","title":"건강 · 알레르기","items":["가정식 요리: 알레르기와 종교상의 식사 제약을 사전에 알려 주세요.","JDM 차 체험: 지병과 복용 중인 약을 사전에 알려 주세요."]},{"icon":"camera","title":"사진 · 영상 촬영","items":["체험 중 사진·영상 촬영은 호스트의 허가가 필요해요.","SNS 게시는 개별 동의를 받은 뒤에 진행해요."]},{"icon":"shield","title":"행동 규범","intro":"모든 체험에서 다음 행위는 금지돼요:","items":["음주 · 약물","폭력 · 협박","무단 촬영 · 녹화","도난 · 파손","성희롱","정치 · 종교 권유","상업 행위"]}]},"faq":{"eyebrow":"자주 묻는 질문","heading":"자주 묻는 질문","lead":"궁금한 점이 있나요? 여기부터 확인해 보세요.","items":[{"q":"신분증 제출은 필수인가요?","a":"네, 안전을 위해 전 참가자에게 신분증 제출을 의무화하고 있어요. 여권, 재류카드, 운전면허증, My Number 카드 중 하나를 제출해 주세요."},{"q":"취소할 수 있나요?","a":"체험 48시간 전까지는 무료로 취소할 수 있어요. 그 이후에는 50%, 당일에는 100%의 취소 수수료가 발생해요."},{"q":"어떤 언어를 지원하나요?","a":"영어, 한국어, 번체 중국어, 프랑스어를 지원해요. LINE 고객 지원도 이용할 수 있어요."},{"q":"소그룹인가요?","a":"네, 1~4명 소그룹으로 세심하게 대응해 드려요."},{"q":"비가 오면 어떻게 되나요?","a":"빈티지 쇼핑과 JDM 차 체험은 실내 중심 플랜으로 변경돼요. 가정식 요리는 실내에서 진행하므로 영향이 없어요."},{"q":"알레르기가 있는데 대응이 될까요?","a":"네, 예약할 때 알레르기를 알려 주세요. 호스트가 재료를 조정해 드려요."},{"q":"사진을 찍어도 되나요?","a":"네, 체험 중 사진 촬영은 가능해요. 다만 호스트의 허가가 필요하고, SNS 게시는 개별 동의를 받은 뒤에 진행해요."},{"q":"결제 방법은 무엇이 있나요?","a":"신용카드 (Visa, Mastercard, JCB, Amex), LINE Pay, Apple Pay, Google Pay를 이용할 수 있어요."}]},"finalCta":{"heading":"이제 관광 코스에서 벗어나 볼까요?","body":"3가지 체험, 소규모 그룹, 그리고 여기 사는 진짜 사람들.","button":"체험 예약하기"},"footer":{"tagline":"관광이 아닙니다. 일본의 일상에 참여하세요.","legalHeading":"안내","legal":["이용약관","개인정보 처리방침","취소 정책","행동 규범","면책 조항","문의하기"],"followHeading":"팔로우","social":["Instagram","TikTok","X (Twitter)","LINE"],"copyright":"© 2026 REAL JAPAN NOW. All rights reserved."}},"zh-TW":{"meta":{"title":"REAL JAPAN NOW — 不是觀光。加入日本的日常生活。","description":"由通過驗證的在地主人帶路，體驗東京古著購物、日本家庭料理、JDM 首都高夜駕。1–4 人小團體。支援英語、韓語、繁體中文與法語。","keywords":"東京體驗, 日本在地體驗, 東京古著, 日本家庭料理, JDM 夜駕, 東京自由行"},"nav":{"experiences":"體驗","why":"選擇我們","how":"預約方法","notices":"預約前須知","faq":"常見問題"},"langSwitcher":{"label":"切換語言","heading":"語言"},"hero":{"eyebrow":"東京 · 在地人帶路","title":"不是觀光。加入日本的日常生活。","subtitle":"與當地人一起逛古著店、在家裡品嚐日本料理、與 JDM 車主一起首都高夜駕。以自己的節奏體驗真正的日本。","cta":"預約體驗","ctaSecondary":"查看 3 種體驗","trust":["通過驗證的主人","1–4 人小團體","支援 4 種語言","48 小時前免費取消"],"scenes":["古著","家庭料理","夜駕"]},"experiences":{"eyebrow":"體驗","heading":"3 種體驗","lead":"選一個就好。與真正住在這裡的人共度 3 到 4 小時。","labels":{"duration":"體驗時間","group":"參加人數","included":"包含項目","notIncluded":"不包含","book":"預約此體驗"},"items":[{"id":"vintage","title":"東京古著尋寶","price":"每人 ¥18,750 起","duration":"3 小時","group":"1–4 人","description":"與當地時尚愛好者一起探索 5-7 家遊客不知道的古著店。包含搭配建議，幫助您找到自己獨特的日本風格。","included":["造訪 5–7 家古著店","穿搭建議","拍照景點導覽"],"notIncluded":["購物費用","餐飲","交通費"]},{"id":"cooking","title":"日本家庭料理體驗","price":"每人 ¥22,500 起","duration":"3 小時","group":"1–4 人","description":"在日本家庭與家人一起烹飪和用餐。體驗觀光無法品嚐到的「真正的家庭味道」和日本飲食文化。","included":["實作 2–3 道料理","餐點","飲食文化解說","食譜提供"],"notIncluded":["交通費","酒類（可另行加點）"]},{"id":"jdm","title":"JDM 夜駕 & 攝影體驗","price":"每人 ¥37,500 起","duration":"4 小時（19:00–23:00）","group":"1–3 人","description":"與 JDM 車主一起在首都高速公路夜間駕駛。在攝影景點拍攝專業級照片，深度體驗日本汽車文化。","included":["首都高夜間駕駛","3–4 個拍照景點","汽車話題交流","攝影建議","輕食與飲料"],"notIncluded":["餐飲（輕食除外）","飯店接送"]}]},"features":{"eyebrow":"選擇我們","heading":"為什麼選擇 REAL JAPAN NOW","lead":"小團體、夠安全、真正在地。","items":[{"title":"真實的日常體驗","body":"不是觀光景點，而是只有當地人才知道的地方。像和朋友一起度過般的輕鬆氛圍。"},{"title":"安全與安心","body":"所有參加者必須提交身分證明。僅限經過驗證的主人提供體驗。24 小時支援系統。"},{"title":"小團體","body":"1-4 人的小團體，提供個別化的照顧。以自己的節奏享受。"},{"title":"多語言支援","body":"提供英語、韓語、繁體中文、法語支援。可使用 LINE 客戶支援。"}]},"flow":{"eyebrow":"預約方法","heading":"預約方法","lead":"從選擇體驗到留下評論，清楚的 7 個步驟。","phases":["線上預約","身分驗證與付款","當天與之後"],"stepLabel":"步驟","cta":"開始預約","steps":[{"title":"選擇體驗","body":"從 3 種體驗中選擇您喜歡的，並選擇日期和人數。"},{"title":"填寫個人資料","body":"輸入姓名、出生日期、國籍與聯絡資訊。"},{"title":"提交身分證明","body":"上傳護照、居留證或駕駛執照圖片。加密安全儲存，30 天後自動刪除。"},{"title":"付款","body":"以信用卡、LINE Pay、Apple Pay 或 Google Pay 全額付款。"},{"title":"預約確認","body":"系統會寄出預約確認郵件。體驗前一天會以 LINE 提醒您。"},{"title":"享受體驗","body":"當天與主人會合，盡情享受體驗。"},{"title":"撰寫評論","body":"體驗後請留下評論，即可獲得下次可用的折扣優惠券。"}]},"notices":{"eyebrow":"預約前須知","heading":"預約前注意事項","lead":"預約前請務必閱讀。","groups":[{"icon":"id","title":"必要事項","items":["所有參加者皆須提交身分證明（護照、居留證、駕駛執照或 My Number 卡）。","古著購物 & 家庭料理：18 歲以上。","JDM 車體驗：20 歲以上（需持駕駛執照）。","預約時全額付款，並適用取消政策。","體驗前 48 小時可免費取消；之後收取 50%；當日收取 100%。"]},{"icon":"health","title":"健康與過敏","items":["家庭料理：請事先告知過敏與宗教飲食限制。","JDM 車體驗：請事先告知既往病史與正在服用的藥物。"]},{"icon":"camera","title":"攝影與錄影","items":["體驗期間拍照、錄影需取得主人許可。","發布至社群媒體需另行取得個別同意。"]},{"icon":"shield","title":"行為規範","intro":"所有體驗中禁止以下行為：","items":["飲酒與藥物","暴力與威脅","未經許可的拍攝或錄影","竊盜與毀損","性騷擾","政治或宗教勸誘","商業行為"]}]},"faq":{"eyebrow":"常見問題","heading":"常見問題","lead":"還有疑問嗎？從這裡開始。","items":[{"q":"必須提交身分證明嗎？","a":"是的，為確保安全，所有參加者都必須提交身分證明。請提交護照、居留證、駕駛執照或 My Number 卡。"},{"q":"可以取消嗎？","a":"體驗前 48 小時可免費取消。之後收取 50%、當日收取 100% 的取消費用。"},{"q":"支援哪些語言？","a":"支援英語、韓語、繁體中文與法語。也可使用 LINE 客戶支援。"},{"q":"是小團體嗎？","a":"是的，1-4 人的小團體，提供個別化的照顧。"},{"q":"下雨怎麼辦？","a":"古著購物與 JDM 車體驗會改為以室內為主的方案。家庭料理在室內進行，因此不受影響。"},{"q":"我有過敏，可以配合嗎？","a":"可以，請在預約時告知過敏狀況，主人會調整食材。"},{"q":"可以拍照嗎？","a":"可以，體驗期間能夠拍照。但需要取得主人許可，發布至社群媒體則需另行取得個別同意。"},{"q":"有哪些付款方式？","a":"信用卡（Visa、Mastercard、JCB、Amex）、LINE Pay、Apple Pay、Google Pay。"}]},"finalCta":{"heading":"準備好離開觀光路線了嗎？","body":"3 種體驗、小團體，還有真正住在這裡的人。","button":"預約體驗"},"footer":{"tagline":"不是觀光。加入日本的日常生活。","legalHeading":"相關條款","legal":["服務條款","隱私權政策","取消政策","行為規範","免責聲明","聯絡我們"],"followHeading":"追蹤我們","social":["Instagram","TikTok","X (Twitter)","LINE"],"copyright":"© 2026 REAL JAPAN NOW. All rights reserved."}},"fr":{"meta":{"title":"REAL JAPAN NOW — Pas du tourisme. Rejoignez la vie quotidienne au Japon.","description":"Boutiques vintage, cuisine familiale et drives nocturnes JDM à Tokyo, avec des hôtes locaux vérifiés. Petits groupes de 1 à 4 personnes. Disponible en anglais, coréen, chinois traditionnel et français.","keywords":"expérience Tokyo, expérience locale Japon, friperie Tokyo, cuisine japonaise maison, drive nocturne JDM, que faire à Tokyo"},"nav":{"experiences":"Expériences","why":"Pourquoi nous","how":"Réservation","notices":"À savoir","faq":"FAQ"},"langSwitcher":{"label":"Changer de langue","heading":"Langue"},"hero":{"eyebrow":"Tokyo · Avec des hôtes locaux","title":"Pas du tourisme. Rejoignez la vie quotidienne au Japon.","subtitle":"Des boutiques vintage avec des locaux, des repas japonais faits maison, des drives nocturnes sur l'autoroute avec des propriétaires de voitures JDM. Découvrez le vrai Japon, à votre rythme.","cta":"Réserver une expérience","ctaSecondary":"Voir les 3 expériences","trust":["Hôtes vérifiés","1 à 4 personnes","4 langues","Annulation gratuite 48 h avant"],"scenes":["Vintage","Cuisine maison","Drive nocturne"]},"experiences":{"eyebrow":"Expériences","heading":"3 Expériences","lead":"Choisissez-en une. Trois à quatre heures avec quelqu'un qui vit vraiment ici.","labels":{"duration":"Durée","group":"Taille du groupe","included":"Ce qui est inclus","notIncluded":"Non inclus","book":"Réserver cette expérience"},"items":[{"id":"vintage","title":"Chasse au vintage à Tokyo","price":"À partir de ¥18 750 / pers.","duration":"3 heures","group":"1 à 4 personnes","description":"Explorez 5 à 7 boutiques vintage inconnues des touristes avec un passionné de mode local. Conseils de coordination inclus pour trouver votre propre style japonais unique.","included":["5 à 7 boutiques vintage","Conseils de style","Guidage vers les spots photo"],"notIncluded":["Vos achats","Nourriture et boissons","Transport"]},{"id":"cooking","title":"Cuisine en famille japonaise","price":"À partir de ¥22 500 / pers.","duration":"3 heures","group":"1 à 4 personnes","description":"Cuisinez et mangez avec une famille japonaise à la maison. Découvrez la « vraie cuisine familiale » et la culture alimentaire japonaise que vous ne pouvez pas obtenir du tourisme.","included":["Préparation de 2 à 3 plats","Le repas","Explications sur la culture culinaire","Recettes à emporter"],"notIncluded":["Transport","Alcool (en supplément)"]},{"id":"jdm","title":"Drive nocturne JDM & séance photo","price":"À partir de ¥37 500 / pers.","duration":"4 heures (19 h – 23 h)","group":"1 à 3 personnes","description":"Conduite nocturne sur l'autoroute métropolitaine avec un propriétaire de voiture JDM. Prenez des photos de niveau professionnel aux spots photo et découvrez profondément la culture automobile japonaise.","included":["Drive nocturne sur l'autoroute métropolitaine","3 à 4 spots photo","Discussions autour des voitures","Conseils photo","Snacks et boissons"],"notIncluded":["Repas (hors snacks)","Transfert depuis l'hôtel"]}]},"features":{"eyebrow":"Pourquoi nous","heading":"Pourquoi choisir REAL JAPAN NOW","lead":"Petit, sûr, et vraiment local.","items":[{"title":"Le quotidien, pour de vrai","body":"Pas des spots touristiques, mais des endroits que seuls les locaux connaissent. Une atmosphère détendue comme passer du temps avec des amis."},{"title":"Sécurité et confiance","body":"Vérification d'identité requise pour tous les participants. Seuls les hôtes vérifiés fournissent des expériences. Système de support 24h/24."},{"title":"Petits groupes","body":"Petits groupes de 1 à 4 personnes pour une attention personnalisée. Profitez à votre rythme."},{"title":"Support multilingue","body":"Support en anglais, coréen, chinois traditionnel et français. Support client LINE disponible."}]},"flow":{"eyebrow":"Réservation","heading":"Comment réserver","lead":"Sept étapes claires, du choix de l'expérience à l'avis final.","phases":["Réservation en ligne","Vérification et paiement","Le jour J et après"],"stepLabel":"Étape","cta":"Commencer la réservation","steps":[{"title":"Choisir l'expérience","body":"Choisissez votre préférée parmi 3 expériences. Sélectionnez la date et le nombre de personnes."},{"title":"Saisir vos informations","body":"Entrez nom, date de naissance, nationalité et informations de contact."},{"title":"Envoyer votre pièce d'identité","body":"Téléchargez une image de passeport, carte de séjour ou permis de conduire. Crypté et stocké en toute sécurité (automatiquement supprimé après 30 jours)."},{"title":"Paiement","body":"Paiement intégral par carte de crédit, LINE Pay, Apple Pay ou Google Pay."},{"title":"Confirmation de réservation","body":"Email de confirmation envoyé. Rappel LINE la veille de l'expérience."},{"title":"Vivre l'expérience","body":"Rencontrez votre hôte le jour même. Profitez pleinement de l'expérience."},{"title":"Laisser un avis","body":"Soumettez un avis après l'expérience. Obtenez un coupon de réduction pour la prochaine fois."}]},"notices":{"eyebrow":"À savoir","heading":"Avis importants avant la réservation","lead":"À lire avant de réserver.","groups":[{"icon":"id","title":"Conditions requises","items":["Pièce d'identité obligatoire pour tous les participants (passeport, carte de séjour, permis de conduire ou carte My Number).","Shopping vintage et cuisine familiale : 18 ans et plus.","Expérience voiture JDM : 20 ans et plus (permis de conduire requis).","Paiement intégral à la réservation. La politique d'annulation s'applique.","Annulation gratuite jusqu'à 48 h avant l'expérience ; 50 % ensuite ; 100 % le jour même."]},{"icon":"health","title":"Santé et allergies","items":["Cuisine familiale : les allergies et restrictions religieuses doivent être déclarées à l'avance.","Expérience voiture JDM : les conditions préexistantes et l'utilisation de médicaments doivent être déclarées à l'avance."]},{"icon":"camera","title":"Photos et vidéos","items":["La prise de photos et vidéos pendant l'expérience nécessite la permission de l'hôte.","La publication sur les réseaux sociaux nécessite un consentement individuel."]},{"icon":"shield","title":"Règles de conduite","intro":"Les comportements suivants sont interdits pendant toutes les expériences :","items":["Alcool et drogues","Violence et menaces","Photos ou enregistrements non autorisés","Vol et dégradations","Harcèlement sexuel","Sollicitation politique ou religieuse","Activité commerciale"]}]},"faq":{"eyebrow":"FAQ","heading":"Questions fréquemment posées","lead":"Une question en suspens ? Commencez ici.","items":[{"q":"La pièce d'identité est-elle obligatoire ?","a":"Oui, la soumission d'identité est requise pour tous les participants pour la sécurité. Veuillez soumettre un passeport, une carte de séjour, un permis de conduire ou une carte My Number."},{"q":"Puis-je annuler ?","a":"Annulation gratuite jusqu'à 48 heures avant l'expérience. Frais d'annulation de 50 % après, 100 % le jour même."},{"q":"Quelles langues sont prises en charge ?","a":"Anglais, coréen, chinois traditionnel et français. Le support client LINE est également disponible."},{"q":"Est-ce un petit groupe ?","a":"Oui, petits groupes de 1 à 4 personnes pour une attention personnalisée."},{"q":"Que se passe-t-il en cas de pluie ?","a":"Le shopping vintage et l'expérience voiture JDM seront changés en plans axés sur l'intérieur. La cuisine familiale est à l'intérieur, donc aucun impact."},{"q":"J'ai des allergies, pouvez-vous vous adapter ?","a":"Oui, veuillez déclarer les allergies lors de la réservation. L'hôte ajustera les ingrédients."},{"q":"Puis-je prendre des photos ?","a":"Oui, la prise de photos pendant l'expérience est possible. Cependant, la permission de l'hôte est requise, et un consentement individuel est obtenu pour la publication sur les réseaux sociaux."},{"q":"Quels modes de paiement sont acceptés ?","a":"Cartes de crédit (Visa, Mastercard, JCB, Amex), LINE Pay, Apple Pay, Google Pay."}]},"finalCta":{"heading":"Prêt à quitter les sentiers touristiques ?","body":"Trois expériences. Petits groupes. De vraies personnes qui vivent ici.","button":"Réserver une expérience"},"footer":{"tagline":"Pas du tourisme. Rejoignez la vie quotidienne au Japon.","legalHeading":"Informations légales","legal":["Conditions d'utilisation","Politique de confidentialité","Politique d'annulation","Règles de conduite","Avertissement","Nous contacter"],"followHeading":"Suivez-nous","social":["Instagram","TikTok","X (Twitter)","LINE"],"copyright":"© 2026 REAL JAPAN NOW. All rights reserved."}}},"icons":{"globe":["M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18","M3.5 9h17M3.5 15h17","M12 3a14 14 0 0 1 0 18","M12 3a14 14 0 0 0 0 18"],"caret":["m6 9 6 6 6-6"],"check":["m5 13 4 4L19 7"],"arrow":["M4 12h15","m13 6 6 6-6 6"],"shield":["M12 3.2 19 6v5.6c0 4.5-3 7.8-7 9.2-4-1.4-7-4.7-7-9.2V6z","m9.2 12 2 2 3.8-4"],"users":["M13.6 7.6a3.4 3.4 0 1 1-6.8 0 3.4 3.4 0 0 1 6.8 0","M16.4 19.5v-1.6a3.6 3.6 0 0 0-3.6-3.6H7.6A3.6 3.6 0 0 0 4 17.9v1.6","M16.6 5.4a3.2 3.2 0 0 1 0 6.1","M20 19.5v-1.4a3.4 3.4 0 0 0-2.6-3.3"],"chat":["M20.5 11.6c0 4.2-3.8 7.6-8.5 7.6-.9 0-1.8-.1-2.6-.4L4.5 20.5l1.3-3.7a7.2 7.2 0 0 1-2.3-5.2C3.5 7.4 7.3 4 12 4s8.5 3.4 8.5 7.6","M9 11.6h.01M12 11.6h.01M15 11.6h.01"],"tea":["M4.5 7.5h11.8v5.2a5.2 5.2 0 0 1-5.2 5.2h-1.4a5.2 5.2 0 0 1-5.2-5.2z","M16.3 9h1.9a2.6 2.6 0 0 1 0 5.2h-1.9","M4 21h13.5","M8.5 4.6c.8-.7.8-1.4 0-2.1M12 4.6c.8-.7.8-1.4 0-2.1"],"clock":["M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18","M12 7.2v5.1l3.2 1.9"],"compass":["M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18","m15.2 8.8-2 5.4-5.4 2 2-5.4z"],"user":["M16 7.6a4 4 0 1 1-8 0 4 4 0 0 1 8 0","M20 20.2v-1.4a5.6 5.6 0 0 0-5.6-5.6H9.6A5.6 5.6 0 0 0 4 18.8v1.4"],"id":["M4.2 5h15.6A1.7 1.7 0 0 1 21.5 6.7v10.6a1.7 1.7 0 0 1-1.7 1.7H4.2a1.7 1.7 0 0 1-1.7-1.7V6.7A1.7 1.7 0 0 1 4.2 5z","M13.8 10h4.2M13.8 14h4.2","M10.6 10.4a1.9 1.9 0 1 1-3.8 0 1.9 1.9 0 0 1 3.8 0","M5.9 15.6c.4-1.4 1.6-2.2 2.8-2.2s2.4.8 2.8 2.2"],"card":["M4.5 6h15A1.5 1.5 0 0 1 21 7.5v9a1.5 1.5 0 0 1-1.5 1.5h-15A1.5 1.5 0 0 1 3 16.5v-9A1.5 1.5 0 0 1 4.5 6z","M3 10.4h18","M6.4 14.4h3.2"],"mail":["M3 7.4a1.4 1.4 0 0 1 1.4-1.4h15.2A1.4 1.4 0 0 1 21 7.4v5","m20.6 7-8.6 5.8L3.4 7","M3 7.4v9.2A1.4 1.4 0 0 0 4.4 18h8.2","m15.6 18.4 2 2 3.9-4"],"pin":["M12 21.2s6.8-5.6 6.8-10.8a6.8 6.8 0 1 0-13.6 0c0 5.2 6.8 10.8 6.8 10.8z","M14.4 10.2a2.4 2.4 0 1 1-4.8 0 2.4 2.4 0 0 1 4.8 0"],"star":["m12 3.6 2.6 5.3 5.8.9-4.2 4.1 1 5.8-5.2-2.7-5.2 2.7 1-5.8-4.2-4.1 5.8-.9z"],"camera":["M4 8.2h2.9l1.6-2.3h7l1.6 2.3H20a1.4 1.4 0 0 1 1.4 1.4v8a1.4 1.4 0 0 1-1.4 1.4H4a1.4 1.4 0 0 1-1.4-1.4v-8A1.4 1.4 0 0 1 4 8.2z","M15.5 13.6a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0"],"heart":["M12 20.2s-7.6-4.6-7.6-9.8a4.4 4.4 0 0 1 7.6-3 4.4 4.4 0 0 1 7.6 3c0 5.2-7.6 9.8-7.6 9.8z"],"lang":["M3.5 6.4h9","M8 4.4v2","M10.6 6.4c-.6 3.6-3 6.6-6.3 8","M6.2 9.4c1 2 2.8 3.6 5 4.4","m12.4 20 3.9-9.4L20.2 20","M13.8 16.8h5"]},"art":{"vintage":"<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 400 300\" preserveAspectRatio=\"xMidYMid slice\" role=\"img\" aria-label=\"Illustration of a Tokyo vintage clothing shop interior\">\n  <defs>\n    <linearGradient id=\"v-wall\" x1=\"0\" y1=\"0\" x2=\"0\" y2=\"1\">\n      <stop offset=\"0\" stop-color=\"#f7f0e6\"/><stop offset=\"1\" stop-color=\"#eee3d3\"/>\n    <\/linearGradient>\n    <linearGradient id=\"v-floor\" x1=\"0\" y1=\"0\" x2=\"0\" y2=\"1\">\n      <stop offset=\"0\" stop-color=\"#d9c7ad\"/><stop offset=\"1\" stop-color=\"#c9b295\"/>\n    <\/linearGradient>\n    <radialGradient id=\"v-glow\" cx=\"0.5\" cy=\"0.5\" r=\"0.5\">\n      <stop offset=\"0\" stop-color=\"#ffd88a\" stop-opacity=\".75\"/><stop offset=\"1\" stop-color=\"#ffd88a\" stop-opacity=\"0\"/>\n    <\/radialGradient>\n  <\/defs>\n\n  <rect width=\"400\" height=\"300\" fill=\"url(#v-wall)\"/>\n  <rect y=\"232\" width=\"400\" height=\"68\" fill=\"url(#v-floor)\"/>\n  <path d=\"M0 232h400\" stroke=\"#b89e7d\" stroke-width=\"1.5\"/>\n\n  <!-- shop window, left -->\n  <rect x=\"18\" y=\"42\" width=\"78\" height=\"112\" rx=\"4\" fill=\"#fdfaf4\" stroke=\"#c9b295\" stroke-width=\"2\"/>\n  <path d=\"M57 42v112M18 98h78\" stroke=\"#c9b295\" stroke-width=\"2\"/>\n  <rect x=\"18\" y=\"42\" width=\"78\" height=\"112\" rx=\"4\" fill=\"url(#v-glow)\" opacity=\".7\"/>\n\n  <!-- pendant lamp, right -->\n  <path d=\"M330 0v46\" stroke=\"#8a7659\" stroke-width=\"2\"/>\n  <path d=\"M312 46h36l-9 16h-18z\" fill=\"#2f3640\"/>\n  <circle cx=\"330\" cy=\"70\" r=\"6\" fill=\"#ffd88a\"/>\n  <circle cx=\"330\" cy=\"70\" r=\"42\" fill=\"url(#v-glow)\"/>\n\n  <!-- clothing rail -->\n  <rect x=\"108\" y=\"86\" width=\"212\" height=\"6\" rx=\"3\" fill=\"#8f7f66\"/>\n  <path d=\"M120 92v-28M308 92v-28\" stroke=\"#8f7f66\" stroke-width=\"4\" stroke-linecap=\"round\"/>\n\n  <!-- hanging garments -->\n  <g stroke=\"#7a6a52\" stroke-width=\"1.6\" fill=\"none\">\n    <path d=\"M140 89v-6a4 4 0 1 1 4 4\"/><path d=\"M180 89v-6a4 4 0 1 1 4 4\"/>\n    <path d=\"M220 89v-6a4 4 0 1 1 4 4\"/><path d=\"M260 89v-6a4 4 0 1 1 4 4\"/>\n  <\/g>\n  <!-- denim jacket -->\n  <path d=\"M126 96h32l10 14-8 6-4-5v52h-28v-52l-4 5-8-6z\" fill=\"#4a6fa5\"/>\n  <path d=\"M142 96v67\" stroke=\"#3a5a8c\" stroke-width=\"1.6\"/>\n  <!-- ochre coat -->\n  <path d=\"M166 96h30l11 15-8 6-4-5v66h-28v-66l-4 5-8-6z\" fill=\"#d9a441\"/>\n  <path d=\"M181 96v82\" stroke=\"#bd8b2e\" stroke-width=\"1.6\"/>\n  <!-- terracotta shirt -->\n  <path d=\"M206 96h30l10 13-8 6-4-4v45h-26v-45l-4 4-8-6z\" fill=\"#c96f4a\"/>\n  <!-- olive jacket -->\n  <path d=\"M246 96h30l11 14-8 6-4-5v56h-28v-56l-4 5-8-6z\" fill=\"#7d8b6a\"/>\n  <path d=\"M261 96v75\" stroke=\"#68765a\" stroke-width=\"1.6\"/>\n\n  <!-- price tag -->\n  <g transform=\"rotate(-12 300 132)\">\n    <rect x=\"286\" y=\"120\" width=\"34\" height=\"20\" rx=\"4\" fill=\"#fff\" stroke=\"#e63946\" stroke-width=\"1.6\"/>\n    <path d=\"M292 128h22M292 133h14\" stroke=\"#e63946\" stroke-width=\"1.6\" stroke-linecap=\"round\"/>\n  <\/g>\n  <path d=\"M300 112v10\" stroke=\"#8f7f66\" stroke-width=\"1.4\"/>\n\n  <!-- folded stack on floor -->\n  <g>\n    <rect x=\"40\" y=\"196\" width=\"62\" height=\"12\" rx=\"3\" fill=\"#c96f4a\"/>\n    <rect x=\"44\" y=\"208\" width=\"58\" height=\"12\" rx=\"3\" fill=\"#4a6fa5\"/>\n    <rect x=\"38\" y=\"220\" width=\"66\" height=\"12\" rx=\"3\" fill=\"#7d8b6a\"/>\n  <\/g>\n\n  <!-- floor mirror -->\n  <rect x=\"326\" y=\"132\" width=\"54\" height=\"100\" rx=\"27\" fill=\"#f7f3ec\" stroke=\"#b89e7d\" stroke-width=\"2.5\"/>\n  <path d=\"M340 214c0-30 6-52 20-66\" stroke=\"#e4dccf\" stroke-width=\"6\" stroke-linecap=\"round\" fill=\"none\"/>\n\n  <!-- plant -->\n  <path d=\"M128 232v-26\" stroke=\"#5f7a4f\" stroke-width=\"3\"/>\n  <path d=\"M128 208c-15-6-21-21-15-33 13 2 21 13 15 33zM128 214c13-8 18-23 12-33-13 3-19 15-12 33z\" fill=\"#6f8f5c\"/>\n  <path d=\"M114 232h28l-4 20h-20z\" fill=\"#c96f4a\"/>\n<\/svg>","cooking":"<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 400 300\" preserveAspectRatio=\"xMidYMid slice\" role=\"img\" aria-label=\"Illustration of a Japanese home-cooked meal laid out on a wooden table\">\n  <defs>\n    <linearGradient id=\"c-table\" x1=\"0\" y1=\"0\" x2=\"0\" y2=\"1\">\n      <stop offset=\"0\" stop-color=\"#e9d8bf\"/><stop offset=\"1\" stop-color=\"#d8c2a2\"/>\n    <\/linearGradient>\n    <radialGradient id=\"c-light\" cx=\"0.5\" cy=\"0.18\" r=\"0.75\">\n      <stop offset=\"0\" stop-color=\"#fff6e2\" stop-opacity=\".85\"/><stop offset=\"1\" stop-color=\"#fff6e2\" stop-opacity=\"0\"/>\n    <\/radialGradient>\n    <linearGradient id=\"c-rice\" x1=\"0\" y1=\"0\" x2=\"0\" y2=\"1\">\n      <stop offset=\"0\" stop-color=\"#ffffff\"/><stop offset=\"1\" stop-color=\"#f0eadf\"/>\n    <\/linearGradient>\n  <\/defs>\n\n  <rect width=\"400\" height=\"300\" fill=\"url(#c-table)\"/>\n  <g stroke=\"#c8ad88\" stroke-width=\"1\" opacity=\".55\">\n    <path d=\"M0 58h400M0 132h400M0 214h400M0 272h400\"/>\n  <\/g>\n  <rect width=\"400\" height=\"300\" fill=\"url(#c-light)\"/>\n\n  <!-- placemat -->\n  <rect x=\"34\" y=\"74\" width=\"332\" height=\"176\" rx=\"10\" fill=\"#f4ece0\" opacity=\".85\"/>\n  <rect x=\"34\" y=\"74\" width=\"332\" height=\"176\" rx=\"10\" fill=\"none\" stroke=\"#c8ad88\" stroke-width=\"1.5\" stroke-dasharray=\"6 5\"/>\n\n  <!-- rice bowl -->\n  <g>\n    <ellipse cx=\"112\" cy=\"196\" rx=\"46\" ry=\"13\" fill=\"#00000012\"/>\n    <path d=\"M66 156h92c-4 26-22 40-46 40s-42-14-46-40z\" fill=\"#2f4a6b\"/>\n    <ellipse cx=\"112\" cy=\"156\" rx=\"46\" ry=\"12\" fill=\"#3c5c82\"/>\n    <ellipse cx=\"112\" cy=\"155\" rx=\"39\" ry=\"9.5\" fill=\"url(#c-rice)\"/>\n    <path d=\"M88 152c8-4 16-5 24-5s16 1 24 5\" stroke=\"#e2dbcd\" stroke-width=\"1.4\" fill=\"none\"/>\n  <\/g>\n\n  <!-- miso soup bowl -->\n  <g>\n    <ellipse cx=\"232\" cy=\"192\" rx=\"40\" ry=\"11\" fill=\"#00000012\"/>\n    <path d=\"M192 158h80c-3 23-19 35-40 35s-37-12-40-35z\" fill=\"#7a3b2e\"/>\n    <ellipse cx=\"232\" cy=\"158\" rx=\"40\" ry=\"10.5\" fill=\"#964a39\"/>\n    <ellipse cx=\"232\" cy=\"157\" rx=\"33\" ry=\"8\" fill=\"#b5793f\"/>\n    <g fill=\"#3f5b3a\"><circle cx=\"220\" cy=\"156\" r=\"3\"/><circle cx=\"240\" cy=\"159\" r=\"2.4\"/><\/g>\n    <rect x=\"228\" y=\"152\" width=\"9\" height=\"9\" rx=\"1.5\" fill=\"#f2ead6\"/>\n  <\/g>\n\n  <!-- grilled fish on rectangular plate -->\n  <g>\n    <rect x=\"286\" y=\"140\" width=\"88\" height=\"52\" rx=\"6\" fill=\"#eef1f3\" stroke=\"#cdd4da\" stroke-width=\"1.5\"/>\n    <path d=\"M296 168c14-14 40-16 56-6l14-8-6 14 6 14-14-8c-16 10-42 8-56-6z\" fill=\"#c9b08a\"/>\n    <path d=\"M306 162c10-6 24-6 34 0M306 174c10 6 24 6 34 0\" stroke=\"#a98d63\" stroke-width=\"1.6\" fill=\"none\"/>\n    <circle cx=\"312\" cy=\"166\" r=\"2\" fill=\"#4a4038\"/>\n    <path d=\"M292 186h30\" stroke=\"#9fb08a\" stroke-width=\"4\" stroke-linecap=\"round\"/>\n  <\/g>\n\n  <!-- small side dishes -->\n  <g>\n    <circle cx=\"86\" cy=\"112\" r=\"22\" fill=\"#eef1f3\" stroke=\"#cdd4da\" stroke-width=\"1.5\"/>\n    <path d=\"M74 112c6-6 18-6 24 0-6 7-18 7-24 0z\" fill=\"#6f8f5c\"/>\n    <circle cx=\"86\" cy=\"106\" r=\"3\" fill=\"#e0b13c\"/>\n  <\/g>\n  <g>\n    <circle cx=\"150\" cy=\"106\" r=\"19\" fill=\"#f6efe2\" stroke=\"#d8c2a2\" stroke-width=\"1.5\"/>\n    <g fill=\"#c96f4a\"><circle cx=\"145\" cy=\"104\" r=\"4.5\"/><circle cx=\"155\" cy=\"108\" r=\"4\"/><circle cx=\"152\" cy=\"99\" r=\"3.4\"/><\/g>\n  <\/g>\n\n  <!-- chopsticks on rest -->\n  <g transform=\"rotate(-6 250 232)\">\n    <rect x=\"182\" y=\"228\" width=\"132\" height=\"4\" rx=\"2\" fill=\"#8f5a3c\"/>\n    <rect x=\"182\" y=\"236\" width=\"132\" height=\"4\" rx=\"2\" fill=\"#8f5a3c\"/>\n    <rect x=\"286\" y=\"224\" width=\"18\" height=\"20\" rx=\"9\" fill=\"#e2e7ea\" stroke=\"#cdd4da\" stroke-width=\"1.4\"/>\n  <\/g>\n\n  <!-- teacup -->\n  <g>\n    <ellipse cx=\"332\" cy=\"228\" rx=\"24\" ry=\"7\" fill=\"#00000010\"/>\n    <path d=\"M310 212h44c-2 14-11 22-22 22s-20-8-22-22z\" fill=\"#3f5b3a\"/>\n    <ellipse cx=\"332\" cy=\"212\" rx=\"22\" ry=\"6\" fill=\"#557a4d\"/>\n    <ellipse cx=\"332\" cy=\"211\" rx=\"17\" ry=\"4.6\" fill=\"#8fae6a\"/>\n  <\/g>\n\n  <!-- steam -->\n  <g stroke=\"#ffffff\" stroke-width=\"3\" stroke-linecap=\"round\" fill=\"none\" opacity=\".7\">\n    <path d=\"M104 132c-7-8 7-14 0-22\"/>\n    <path d=\"M124 130c-7-8 7-13 0-20\"/>\n    <path d=\"M226 136c-7-8 7-14 0-22\"/>\n  <\/g>\n<\/svg>","jdm":"<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 400 300\" preserveAspectRatio=\"xMidYMid slice\" role=\"img\" aria-label=\"Illustration of a JDM sports car on the Tokyo Metropolitan Expressway at night\">\n  <defs>\n    <linearGradient id=\"j-sky\" x1=\"0\" y1=\"0\" x2=\"0\" y2=\"1\">\n      <stop offset=\"0\" stop-color=\"#0b1020\"/><stop offset=\"0.55\" stop-color=\"#16233f\"/><stop offset=\"1\" stop-color=\"#243654\"/>\n    <\/linearGradient>\n    <linearGradient id=\"j-road\" x1=\"0\" y1=\"0\" x2=\"0\" y2=\"1\">\n      <stop offset=\"0\" stop-color=\"#2a3140\"/><stop offset=\"1\" stop-color=\"#171c26\"/>\n    <\/linearGradient>\n    <linearGradient id=\"j-trail-r\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"0\">\n      <stop offset=\"0\" stop-color=\"#e63946\" stop-opacity=\"0\"/><stop offset=\"1\" stop-color=\"#ff5b66\" stop-opacity=\"1\"/>\n    <\/linearGradient>\n    <linearGradient id=\"j-trail-w\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"0\">\n      <stop offset=\"0\" stop-color=\"#9fd4ff\" stop-opacity=\"1\"/><stop offset=\"1\" stop-color=\"#9fd4ff\" stop-opacity=\"0\"/>\n    <\/linearGradient>\n    <radialGradient id=\"j-moon\" cx=\"0.5\" cy=\"0.5\" r=\"0.5\">\n      <stop offset=\"0\" stop-color=\"#ffffff\" stop-opacity=\".55\"/><stop offset=\"1\" stop-color=\"#ffffff\" stop-opacity=\"0\"/>\n    <\/radialGradient>\n    <radialGradient id=\"j-halo\" cx=\"0.5\" cy=\"0.5\" r=\"0.5\">\n      <stop offset=\"0\" stop-color=\"#e63946\" stop-opacity=\".5\"/><stop offset=\"1\" stop-color=\"#e63946\" stop-opacity=\"0\"/>\n    <\/radialGradient>\n  <\/defs>\n\n  <rect width=\"400\" height=\"300\" fill=\"url(#j-sky)\"/>\n\n  <!-- moon + stars -->\n  <circle cx=\"326\" cy=\"46\" r=\"34\" fill=\"url(#j-moon)\"/>\n  <circle cx=\"326\" cy=\"46\" r=\"12\" fill=\"#f2f6ff\" opacity=\".9\"/>\n  <g fill=\"#ffffff\" opacity=\".65\">\n    <circle cx=\"58\" cy=\"34\" r=\"1.3\"/><circle cx=\"122\" cy=\"22\" r=\"1\"/><circle cx=\"196\" cy=\"46\" r=\"1.2\"/>\n    <circle cx=\"252\" cy=\"24\" r=\"0.9\"/><circle cx=\"88\" cy=\"70\" r=\"1\"/><circle cx=\"374\" cy=\"92\" r=\"1.1\"/>\n  <\/g>\n\n  <!-- city skyline -->\n  <g fill=\"#0e1626\">\n    <rect x=\"0\" y=\"120\" width=\"34\" height=\"80\"/><rect x=\"36\" y=\"98\" width=\"26\" height=\"102\"/>\n    <rect x=\"66\" y=\"132\" width=\"30\" height=\"68\"/><rect x=\"100\" y=\"86\" width=\"22\" height=\"114\"/>\n    <rect x=\"126\" y=\"116\" width=\"34\" height=\"84\"/><rect x=\"164\" y=\"104\" width=\"20\" height=\"96\"/>\n    <rect x=\"188\" y=\"126\" width=\"30\" height=\"74\"/><rect x=\"222\" y=\"94\" width=\"26\" height=\"106\"/>\n    <rect x=\"252\" y=\"122\" width=\"22\" height=\"78\"/><rect x=\"278\" y=\"110\" width=\"34\" height=\"90\"/>\n    <rect x=\"316\" y=\"130\" width=\"24\" height=\"70\"/><rect x=\"344\" y=\"100\" width=\"56\" height=\"100\"/>\n  <\/g>\n  <!-- tokyo-tower-ish silhouette -->\n  <path d=\"M204 126l8-44 8 44-8 6z\" fill=\"#0e1626\"/>\n  <path d=\"M212 82v-12\" stroke=\"#0e1626\" stroke-width=\"2\"/>\n  <!-- lit windows -->\n  <g fill=\"#ffd88a\" opacity=\".75\">\n    <rect x=\"42\" y=\"108\" width=\"4\" height=\"5\"/><rect x=\"50\" y=\"120\" width=\"4\" height=\"5\"/>\n    <rect x=\"106\" y=\"96\" width=\"4\" height=\"5\"/><rect x=\"106\" y=\"112\" width=\"4\" height=\"5\"/>\n    <rect x=\"134\" y=\"126\" width=\"4\" height=\"5\"/><rect x=\"146\" y=\"140\" width=\"4\" height=\"5\"/>\n    <rect x=\"228\" y=\"104\" width=\"4\" height=\"5\"/><rect x=\"236\" y=\"122\" width=\"4\" height=\"5\"/>\n    <rect x=\"286\" y=\"120\" width=\"4\" height=\"5\"/><rect x=\"298\" y=\"136\" width=\"4\" height=\"5\"/>\n    <rect x=\"356\" y=\"112\" width=\"4\" height=\"5\"/><rect x=\"372\" y=\"128\" width=\"4\" height=\"5\"/>\n    <rect x=\"364\" y=\"146\" width=\"4\" height=\"5\"/>\n  <\/g>\n  <g fill=\"#9fd4ff\" opacity=\".5\">\n    <rect x=\"70\" y=\"146\" width=\"4\" height=\"5\"/><rect x=\"196\" y=\"140\" width=\"4\" height=\"5\"/>\n    <rect x=\"322\" y=\"144\" width=\"4\" height=\"5\"/>\n  <\/g>\n\n  <!-- elevated expressway deck -->\n  <path d=\"M0 214c120-26 280-26 400 0v20c-120-26-280-26-400 0z\" fill=\"#1d2533\"/>\n  <path d=\"M0 200h400\" stroke=\"#0b1020\" stroke-width=\"0\" />\n  <rect y=\"230\" width=\"400\" height=\"70\" fill=\"url(#j-road)\"/>\n  <!-- guard rail -->\n  <path d=\"M0 212c120-26 280-26 400 0\" stroke=\"#3a475e\" stroke-width=\"3\" fill=\"none\"/>\n  <g stroke=\"#38455c\" stroke-width=\"2\">\n    <path d=\"M40 208v10M100 202v10M160 199v10M220 199v10M280 202v10M340 208v10\"/>\n  <\/g>\n\n  <!-- lane markings -->\n  <g stroke=\"#4d566b\" stroke-width=\"3\" stroke-linecap=\"round\" opacity=\".7\">\n    <path d=\"M20 292h30M84 292h30M148 292h30M212 292h30M276 292h30M340 292h30\"/>\n  <\/g>\n  <path d=\"M0 252h400\" stroke=\"#39435a\" stroke-width=\"1.5\" opacity=\".8\"/>\n\n  <!-- light trails -->\n  <g opacity=\".95\">\n    <rect x=\"30\" y=\"242\" width=\"150\" height=\"4\" rx=\"2\" fill=\"url(#j-trail-r)\"/>\n    <rect x=\"60\" y=\"250\" width=\"120\" height=\"3\" rx=\"1.5\" fill=\"url(#j-trail-r)\"/>\n    <rect x=\"230\" y=\"238\" width=\"150\" height=\"3.5\" rx=\"1.75\" fill=\"url(#j-trail-w)\"/>\n    <rect x=\"250\" y=\"246\" width=\"120\" height=\"2.5\" rx=\"1.25\" fill=\"url(#j-trail-w)\"/>\n  <\/g>\n\n  <!-- the car: low coupe, three-quarter rear -->\n  <g transform=\"translate(96 226)\">\n    <ellipse cx=\"104\" cy=\"62\" rx=\"112\" ry=\"12\" fill=\"#000\" opacity=\".35\"/>\n    <circle cx=\"104\" cy=\"34\" r=\"86\" fill=\"url(#j-halo)\"/>\n    <!-- body -->\n    <path d=\"M8 52c-4-14 2-22 14-26l24-8 22-14c8-5 16-8 26-8h28c11 0 20 3 28 9l20 15 24 8c12 4 18 12 14 24z\"\n          fill=\"#e63946\"/>\n    <path d=\"M8 52c-4-14 2-22 14-26l24-8 22-14c8-5 16-8 26-8h28c11 0 20 3 28 9l20 15 24 8c12 4 18 12 14 24z\"\n          fill=\"none\" stroke=\"#ff8189\" stroke-width=\"1.4\" opacity=\".8\"/>\n    <!-- greenhouse -->\n    <path d=\"M70 20l16-11c6-4 12-6 20-6h24c9 0 16 2 22 7l14 10z\" fill=\"#101826\"/>\n    <path d=\"M74 18l14-9c5-4 10-5 17-5h22c8 0 14 2 19 6l12 8z\" fill=\"#22334f\" opacity=\".85\"/>\n    <!-- rear wing -->\n    <path d=\"M14 22h44v5H14zM20 27h6v10h-6zM48 27h6v10h-6z\" fill=\"#1b2230\"/>\n    <!-- tail lights -->\n    <rect x=\"10\" y=\"36\" width=\"26\" height=\"7\" rx=\"3.5\" fill=\"#ff5b66\"/>\n    <rect x=\"176\" y=\"36\" width=\"26\" height=\"7\" rx=\"3.5\" fill=\"#ff5b66\"/>\n    <rect x=\"10\" y=\"36\" width=\"26\" height=\"7\" rx=\"3.5\" fill=\"#fff\" opacity=\".35\"/>\n    <!-- side skirt / shading -->\n    <path d=\"M20 52h172l-6 6H26z\" fill=\"#a8232f\"/>\n    <!-- wheels -->\n    <g>\n      <ellipse cx=\"52\" cy=\"54\" rx=\"20\" ry=\"14\" fill=\"#0d1219\"/>\n      <ellipse cx=\"52\" cy=\"54\" rx=\"11\" ry=\"7.5\" fill=\"#8e97a6\"/>\n      <ellipse cx=\"52\" cy=\"54\" rx=\"4\" ry=\"3\" fill=\"#4a5361\"/>\n      <ellipse cx=\"158\" cy=\"54\" rx=\"20\" ry=\"14\" fill=\"#0d1219\"/>\n      <ellipse cx=\"158\" cy=\"54\" rx=\"11\" ry=\"7.5\" fill=\"#8e97a6\"/>\n      <ellipse cx=\"158\" cy=\"54\" rx=\"4\" ry=\"3\" fill=\"#4a5361\"/>\n    <\/g>\n    <!-- exhaust glow -->\n    <circle cx=\"90\" cy=\"52\" r=\"4\" fill=\"#2b323d\"/>\n    <circle cx=\"118\" cy=\"52\" r=\"4\" fill=\"#2b323d\"/>\n  <\/g>\n\n  <!-- foreground ground reflection -->\n  <rect y=\"286\" width=\"400\" height=\"14\" fill=\"#0d1219\" opacity=\".5\"/>\n<\/svg>"}};</script><script>/* Renders the whole landing page from a message dictionary.
    Used twice: at build time in Node to bake the English HTML into the file,
    and again in the browser to re-render instantly on a language switch. */
@@ -1632,11 +2104,13 @@ function brand() {
 
 function header(t, ctx) {
   const current = LOCALE_META.find((m) => m.code === ctx.locale) || LOCALE_META[0]
-  const nav = NAV_KEYS.map(([href, key]) => `<a href="${href}">${esc(t.nav[key])}</a>`).join('')
+  const nav = NAV_KEYS.map(
+    ([href, key]) => `<a class="md-btn md-btn--text md-state" href="${href}">${esc(t.nav[key])}</a>`,
+  ).join('')
   const options = LOCALE_META.map((m) => {
     const selected = m.code === ctx.locale
     return (
-      `<button type="button" class="lang__option" role="option" aria-selected="${selected}" ` +
+      `<button type="button" class="lang__option md-state" role="option" aria-selected="${selected}" ` +
       `lang="${m.htmlLang}" data-locale="${m.code}">` +
       `<span class="lang__flag" aria-hidden="true">${m.flag}</span>` +
       `<span class="lang__name">${esc(m.name)}</span>` +
@@ -1646,13 +2120,13 @@ function header(t, ctx) {
   }).join('')
 
   return (
-    '<header class="site-header" data-scrolled="false"><div class="shell header-inner">' +
-    `<a class="brand" href="#top">${brand()}</a>` +
+    '<header class="m3-top-app-bar" data-scrolled="false"><div class="shell top-app-bar__inner">' +
+    `<a class="brand md-state" href="#top">${brand()}</a>` +
     `<nav class="nav" aria-label="Primary">${nav}</nav>` +
-    '<div class="header-actions">' +
-    `<a class="btn btn--primary btn--sm header-cta" href="#how">${esc(t.hero.cta)}</a>` +
+    '<div class="top-app-bar__actions">' +
+    `<a class="md-btn md-btn--filled md-state top-app-bar__cta" href="#how">${esc(t.hero.cta)}</a>` +
     '<div class="lang">' +
-    `<button type="button" class="lang__btn" id="langBtn" aria-label="${esc(t.langSwitcher.label)}" ` +
+    `<button type="button" class="lang__btn md-state" id="langBtn" aria-label="${esc(t.langSwitcher.label)}" ` +
     'aria-haspopup="listbox" aria-expanded="false" aria-controls="langMenu">' +
     icon(ctx, 'globe', 'lang__globe') +
     `<span class="lang__code">${esc(current.code.toUpperCase())}</span>` +
@@ -1672,17 +2146,17 @@ function hero(t, ctx) {
   ).join('')
 
   const trust = t.hero.trust
-    .map((label, i) => `<li>${icon(ctx, TRUST_ICONS[i], '', 2)}${esc(label)}</li>`)
+    .map((label, i) => `<li class="md-chip">${icon(ctx, TRUST_ICONS[i], '', 2)}${esc(label)}</li>`)
     .join('')
 
   return (
     '<section class="hero" id="top"><div class="shell hero-grid"><div class="hero-copy">' +
-    `<p class="hero-eyebrow"><span class="dot" aria-hidden="true"></span>${esc(t.hero.eyebrow)}</p>` +
+    `<p class="md-chip md-chip--tonal hero-eyebrow">${esc(t.hero.eyebrow)}</p>` +
     `<h1 class="hero-title">${esc(t.hero.title)}</h1>` +
     `<p class="hero-sub">${esc(t.hero.subtitle)}</p>` +
     '<div class="hero-actions">' +
-    `<a class="btn btn--primary" href="#how">${esc(t.hero.cta)}${icon(ctx, 'arrow', 'btn__arrow', 2)}</a>` +
-    `<a class="btn btn--ghost" href="#experiences">${esc(t.hero.ctaSecondary)}</a></div>` +
+    `<a class="md-btn md-btn--md md-btn--filled md-state" href="#how">${esc(t.hero.cta)}${icon(ctx, 'arrow', 'md-btn__arrow', 2)}</a>` +
+    `<a class="md-btn md-btn--md md-btn--outlined md-state" href="#experiences">${esc(t.hero.ctaSecondary)}</a></div>` +
     `<ul class="trust">${trust}</ul></div>` +
     `<div class="hero-art" aria-hidden="true">${panels}</div></div></section>`
   )
@@ -1704,22 +2178,22 @@ function experiences(t, ctx) {
       const list = (items, mod) =>
         `<ul class="exp-list exp-list--${mod}">${items.map((x) => `<li>${esc(x)}</li>`).join('')}</ul>`
       return (
-        `<div class="reveal" style="transition-delay:${i * 80}ms"><article class="exp-card">` +
+        `<div class="reveal" style="transition-delay:${i * 80}ms"><article class="md-card md-card--elevated exp-card">` +
         `<div class="exp-media">${artFor(ctx, item.id, 'card')}` +
         `<span class="exp-media__index" aria-hidden="true">${String(i + 1).padStart(2, '0')}</span></div>` +
         '<div class="exp-body">' +
         `<h3 class="exp-title">${esc(item.title)}</h3>` +
         `<p class="exp-price">${esc(item.price)}</p>` +
         '<ul class="exp-facts">' +
-        `<li>${icon(ctx, 'clock')}<span class="visually-hidden">${esc(l.duration)}: </span>${esc(item.duration)}</li>` +
-        `<li>${icon(ctx, 'users')}<span class="visually-hidden">${esc(l.group)}: </span>${esc(item.group)}</li>` +
+        `<li class="md-chip">${icon(ctx, 'clock')}<span class="visually-hidden">${esc(l.duration)}: </span>${esc(item.duration)}</li>` +
+        `<li class="md-chip">${icon(ctx, 'users')}<span class="visually-hidden">${esc(l.group)}: </span>${esc(item.group)}</li>` +
         '</ul>' +
         `<p class="exp-desc">${esc(item.description)}</p>` +
         '<div class="exp-lists">' +
         `<div><p class="exp-list__title">${esc(l.included)}</p>${list(item.included, 'yes')}</div>` +
         `<div><p class="exp-list__title">${esc(l.notIncluded)}</p>${list(item.notIncluded, 'no')}</div>` +
         '</div>' +
-        `<div class="exp-cta"><a class="btn btn--ghost btn--sm btn--block" href="#how">${esc(l.book)}</a></div>` +
+        `<div class="exp-cta"><a class="md-btn md-btn--outlined md-btn--block md-state" href="#how">${esc(l.book)}</a></div>` +
         '</div></article></div>'
       )
     })
@@ -1736,7 +2210,7 @@ function features(t, ctx) {
   const items = t.features.items
     .map(
       (item, i) =>
-        `<div class="reveal" style="transition-delay:${i * 70}ms"><div class="feat">` +
+        `<div class="reveal" style="transition-delay:${i * 70}ms"><div class="md-card md-card--filled feat">` +
         `<div class="feat__icon">${icon(ctx, FEATURE_ICONS[i])}</div>` +
         `<h3 class="feat__title">${esc(item.title)}</h3>` +
         `<p class="feat__body">${esc(item.body)}</p></div></div>`,
@@ -1744,7 +2218,7 @@ function features(t, ctx) {
     .join('')
 
   return (
-    '<section class="section section--mist" id="why" aria-labelledby="why-title"><div class="shell">' +
+    '<section class="section section--container-low" id="why" aria-labelledby="why-title"><div class="shell">' +
     sectionHead(t, t.features.eyebrow, t.features.heading, t.features.lead, 'why-title') +
     `<div class="feat-grid">${items}</div></div></section>`
   )
@@ -1756,7 +2230,7 @@ function flow(t, ctx) {
       const [from, to] = PHASE_RANGES[i]
       return (
         '<li class="flow-phase-chip">' +
-        `<span class="num" aria-hidden="true">${i + 1}</span><span>${esc(phase)}</span>` +
+        `<span class="num" aria-hidden="true">${i + 1}</span><span class="label">${esc(phase)}</span>` +
         `<span class="range">${esc(t.flow.stepLabel)} ${from}–${to}</span></li>`
       )
     })
@@ -1767,7 +2241,7 @@ function flow(t, ctx) {
       (step, i) =>
         '<li class="flow-step">' +
         `<span class="flow-step__node" aria-hidden="true">${i + 1}</span>` +
-        `<div class="reveal flow-step__card" style="transition-delay:${i * 40}ms">` +
+        `<div class="reveal md-card md-card--outlined flow-step__card" style="transition-delay:${i * 40}ms">` +
         `<span class="flow-step__label">${esc(t.flow.stepLabel)} ${i + 1}</span>` +
         '<div class="flow-step__head">' +
         icon(ctx, STEP_ICONS[i], 'flow-step__icon') +
@@ -1781,7 +2255,7 @@ function flow(t, ctx) {
     sectionHead(t, t.flow.eyebrow, t.flow.heading, t.flow.lead, 'how-title') +
     `<ul class="flow-phases">${phases}</ul>` +
     `<ol class="flow-rail">${steps}</ol>` +
-    `<div class="flow-cta"><a class="btn btn--primary" href="#experiences">${esc(t.flow.cta)}${icon(ctx, 'arrow', 'btn__arrow', 2)}</a></div>` +
+    `<div class="flow-cta"><a class="md-btn md-btn--filled md-state" href="#experiences">${esc(t.flow.cta)}${icon(ctx, 'arrow', 'md-btn__arrow', 2)}</a></div>` +
     '</div></section>'
   )
 }
@@ -1792,7 +2266,7 @@ function notices(t, ctx) {
       const conduct = group.icon === 'shield'
       return (
         `<div class="reveal" style="transition-delay:${i * 60}ms">` +
-        `<div class="notice${conduct ? ' notice--conduct' : ''}">` +
+        `<div class="md-card md-card--outlined notice${conduct ? ' notice--conduct' : ''}">` +
         '<div class="notice__head">' +
         icon(ctx, NOTICE_ICONS[group.icon] || 'shield', 'notice__icon') +
         `<h3 class="notice__title">${esc(group.title)}</h3></div>` +
@@ -1804,7 +2278,7 @@ function notices(t, ctx) {
     .join('')
 
   return (
-    '<section class="section section--sand" id="notices" aria-labelledby="notices-title"><div class="shell">' +
+    '<section class="section section--container" id="notices" aria-labelledby="notices-title"><div class="shell">' +
     sectionHead(t, t.notices.eyebrow, t.notices.heading, t.notices.lead, 'notices-title') +
     `<div class="notice-grid">${groups}</div></div></section>`
   )
@@ -1814,7 +2288,7 @@ function faq(t) {
   const items = t.faq.items
     .map(
       (item) =>
-        '<details class="faq-item"><summary>' +
+        '<details class="faq-item"><summary class="md-state">' +
         '<span class="faq-item__q" aria-hidden="true">Q</span>' +
         `<span class="faq-item__text">${esc(item.q)}</span>` +
         '<span class="faq-item__sign" aria-hidden="true"></span></summary>' +
@@ -1833,17 +2307,17 @@ function finalCta(t, ctx) {
   return (
     '<section class="cta-band" aria-labelledby="cta-title"><div class="shell cta-band__inner">' +
     `<h2 id="cta-title">${esc(t.finalCta.heading)}</h2><p>${esc(t.finalCta.body)}</p>` +
-    `<a class="btn btn--primary" href="#experiences">${esc(t.finalCta.button)}${icon(ctx, 'arrow', 'btn__arrow', 2)}</a>` +
+    `<a class="md-btn md-btn--md md-btn--filled md-state" href="#experiences">${esc(t.finalCta.button)}${icon(ctx, 'arrow', 'md-btn__arrow', 2)}</a>` +
     '</div></section>'
   )
 }
 
 function footer(t) {
   const legal = t.footer.legal
-    .map((label, i) => `<li><a href="${LEGAL_HREFS[i]}">${esc(label)}</a></li>`)
+    .map((label, i) => `<li><a class="md-state" href="${LEGAL_HREFS[i]}">${esc(label)}</a></li>`)
     .join('')
   const social = t.footer.social
-    .map((label, i) => `<a role="listitem" href="${SOCIAL_HREFS[i]}">${esc(label)}</a>`)
+    .map((label, i) => `<a class="md-chip md-state" role="listitem" href="${SOCIAL_HREFS[i]}">${esc(label)}</a>`)
     .join('')
 
   return (
@@ -1863,10 +2337,10 @@ function footer(t) {
 
 function stickyCta(t) {
   return (
-    '<div class="sticky-cta" data-visible="false" aria-hidden="true">' +
-    `<div class="sticky-cta__price">` +
+    '<div class="bottom-bar" data-visible="false" aria-hidden="true">' +
+    `<div class="bottom-bar__price">` +
     `<span class="val">${esc(t.experiences.items[0].price)}</span></div>` +
-    `<a class="btn btn--primary btn--sm btn--block" href="#how" tabindex="-1">${esc(t.hero.cta)}</a></div>`
+    `<a class="md-fab md-state" href="#how" tabindex="-1">${esc(t.hero.cta)}</a></div>`
   )
 }
 
@@ -1945,7 +2419,7 @@ function renderBody(t, ctx) {
   function onScroll() {
     var header = document.querySelector('.site-header');
     if (header) header.setAttribute('data-scrolled', String(window.scrollY > 8));
-    var bar = document.querySelector('.sticky-cta');
+    var bar = document.querySelector('.bottom-bar');
     if (bar) {
       var past = window.scrollY > window.innerHeight * 0.7;
       var nearBottom = window.innerHeight + window.scrollY > document.body.scrollHeight - 320;

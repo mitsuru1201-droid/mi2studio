@@ -19,7 +19,7 @@ export function Faq() {
         <div className="faq-list">
           {t.faq.items.map((item) => (
             <details className="faq-item" key={item.q}>
-              <summary>
+              <summary className="md-state">
                 <span className="faq-item__q" aria-hidden="true">
                   Q
                 </span>

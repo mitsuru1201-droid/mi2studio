@@ -11,7 +11,7 @@ export function Features() {
   const { t } = useLanguage()
 
   return (
-    <section className="section section--mist" id="why" aria-labelledby="why-title">
+    <section className="section section--container-low" id="why" aria-labelledby="why-title">
       <div className="shell">
         <SectionHead
           eyebrow={t.features.eyebrow}
@@ -23,7 +23,7 @@ export function Features() {
         <div className="feat-grid">
           {t.features.items.map((item, i) => (
             <Reveal key={item.title} delay={i * 70}>
-              <div className="feat">
+              <div className="md-card md-card--filled feat">
                 <div className="feat__icon">
                   <Icon name={ICONS[i]} />
                 </div>

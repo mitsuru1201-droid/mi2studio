@@ -18,27 +18,24 @@ export function Hero() {
     <section className="hero" id="top">
       <div className="shell hero-grid">
         <div className="hero-copy">
-          <p className="hero-eyebrow">
-            <span className="dot" aria-hidden="true" />
-            {t.hero.eyebrow}
-          </p>
+          <p className="md-chip md-chip--tonal hero-eyebrow">{t.hero.eyebrow}</p>
 
           <h1 className="hero-title">{t.hero.title}</h1>
           <p className="hero-sub">{t.hero.subtitle}</p>
 
           <div className="hero-actions">
-            <a className="btn btn--primary" href="#how">
+            <a className="md-btn md-btn--md md-btn--filled md-state" href="#how">
               {t.hero.cta}
-              <Icon name="arrow" className="btn__arrow" strokeWidth={2} />
+              <Icon name="arrow" className="md-btn__arrow" strokeWidth={2} />
             </a>
-            <a className="btn btn--ghost" href="#experiences">
+            <a className="md-btn md-btn--md md-btn--outlined md-state" href="#experiences">
               {t.hero.ctaSecondary}
             </a>
           </div>
 
           <ul className="trust">
             {t.hero.trust.map((label, i) => (
-              <li key={label}>
+              <li className="md-chip" key={label}>
                 <Icon name={TRUST_ICONS[i]} strokeWidth={2} />
                 {label}
               </li>

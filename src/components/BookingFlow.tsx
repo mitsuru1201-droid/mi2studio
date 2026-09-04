@@ -36,7 +36,7 @@ export function BookingFlow() {
                 <span className="num" aria-hidden="true">
                   {i + 1}
                 </span>
-                <span>{phase}</span>
+                <span className="label">{phase}</span>
                 <span className="range">
                   {t.flow.stepLabel} {from}–{to}
                 </span>
@@ -51,7 +51,7 @@ export function BookingFlow() {
               <span className="flow-step__node" aria-hidden="true">
                 {i + 1}
               </span>
-              <Reveal className="flow-step__card" delay={i * 40}>
+              <Reveal className="md-card md-card--outlined flow-step__card" delay={i * 40}>
                 <span className="flow-step__label">
                   {t.flow.stepLabel} {i + 1}
                 </span>
@@ -66,9 +66,9 @@ export function BookingFlow() {
         </ol>
 
         <div className="flow-cta">
-          <a className="btn btn--primary" href="#experiences">
+          <a className="md-btn md-btn--filled md-state" href="#experiences">
             {t.flow.cta}
-            <Icon name="arrow" className="btn__arrow" strokeWidth={2} />
+            <Icon name="arrow" className="md-btn__arrow" strokeWidth={2} />
           </a>
         </div>
       </div>

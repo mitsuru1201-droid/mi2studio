@@ -19,7 +19,7 @@ const readJson = (p) => JSON.parse(read(p))
 const LOCALES = ['en', 'ko', 'zh-TW', 'fr']
 const messages = Object.fromEntries(LOCALES.map((l) => [l, readJson(`messages/${l}.json`)]))
 const icons = readJson('src/icons.json')
-const css = read('src/styles/lp.css')
+const css = [read('src/styles/m3-color.css'), read('src/styles/lp.css')].join('\n')
 
 /**
  * Inline the scene art, letting CSS own the sizing. Only the root <svg> tag
@@ -107,7 +107,7 @@ const APP = `
   function onScroll() {
     var header = document.querySelector('.site-header');
     if (header) header.setAttribute('data-scrolled', String(window.scrollY > 8));
-    var bar = document.querySelector('.sticky-cta');
+    var bar = document.querySelector('.bottom-bar');
     if (bar) {
       var past = window.scrollY > window.innerHeight * 0.7;
       var nearBottom = window.innerHeight + window.scrollY > document.body.scrollHeight - 320;

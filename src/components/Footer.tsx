@@ -37,7 +37,7 @@ export function Footer() {
             <ul className="footer-links">
               {t.footer.legal.map((label, i) => (
                 <li key={label}>
-                  <a href={LEGAL_HREFS[i]}>{label}</a>
+                  <a className="md-state" href={LEGAL_HREFS[i]}>{label}</a>
                 </li>
               ))}
             </ul>
@@ -49,7 +49,7 @@ export function Footer() {
             </p>
             <div className="footer-social" role="list" aria-labelledby="footer-social">
               {t.footer.social.map((label, i) => (
-                <a key={label} role="listitem" href={SOCIAL_HREFS[i]}>
+                <a key={label} className="md-chip md-state" role="listitem" href={SOCIAL_HREFS[i]}>
                   {label}
                 </a>
               ))}

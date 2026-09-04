@@ -29,7 +29,7 @@ export function Experiences() {
         <div className="exp-grid">
           {t.experiences.items.map((item, i) => (
             <Reveal key={item.id} delay={i * 80}>
-              <article className="exp-card">
+              <article className="md-card md-card--elevated exp-card">
                 <div className="exp-media">
                   {/* Placeholder artwork — swap the src for WebP photography. */}
                   <img
@@ -50,12 +50,12 @@ export function Experiences() {
                   <p className="exp-price">{item.price}</p>
 
                   <ul className="exp-facts">
-                    <li>
+                    <li className="md-chip">
                       <Icon name="clock" />
                       <span className="visually-hidden">{labels.duration}: </span>
                       {item.duration}
                     </li>
-                    <li>
+                    <li className="md-chip">
                       <Icon name="users" />
                       <span className="visually-hidden">{labels.group}: </span>
                       {item.group}
@@ -84,7 +84,7 @@ export function Experiences() {
                   </div>
 
                   <div className="exp-cta">
-                    <a className="btn btn--ghost btn--sm btn--block" href="#how">
+                    <a className="md-btn md-btn--outlined md-btn--block md-state" href="#how">
                       {labels.book}
                     </a>
                   </div>

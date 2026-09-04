@@ -60,11 +60,13 @@ function brand() {
 
 function header(t, ctx) {
   const current = LOCALE_META.find((m) => m.code === ctx.locale) || LOCALE_META[0]
-  const nav = NAV_KEYS.map(([href, key]) => `<a href="${href}">${esc(t.nav[key])}</a>`).join('')
+  const nav = NAV_KEYS.map(
+    ([href, key]) => `<a class="md-btn md-btn--text md-state" href="${href}">${esc(t.nav[key])}</a>`,
+  ).join('')
   const options = LOCALE_META.map((m) => {
     const selected = m.code === ctx.locale
     return (
-      `<button type="button" class="lang__option" role="option" aria-selected="${selected}" ` +
+      `<button type="button" class="lang__option md-state" role="option" aria-selected="${selected}" ` +
       `lang="${m.htmlLang}" data-locale="${m.code}">` +
       `<span class="lang__flag" aria-hidden="true">${m.flag}</span>` +
       `<span class="lang__name">${esc(m.name)}</span>` +
@@ -74,13 +76,13 @@ function header(t, ctx) {
   }).join('')
 
   return (
-    '<header class="site-header" data-scrolled="false"><div class="shell header-inner">' +
-    `<a class="brand" href="#top">${brand()}</a>` +
+    '<header class="m3-top-app-bar" data-scrolled="false"><div class="shell top-app-bar__inner">' +
+    `<a class="brand md-state" href="#top">${brand()}</a>` +
     `<nav class="nav" aria-label="Primary">${nav}</nav>` +
-    '<div class="header-actions">' +
-    `<a class="btn btn--primary btn--sm header-cta" href="#how">${esc(t.hero.cta)}</a>` +
+    '<div class="top-app-bar__actions">' +
+    `<a class="md-btn md-btn--filled md-state top-app-bar__cta" href="#how">${esc(t.hero.cta)}</a>` +
     '<div class="lang">' +
-    `<button type="button" class="lang__btn" id="langBtn" aria-label="${esc(t.langSwitcher.label)}" ` +
+    `<button type="button" class="lang__btn md-state" id="langBtn" aria-label="${esc(t.langSwitcher.label)}" ` +
     'aria-haspopup="listbox" aria-expanded="false" aria-controls="langMenu">' +
     icon(ctx, 'globe', 'lang__globe') +
     `<span class="lang__code">${esc(current.code.toUpperCase())}</span>` +
@@ -100,17 +102,17 @@ function hero(t, ctx) {
   ).join('')
 
   const trust = t.hero.trust
-    .map((label, i) => `<li>${icon(ctx, TRUST_ICONS[i], '', 2)}${esc(label)}</li>`)
+    .map((label, i) => `<li class="md-chip">${icon(ctx, TRUST_ICONS[i], '', 2)}${esc(label)}</li>`)
     .join('')
 
   return (
     '<section class="hero" id="top"><div class="shell hero-grid"><div class="hero-copy">' +
-    `<p class="hero-eyebrow"><span class="dot" aria-hidden="true"></span>${esc(t.hero.eyebrow)}</p>` +
+    `<p class="md-chip md-chip--tonal hero-eyebrow">${esc(t.hero.eyebrow)}</p>` +
     `<h1 class="hero-title">${esc(t.hero.title)}</h1>` +
     `<p class="hero-sub">${esc(t.hero.subtitle)}</p>` +
     '<div class="hero-actions">' +
-    `<a class="btn btn--primary" href="#how">${esc(t.hero.cta)}${icon(ctx, 'arrow', 'btn__arrow', 2)}</a>` +
-    `<a class="btn btn--ghost" href="#experiences">${esc(t.hero.ctaSecondary)}</a></div>` +
+    `<a class="md-btn md-btn--md md-btn--filled md-state" href="#how">${esc(t.hero.cta)}${icon(ctx, 'arrow', 'md-btn__arrow', 2)}</a>` +
+    `<a class="md-btn md-btn--md md-btn--outlined md-state" href="#experiences">${esc(t.hero.ctaSecondary)}</a></div>` +
     `<ul class="trust">${trust}</ul></div>` +
     `<div class="hero-art" aria-hidden="true">${panels}</div></div></section>`
   )
@@ -132,22 +134,22 @@ function experiences(t, ctx) {
       const list = (items, mod) =>
         `<ul class="exp-list exp-list--${mod}">${items.map((x) => `<li>${esc(x)}</li>`).join('')}</ul>`
       return (
-        `<div class="reveal" style="transition-delay:${i * 80}ms"><article class="exp-card">` +
+        `<div class="reveal" style="transition-delay:${i * 80}ms"><article class="md-card md-card--elevated exp-card">` +
         `<div class="exp-media">${artFor(ctx, item.id, 'card')}` +
         `<span class="exp-media__index" aria-hidden="true">${String(i + 1).padStart(2, '0')}</span></div>` +
         '<div class="exp-body">' +
         `<h3 class="exp-title">${esc(item.title)}</h3>` +
         `<p class="exp-price">${esc(item.price)}</p>` +
         '<ul class="exp-facts">' +
-        `<li>${icon(ctx, 'clock')}<span class="visually-hidden">${esc(l.duration)}: </span>${esc(item.duration)}</li>` +
-        `<li>${icon(ctx, 'users')}<span class="visually-hidden">${esc(l.group)}: </span>${esc(item.group)}</li>` +
+        `<li class="md-chip">${icon(ctx, 'clock')}<span class="visually-hidden">${esc(l.duration)}: </span>${esc(item.duration)}</li>` +
+        `<li class="md-chip">${icon(ctx, 'users')}<span class="visually-hidden">${esc(l.group)}: </span>${esc(item.group)}</li>` +
         '</ul>' +
         `<p class="exp-desc">${esc(item.description)}</p>` +
         '<div class="exp-lists">' +
         `<div><p class="exp-list__title">${esc(l.included)}</p>${list(item.included, 'yes')}</div>` +
         `<div><p class="exp-list__title">${esc(l.notIncluded)}</p>${list(item.notIncluded, 'no')}</div>` +
         '</div>' +
-        `<div class="exp-cta"><a class="btn btn--ghost btn--sm btn--block" href="#how">${esc(l.book)}</a></div>` +
+        `<div class="exp-cta"><a class="md-btn md-btn--outlined md-btn--block md-state" href="#how">${esc(l.book)}</a></div>` +
         '</div></article></div>'
       )
     })
@@ -164,7 +166,7 @@ function features(t, ctx) {
   const items = t.features.items
     .map(
       (item, i) =>
-        `<div class="reveal" style="transition-delay:${i * 70}ms"><div class="feat">` +
+        `<div class="reveal" style="transition-delay:${i * 70}ms"><div class="md-card md-card--filled feat">` +
         `<div class="feat__icon">${icon(ctx, FEATURE_ICONS[i])}</div>` +
         `<h3 class="feat__title">${esc(item.title)}</h3>` +
         `<p class="feat__body">${esc(item.body)}</p></div></div>`,
@@ -172,7 +174,7 @@ function features(t, ctx) {
     .join('')
 
   return (
-    '<section class="section section--mist" id="why" aria-labelledby="why-title"><div class="shell">' +
+    '<section class="section section--container-low" id="why" aria-labelledby="why-title"><div class="shell">' +
     sectionHead(t, t.features.eyebrow, t.features.heading, t.features.lead, 'why-title') +
     `<div class="feat-grid">${items}</div></div></section>`
   )
@@ -184,7 +186,7 @@ function flow(t, ctx) {
       const [from, to] = PHASE_RANGES[i]
       return (
         '<li class="flow-phase-chip">' +
-        `<span class="num" aria-hidden="true">${i + 1}</span><span>${esc(phase)}</span>` +
+        `<span class="num" aria-hidden="true">${i + 1}</span><span class="label">${esc(phase)}</span>` +
         `<span class="range">${esc(t.flow.stepLabel)} ${from}–${to}</span></li>`
       )
     })
@@ -195,7 +197,7 @@ function flow(t, ctx) {
       (step, i) =>
         '<li class="flow-step">' +
         `<span class="flow-step__node" aria-hidden="true">${i + 1}</span>` +
-        `<div class="reveal flow-step__card" style="transition-delay:${i * 40}ms">` +
+        `<div class="reveal md-card md-card--outlined flow-step__card" style="transition-delay:${i * 40}ms">` +
         `<span class="flow-step__label">${esc(t.flow.stepLabel)} ${i + 1}</span>` +
         '<div class="flow-step__head">' +
         icon(ctx, STEP_ICONS[i], 'flow-step__icon') +
@@ -209,7 +211,7 @@ function flow(t, ctx) {
     sectionHead(t, t.flow.eyebrow, t.flow.heading, t.flow.lead, 'how-title') +
     `<ul class="flow-phases">${phases}</ul>` +
     `<ol class="flow-rail">${steps}</ol>` +
-    `<div class="flow-cta"><a class="btn btn--primary" href="#experiences">${esc(t.flow.cta)}${icon(ctx, 'arrow', 'btn__arrow', 2)}</a></div>` +
+    `<div class="flow-cta"><a class="md-btn md-btn--filled md-state" href="#experiences">${esc(t.flow.cta)}${icon(ctx, 'arrow', 'md-btn__arrow', 2)}</a></div>` +
     '</div></section>'
   )
 }
@@ -220,7 +222,7 @@ function notices(t, ctx) {
       const conduct = group.icon === 'shield'
       return (
         `<div class="reveal" style="transition-delay:${i * 60}ms">` +
-        `<div class="notice${conduct ? ' notice--conduct' : ''}">` +
+        `<div class="md-card md-card--outlined notice${conduct ? ' notice--conduct' : ''}">` +
         '<div class="notice__head">' +
         icon(ctx, NOTICE_ICONS[group.icon] || 'shield', 'notice__icon') +
         `<h3 class="notice__title">${esc(group.title)}</h3></div>` +
@@ -232,7 +234,7 @@ function notices(t, ctx) {
     .join('')
 
   return (
-    '<section class="section section--sand" id="notices" aria-labelledby="notices-title"><div class="shell">' +
+    '<section class="section section--container" id="notices" aria-labelledby="notices-title"><div class="shell">' +
     sectionHead(t, t.notices.eyebrow, t.notices.heading, t.notices.lead, 'notices-title') +
     `<div class="notice-grid">${groups}</div></div></section>`
   )
@@ -242,7 +244,7 @@ function faq(t) {
   const items = t.faq.items
     .map(
       (item) =>
-        '<details class="faq-item"><summary>' +
+        '<details class="faq-item"><summary class="md-state">' +
         '<span class="faq-item__q" aria-hidden="true">Q</span>' +
         `<span class="faq-item__text">${esc(item.q)}</span>` +
         '<span class="faq-item__sign" aria-hidden="true"></span></summary>' +
@@ -261,17 +263,17 @@ function finalCta(t, ctx) {
   return (
     '<section class="cta-band" aria-labelledby="cta-title"><div class="shell cta-band__inner">' +
     `<h2 id="cta-title">${esc(t.finalCta.heading)}</h2><p>${esc(t.finalCta.body)}</p>` +
-    `<a class="btn btn--primary" href="#experiences">${esc(t.finalCta.button)}${icon(ctx, 'arrow', 'btn__arrow', 2)}</a>` +
+    `<a class="md-btn md-btn--md md-btn--filled md-state" href="#experiences">${esc(t.finalCta.button)}${icon(ctx, 'arrow', 'md-btn__arrow', 2)}</a>` +
     '</div></section>'
   )
 }
 
 function footer(t) {
   const legal = t.footer.legal
-    .map((label, i) => `<li><a href="${LEGAL_HREFS[i]}">${esc(label)}</a></li>`)
+    .map((label, i) => `<li><a class="md-state" href="${LEGAL_HREFS[i]}">${esc(label)}</a></li>`)
     .join('')
   const social = t.footer.social
-    .map((label, i) => `<a role="listitem" href="${SOCIAL_HREFS[i]}">${esc(label)}</a>`)
+    .map((label, i) => `<a class="md-chip md-state" role="listitem" href="${SOCIAL_HREFS[i]}">${esc(label)}</a>`)
     .join('')
 
   return (
@@ -291,10 +293,10 @@ function footer(t) {
 
 function stickyCta(t) {
   return (
-    '<div class="sticky-cta" data-visible="false" aria-hidden="true">' +
-    `<div class="sticky-cta__price">` +
+    '<div class="bottom-bar" data-visible="false" aria-hidden="true">' +
+    `<div class="bottom-bar__price">` +
     `<span class="val">${esc(t.experiences.items[0].price)}</span></div>` +
-    `<a class="btn btn--primary btn--sm btn--block" href="#how" tabindex="-1">${esc(t.hero.cta)}</a></div>`
+    `<a class="md-fab md-state" href="#how" tabindex="-1">${esc(t.hero.cta)}</a></div>`
   )
 }
 

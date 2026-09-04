@@ -16,7 +16,7 @@ export function Notices() {
   const { t } = useLanguage()
 
   return (
-    <section className="section section--sand" id="notices" aria-labelledby="notices-title">
+    <section className="section section--container" id="notices" aria-labelledby="notices-title">
       <div className="shell">
         <SectionHead
           eyebrow={t.notices.eyebrow}
@@ -30,7 +30,7 @@ export function Notices() {
             const isConduct = group.icon === 'shield'
             return (
               <Reveal key={group.title} delay={i * 60}>
-                <div className={`notice${isConduct ? ' notice--conduct' : ''}`}>
+                <div className={`md-card md-card--outlined notice${isConduct ? ' notice--conduct' : ''}`}>
                   <div className="notice__head">
                     <Icon name={ICON_MAP[group.icon] ?? 'shield'} className="notice__icon" />
                     <h3 className="notice__title">{group.title}</h3>

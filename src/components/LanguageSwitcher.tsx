@@ -55,7 +55,7 @@ export function LanguageSwitcher() {
     <div className="lang" ref={rootRef}>
       <button
         type="button"
-        className="lang__btn"
+        className="lang__btn md-state"
         aria-label={t.langSwitcher.label}
         aria-haspopup="listbox"
         aria-expanded={open}
@@ -87,7 +87,7 @@ export function LanguageSwitcher() {
                 <button
                   key={meta.code}
                   type="button"
-                  className="lang__option"
+                  className="lang__option md-state"
                   role="option"
                   aria-selected={selected}
                   lang={meta.htmlLang}

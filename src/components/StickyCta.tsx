@@ -28,13 +28,13 @@ export function StickyCta() {
   }, [])
 
   return (
-    <div className="sticky-cta" data-visible={visible} aria-hidden={!visible}>
-      <div className="sticky-cta__price">
+    <div className="bottom-bar" data-visible={visible} aria-hidden={!visible}>
+      <div className="bottom-bar__price">
         {/* The price string is self-describing in every language ("From ¥…",
             "1인 ¥…부터"), so it needs no separate label. */}
         <span className="val">{t.experiences.items[0].price}</span>
       </div>
-      <a className="btn btn--primary btn--sm btn--block" href="#how" tabIndex={visible ? 0 : -1}>
+      <a className="md-fab md-state" href="#how" tabIndex={visible ? 0 : -1}>
         {t.hero.cta}
       </a>
     </div>
