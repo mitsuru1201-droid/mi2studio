@@ -1,0 +1,120 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Illustration of a JDM sports car on the Tokyo Metropolitan Expressway at night">
+  <defs>
+    <linearGradient id="j-sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0b1020"/><stop offset="0.55" stop-color="#16233f"/><stop offset="1" stop-color="#243654"/>
+    </linearGradient>
+    <linearGradient id="j-road" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2a3140"/><stop offset="1" stop-color="#171c26"/>
+    </linearGradient>
+    <linearGradient id="j-trail-r" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#e63946" stop-opacity="0"/><stop offset="1" stop-color="#ff5b66" stop-opacity="1"/>
+    </linearGradient>
+    <linearGradient id="j-trail-w" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#9fd4ff" stop-opacity="1"/><stop offset="1" stop-color="#9fd4ff" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="j-moon" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#ffffff" stop-opacity=".55"/><stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="j-halo" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#e63946" stop-opacity=".5"/><stop offset="1" stop-color="#e63946" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="400" height="300" fill="url(#j-sky)"/>
+
+  <!-- moon + stars -->
+  <circle cx="326" cy="46" r="34" fill="url(#j-moon)"/>
+  <circle cx="326" cy="46" r="12" fill="#f2f6ff" opacity=".9"/>
+  <g fill="#ffffff" opacity=".65">
+    <circle cx="58" cy="34" r="1.3"/><circle cx="122" cy="22" r="1"/><circle cx="196" cy="46" r="1.2"/>
+    <circle cx="252" cy="24" r="0.9"/><circle cx="88" cy="70" r="1"/><circle cx="374" cy="92" r="1.1"/>
+  </g>
+
+  <!-- city skyline -->
+  <g fill="#0e1626">
+    <rect x="0" y="120" width="34" height="80"/><rect x="36" y="98" width="26" height="102"/>
+    <rect x="66" y="132" width="30" height="68"/><rect x="100" y="86" width="22" height="114"/>
+    <rect x="126" y="116" width="34" height="84"/><rect x="164" y="104" width="20" height="96"/>
+    <rect x="188" y="126" width="30" height="74"/><rect x="222" y="94" width="26" height="106"/>
+    <rect x="252" y="122" width="22" height="78"/><rect x="278" y="110" width="34" height="90"/>
+    <rect x="316" y="130" width="24" height="70"/><rect x="344" y="100" width="56" height="100"/>
+  </g>
+  <!-- tokyo-tower-ish silhouette -->
+  <path d="M204 126l8-44 8 44-8 6z" fill="#0e1626"/>
+  <path d="M212 82v-12" stroke="#0e1626" stroke-width="2"/>
+  <!-- lit windows -->
+  <g fill="#ffd88a" opacity=".75">
+    <rect x="42" y="108" width="4" height="5"/><rect x="50" y="120" width="4" height="5"/>
+    <rect x="106" y="96" width="4" height="5"/><rect x="106" y="112" width="4" height="5"/>
+    <rect x="134" y="126" width="4" height="5"/><rect x="146" y="140" width="4" height="5"/>
+    <rect x="228" y="104" width="4" height="5"/><rect x="236" y="122" width="4" height="5"/>
+    <rect x="286" y="120" width="4" height="5"/><rect x="298" y="136" width="4" height="5"/>
+    <rect x="356" y="112" width="4" height="5"/><rect x="372" y="128" width="4" height="5"/>
+    <rect x="364" y="146" width="4" height="5"/>
+  </g>
+  <g fill="#9fd4ff" opacity=".5">
+    <rect x="70" y="146" width="4" height="5"/><rect x="196" y="140" width="4" height="5"/>
+    <rect x="322" y="144" width="4" height="5"/>
+  </g>
+
+  <!-- elevated expressway deck -->
+  <path d="M0 214c120-26 280-26 400 0v20c-120-26-280-26-400 0z" fill="#1d2533"/>
+  <path d="M0 200h400" stroke="#0b1020" stroke-width="0" />
+  <rect y="230" width="400" height="70" fill="url(#j-road)"/>
+  <!-- guard rail -->
+  <path d="M0 212c120-26 280-26 400 0" stroke="#3a475e" stroke-width="3" fill="none"/>
+  <g stroke="#38455c" stroke-width="2">
+    <path d="M40 208v10M100 202v10M160 199v10M220 199v10M280 202v10M340 208v10"/>
+  </g>
+
+  <!-- lane markings -->
+  <g stroke="#4d566b" stroke-width="3" stroke-linecap="round" opacity=".7">
+    <path d="M20 292h30M84 292h30M148 292h30M212 292h30M276 292h30M340 292h30"/>
+  </g>
+  <path d="M0 252h400" stroke="#39435a" stroke-width="1.5" opacity=".8"/>
+
+  <!-- light trails -->
+  <g opacity=".95">
+    <rect x="30" y="242" width="150" height="4" rx="2" fill="url(#j-trail-r)"/>
+    <rect x="60" y="250" width="120" height="3" rx="1.5" fill="url(#j-trail-r)"/>
+    <rect x="230" y="238" width="150" height="3.5" rx="1.75" fill="url(#j-trail-w)"/>
+    <rect x="250" y="246" width="120" height="2.5" rx="1.25" fill="url(#j-trail-w)"/>
+  </g>
+
+  <!-- the car: low coupe, three-quarter rear -->
+  <g transform="translate(96 226)">
+    <ellipse cx="104" cy="62" rx="112" ry="12" fill="#000" opacity=".35"/>
+    <circle cx="104" cy="34" r="86" fill="url(#j-halo)"/>
+    <!-- body -->
+    <path d="M8 52c-4-14 2-22 14-26l24-8 22-14c8-5 16-8 26-8h28c11 0 20 3 28 9l20 15 24 8c12 4 18 12 14 24z"
+          fill="#e63946"/>
+    <path d="M8 52c-4-14 2-22 14-26l24-8 22-14c8-5 16-8 26-8h28c11 0 20 3 28 9l20 15 24 8c12 4 18 12 14 24z"
+          fill="none" stroke="#ff8189" stroke-width="1.4" opacity=".8"/>
+    <!-- greenhouse -->
+    <path d="M70 20l16-11c6-4 12-6 20-6h24c9 0 16 2 22 7l14 10z" fill="#101826"/>
+    <path d="M74 18l14-9c5-4 10-5 17-5h22c8 0 14 2 19 6l12 8z" fill="#22334f" opacity=".85"/>
+    <!-- rear wing -->
+    <path d="M14 22h44v5H14zM20 27h6v10h-6zM48 27h6v10h-6z" fill="#1b2230"/>
+    <!-- tail lights -->
+    <rect x="10" y="36" width="26" height="7" rx="3.5" fill="#ff5b66"/>
+    <rect x="176" y="36" width="26" height="7" rx="3.5" fill="#ff5b66"/>
+    <rect x="10" y="36" width="26" height="7" rx="3.5" fill="#fff" opacity=".35"/>
+    <!-- side skirt / shading -->
+    <path d="M20 52h172l-6 6H26z" fill="#a8232f"/>
+    <!-- wheels -->
+    <g>
+      <ellipse cx="52" cy="54" rx="20" ry="14" fill="#0d1219"/>
+      <ellipse cx="52" cy="54" rx="11" ry="7.5" fill="#8e97a6"/>
+      <ellipse cx="52" cy="54" rx="4" ry="3" fill="#4a5361"/>
+      <ellipse cx="158" cy="54" rx="20" ry="14" fill="#0d1219"/>
+      <ellipse cx="158" cy="54" rx="11" ry="7.5" fill="#8e97a6"/>
+      <ellipse cx="158" cy="54" rx="4" ry="3" fill="#4a5361"/>
+    </g>
+    <!-- exhaust glow -->
+    <circle cx="90" cy="52" r="4" fill="#2b323d"/>
+    <circle cx="118" cy="52" r="4" fill="#2b323d"/>
+  </g>
+
+  <!-- foreground ground reflection -->
+  <rect y="286" width="400" height="14" fill="#0d1219" opacity=".5"/>
+</svg>

@@ -1,0 +1,248 @@
+{
+  "meta": {
+    "title": "REAL JAPAN NOW — Not tourism. Join everyday life in Japan.",
+    "description": "Vintage shopping, home cooking and JDM night drives in Tokyo, hosted by verified locals. Small groups of 1–4 people. Available in English, 한국어, 繁體中文 and Français.",
+    "keywords": "Tokyo experience, local experience Japan, vintage shopping Tokyo, Japanese home cooking, JDM night drive, things to do in Tokyo"
+  },
+  "nav": {
+    "experiences": "Experiences",
+    "why": "Why us",
+    "how": "How to book",
+    "notices": "Before booking",
+    "faq": "FAQ"
+  },
+  "langSwitcher": {
+    "label": "Change language",
+    "heading": "Language"
+  },
+  "hero": {
+    "eyebrow": "Tokyo · Hosted by locals",
+    "title": "Not tourism. Join everyday life in Japan.",
+    "subtitle": "Vintage shops with locals, home-cooked Japanese meals, midnight highway drives with JDM car owners. Experience the real Japan, at your own pace.",
+    "cta": "Book an Experience",
+    "ctaSecondary": "See the 3 experiences",
+    "trust": [
+      "ID-verified hosts",
+      "1–4 people",
+      "4 languages",
+      "Free cancellation 48h before"
+    ],
+    "scenes": ["Vintage", "Home cooking", "Night drive"]
+  },
+  "experiences": {
+    "eyebrow": "Experiences",
+    "heading": "3 Experiences",
+    "lead": "Pick one. Three to four hours with someone who actually lives here.",
+    "labels": {
+      "duration": "Duration",
+      "group": "Group size",
+      "included": "What's included",
+      "notIncluded": "Not included",
+      "book": "Book this experience"
+    },
+    "items": [
+      {
+        "id": "vintage",
+        "title": "Vintage Hunting in Tokyo",
+        "price": "From ¥18,750 / person",
+        "duration": "3 hours",
+        "group": "1–4 people",
+        "description": "Explore 5-7 vintage shops unknown to tourists with a local fashion enthusiast. Includes coordination advice to find your own unique Japanese style.",
+        "included": ["5–7 vintage shops", "Coordination advice", "Photo spot guidance"],
+        "notIncluded": ["Purchase cost", "Food and drinks", "Transportation"]
+      },
+      {
+        "id": "cooking",
+        "title": "Home Cooking Experience",
+        "price": "From ¥22,500 / person",
+        "duration": "3 hours",
+        "group": "1–4 people",
+        "description": "Cook and eat with a Japanese family at home. Experience \"authentic home cooking\" and Japanese food culture that you can't get from tourism.",
+        "included": ["Cooking 2–3 dishes", "The meal", "Food culture explanation", "Recipes to take home"],
+        "notIncluded": ["Transportation", "Alcohol (available to order)"]
+      },
+      {
+        "id": "jdm",
+        "title": "JDM Night Drive & Photo Session",
+        "price": "From ¥37,500 / person",
+        "duration": "4 hours (19:00–23:00)",
+        "group": "1–3 people",
+        "description": "Night drive on the Metropolitan Expressway with a JDM car owner. Take professional-level photos at photo spots and deeply experience Japanese car culture.",
+        "included": ["Metropolitan Expressway night drive", "3–4 photo spots", "Car talk", "Photo advice", "Light snacks and drinks"],
+        "notIncluded": ["Meals (light snacks excluded)", "Hotel transfer"]
+      }
+    ]
+  },
+  "features": {
+    "eyebrow": "Why us",
+    "heading": "Why Choose REAL JAPAN NOW",
+    "lead": "Small, safe, and genuinely local.",
+    "items": [
+      {
+        "title": "Authentic Everyday Experience",
+        "body": "Not tourist spots, but places only locals know. Relaxed atmosphere like spending time with friends."
+      },
+      {
+        "title": "Safety & Security",
+        "body": "ID verification required for all participants. Only verified hosts provide experiences. 24-hour support system."
+      },
+      {
+        "title": "Small Group",
+        "body": "Small groups of 1-4 people for personalized attention. Enjoy at your own pace."
+      },
+      {
+        "title": "Multilingual Support",
+        "body": "Support in English, Korean, Traditional Chinese, and French. LINE customer support available."
+      }
+    ]
+  },
+  "flow": {
+    "eyebrow": "How to book",
+    "heading": "How to Book",
+    "lead": "Seven clear steps, from choosing an experience to leaving a review.",
+    "phases": [
+      "Book online",
+      "Verify & pay",
+      "On the day & after"
+    ],
+    "stepLabel": "Step",
+    "cta": "Start booking",
+    "steps": [
+      {
+        "title": "Choose Experience",
+        "body": "Choose your favorite from 3 experiences. Select date and number of people."
+      },
+      {
+        "title": "Enter Personal Information",
+        "body": "Enter name, date of birth, nationality, and contact information."
+      },
+      {
+        "title": "Submit ID",
+        "body": "Upload passport, residence card, or driver's license image. Encrypted and securely stored (automatically deleted after 30 days)."
+      },
+      {
+        "title": "Payment",
+        "body": "Full payment by credit card, LINE Pay, Apple Pay, or Google Pay."
+      },
+      {
+        "title": "Booking Confirmation",
+        "body": "Confirmation email sent. LINE reminder the day before the experience."
+      },
+      {
+        "title": "Enjoy the Experience",
+        "body": "Meet your host on the day. Enjoy the experience to the fullest."
+      },
+      {
+        "title": "Submit Review",
+        "body": "Submit a review after the experience. Get a discount coupon for next time."
+      }
+    ]
+  },
+  "notices": {
+    "eyebrow": "Before booking",
+    "heading": "Important Notices Before Booking",
+    "lead": "Please read this before you book.",
+    "groups": [
+      {
+        "icon": "id",
+        "title": "Required Items",
+        "items": [
+          "ID submission is required for all participants (passport, residence card, driver's license, or My Number card).",
+          "Vintage shopping & home cooking: 18 years and older.",
+          "JDM car experience: 20 years and older (driver's license required).",
+          "Full payment at booking. The cancellation policy applies.",
+          "Free cancellation up to 48 hours before the experience; 50% after that; 100% on the day."
+        ]
+      },
+      {
+        "icon": "health",
+        "title": "Health & Allergies",
+        "items": [
+          "Home cooking: allergies and religious dietary restrictions must be declared in advance.",
+          "JDM car experience: pre-existing conditions and medication use must be declared in advance."
+        ]
+      },
+      {
+        "icon": "camera",
+        "title": "Photo & Video Recording",
+        "items": [
+          "Photos and video during the experience require the host's permission.",
+          "Posting on social media requires individual consent."
+        ]
+      },
+      {
+        "icon": "shield",
+        "title": "Code of Conduct",
+        "intro": "The following are prohibited during all experiences:",
+        "items": [
+          "Alcohol and drugs",
+          "Violence and threats",
+          "Unauthorized photography or recording",
+          "Theft and damage",
+          "Sexual harassment",
+          "Political or religious solicitation",
+          "Commercial activity"
+        ]
+      }
+    ]
+  },
+  "faq": {
+    "eyebrow": "FAQ",
+    "heading": "Frequently Asked Questions",
+    "lead": "Still wondering about something? Start here.",
+    "items": [
+      {
+        "q": "Is ID submission required?",
+        "a": "Yes, ID submission is required for all participants for safety. Please submit a passport, residence card, driver's license, or My Number card."
+      },
+      {
+        "q": "Can I cancel?",
+        "a": "Free cancellation up to 48 hours before the experience. A 50% cancellation fee applies after that, and 100% on the day."
+      },
+      {
+        "q": "What languages are supported?",
+        "a": "English, Korean, Traditional Chinese, and French. LINE customer support is also available."
+      },
+      {
+        "q": "Is it a small group?",
+        "a": "Yes, small groups of 1-4 people for personalized attention."
+      },
+      {
+        "q": "What happens in case of rain?",
+        "a": "Vintage shopping and the JDM car experience will be changed to indoor-focused plans. Home cooking is indoors, so there is no impact."
+      },
+      {
+        "q": "I have allergies, can you accommodate?",
+        "a": "Yes, please declare allergies at booking. The host will adjust the ingredients."
+      },
+      {
+        "q": "Can I take photos?",
+        "a": "Yes, taking photos during the experience is possible. However, the host's permission is required, and individual consent is obtained for social media posting."
+      },
+      {
+        "q": "What payment methods are accepted?",
+        "a": "Credit cards (Visa, Mastercard, JCB, Amex), LINE Pay, Apple Pay, and Google Pay."
+      }
+    ]
+  },
+  "finalCta": {
+    "heading": "Ready to leave the tourist trail?",
+    "body": "Three experiences. Small groups. Real people who actually live here.",
+    "button": "Book an Experience"
+  },
+  "footer": {
+    "tagline": "Not tourism. Join everyday life in Japan.",
+    "legalHeading": "Information",
+    "legal": [
+      "Terms of Service",
+      "Privacy Policy",
+      "Cancellation Policy",
+      "Code of Conduct",
+      "Disclaimer",
+      "Contact Us"
+    ],
+    "followHeading": "Follow",
+    "social": ["Instagram", "TikTok", "X (Twitter)", "LINE"],
+    "copyright": "© 2026 REAL JAPAN NOW. All rights reserved."
+  }
+}

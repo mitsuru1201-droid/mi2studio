@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Illustration of a Tokyo vintage clothing shop interior">
+  <defs>
+    <linearGradient id="v-wall" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f7f0e6"/><stop offset="1" stop-color="#eee3d3"/>
+    </linearGradient>
+    <linearGradient id="v-floor" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#d9c7ad"/><stop offset="1" stop-color="#c9b295"/>
+    </linearGradient>
+    <radialGradient id="v-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#ffd88a" stop-opacity=".75"/><stop offset="1" stop-color="#ffd88a" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="400" height="300" fill="url(#v-wall)"/>
+  <rect y="232" width="400" height="68" fill="url(#v-floor)"/>
+  <path d="M0 232h400" stroke="#b89e7d" stroke-width="1.5"/>
+
+  <!-- shop window, left -->
+  <rect x="18" y="42" width="78" height="112" rx="4" fill="#fdfaf4" stroke="#c9b295" stroke-width="2"/>
+  <path d="M57 42v112M18 98h78" stroke="#c9b295" stroke-width="2"/>
+  <rect x="18" y="42" width="78" height="112" rx="4" fill="url(#v-glow)" opacity=".7"/>
+
+  <!-- pendant lamp, right -->
+  <path d="M330 0v46" stroke="#8a7659" stroke-width="2"/>
+  <path d="M312 46h36l-9 16h-18z" fill="#2f3640"/>
+  <circle cx="330" cy="70" r="6" fill="#ffd88a"/>
+  <circle cx="330" cy="70" r="42" fill="url(#v-glow)"/>
+
+  <!-- clothing rail -->
+  <rect x="108" y="86" width="212" height="6" rx="3" fill="#8f7f66"/>
+  <path d="M120 92v-28M308 92v-28" stroke="#8f7f66" stroke-width="4" stroke-linecap="round"/>
+
+  <!-- hanging garments -->
+  <g stroke="#7a6a52" stroke-width="1.6" fill="none">
+    <path d="M140 89v-6a4 4 0 1 1 4 4"/><path d="M180 89v-6a4 4 0 1 1 4 4"/>
+    <path d="M220 89v-6a4 4 0 1 1 4 4"/><path d="M260 89v-6a4 4 0 1 1 4 4"/>
+  </g>
+  <!-- denim jacket -->
+  <path d="M126 96h32l10 14-8 6-4-5v52h-28v-52l-4 5-8-6z" fill="#4a6fa5"/>
+  <path d="M142 96v67" stroke="#3a5a8c" stroke-width="1.6"/>
+  <!-- ochre coat -->
+  <path d="M166 96h30l11 15-8 6-4-5v66h-28v-66l-4 5-8-6z" fill="#d9a441"/>
+  <path d="M181 96v82" stroke="#bd8b2e" stroke-width="1.6"/>
+  <!-- terracotta shirt -->
+  <path d="M206 96h30l10 13-8 6-4-4v45h-26v-45l-4 4-8-6z" fill="#c96f4a"/>
+  <!-- olive jacket -->
+  <path d="M246 96h30l11 14-8 6-4-5v56h-28v-56l-4 5-8-6z" fill="#7d8b6a"/>
+  <path d="M261 96v75" stroke="#68765a" stroke-width="1.6"/>
+
+  <!-- price tag -->
+  <g transform="rotate(-12 300 132)">
+    <rect x="286" y="120" width="34" height="20" rx="4" fill="#fff" stroke="#e63946" stroke-width="1.6"/>
+    <path d="M292 128h22M292 133h14" stroke="#e63946" stroke-width="1.6" stroke-linecap="round"/>
+  </g>
+  <path d="M300 112v10" stroke="#8f7f66" stroke-width="1.4"/>
+
+  <!-- folded stack on floor -->
+  <g>
+    <rect x="40" y="196" width="62" height="12" rx="3" fill="#c96f4a"/>
+    <rect x="44" y="208" width="58" height="12" rx="3" fill="#4a6fa5"/>
+    <rect x="38" y="220" width="66" height="12" rx="3" fill="#7d8b6a"/>
+  </g>
+
+  <!-- floor mirror -->
+  <rect x="326" y="132" width="54" height="100" rx="27" fill="#f7f3ec" stroke="#b89e7d" stroke-width="2.5"/>
+  <path d="M340 214c0-30 6-52 20-66" stroke="#e4dccf" stroke-width="6" stroke-linecap="round" fill="none"/>
+
+  <!-- plant -->
+  <path d="M128 232v-26" stroke="#5f7a4f" stroke-width="3"/>
+  <path d="M128 208c-15-6-21-21-15-33 13 2 21 13 15 33zM128 214c13-8 18-23 12-33-13 3-19 15-12 33z" fill="#6f8f5c"/>
+  <path d="M114 232h28l-4 20h-20z" fill="#c96f4a"/>
+</svg>

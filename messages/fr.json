@@ -1,0 +1,248 @@
+{
+  "meta": {
+    "title": "REAL JAPAN NOW — Pas du tourisme. Rejoignez la vie quotidienne au Japon.",
+    "description": "Boutiques vintage, cuisine familiale et drives nocturnes JDM à Tokyo, avec des hôtes locaux vérifiés. Petits groupes de 1 à 4 personnes. Disponible en anglais, coréen, chinois traditionnel et français.",
+    "keywords": "expérience Tokyo, expérience locale Japon, friperie Tokyo, cuisine japonaise maison, drive nocturne JDM, que faire à Tokyo"
+  },
+  "nav": {
+    "experiences": "Expériences",
+    "why": "Pourquoi nous",
+    "how": "Réservation",
+    "notices": "À savoir",
+    "faq": "FAQ"
+  },
+  "langSwitcher": {
+    "label": "Changer de langue",
+    "heading": "Langue"
+  },
+  "hero": {
+    "eyebrow": "Tokyo · Avec des hôtes locaux",
+    "title": "Pas du tourisme. Rejoignez la vie quotidienne au Japon.",
+    "subtitle": "Des boutiques vintage avec des locaux, des repas japonais faits maison, des drives nocturnes sur l'autoroute avec des propriétaires de voitures JDM. Découvrez le vrai Japon, à votre rythme.",
+    "cta": "Réserver une expérience",
+    "ctaSecondary": "Voir les 3 expériences",
+    "trust": [
+      "Hôtes vérifiés",
+      "1 à 4 personnes",
+      "4 langues",
+      "Annulation gratuite 48 h avant"
+    ],
+    "scenes": ["Vintage", "Cuisine maison", "Drive nocturne"]
+  },
+  "experiences": {
+    "eyebrow": "Expériences",
+    "heading": "3 Expériences",
+    "lead": "Choisissez-en une. Trois à quatre heures avec quelqu'un qui vit vraiment ici.",
+    "labels": {
+      "duration": "Durée",
+      "group": "Taille du groupe",
+      "included": "Ce qui est inclus",
+      "notIncluded": "Non inclus",
+      "book": "Réserver cette expérience"
+    },
+    "items": [
+      {
+        "id": "vintage",
+        "title": "Chasse au vintage à Tokyo",
+        "price": "À partir de ¥18 750 / pers.",
+        "duration": "3 heures",
+        "group": "1 à 4 personnes",
+        "description": "Explorez 5 à 7 boutiques vintage inconnues des touristes avec un passionné de mode local. Conseils de coordination inclus pour trouver votre propre style japonais unique.",
+        "included": ["5 à 7 boutiques vintage", "Conseils de style", "Guidage vers les spots photo"],
+        "notIncluded": ["Vos achats", "Nourriture et boissons", "Transport"]
+      },
+      {
+        "id": "cooking",
+        "title": "Cuisine en famille japonaise",
+        "price": "À partir de ¥22 500 / pers.",
+        "duration": "3 heures",
+        "group": "1 à 4 personnes",
+        "description": "Cuisinez et mangez avec une famille japonaise à la maison. Découvrez la « vraie cuisine familiale » et la culture alimentaire japonaise que vous ne pouvez pas obtenir du tourisme.",
+        "included": ["Préparation de 2 à 3 plats", "Le repas", "Explications sur la culture culinaire", "Recettes à emporter"],
+        "notIncluded": ["Transport", "Alcool (en supplément)"]
+      },
+      {
+        "id": "jdm",
+        "title": "Drive nocturne JDM & séance photo",
+        "price": "À partir de ¥37 500 / pers.",
+        "duration": "4 heures (19 h – 23 h)",
+        "group": "1 à 3 personnes",
+        "description": "Conduite nocturne sur l'autoroute métropolitaine avec un propriétaire de voiture JDM. Prenez des photos de niveau professionnel aux spots photo et découvrez profondément la culture automobile japonaise.",
+        "included": ["Drive nocturne sur l'autoroute métropolitaine", "3 à 4 spots photo", "Discussions autour des voitures", "Conseils photo", "Snacks et boissons"],
+        "notIncluded": ["Repas (hors snacks)", "Transfert depuis l'hôtel"]
+      }
+    ]
+  },
+  "features": {
+    "eyebrow": "Pourquoi nous",
+    "heading": "Pourquoi choisir REAL JAPAN NOW",
+    "lead": "Petit, sûr, et vraiment local.",
+    "items": [
+      {
+        "title": "Le quotidien, pour de vrai",
+        "body": "Pas des spots touristiques, mais des endroits que seuls les locaux connaissent. Une atmosphère détendue comme passer du temps avec des amis."
+      },
+      {
+        "title": "Sécurité et confiance",
+        "body": "Vérification d'identité requise pour tous les participants. Seuls les hôtes vérifiés fournissent des expériences. Système de support 24h/24."
+      },
+      {
+        "title": "Petits groupes",
+        "body": "Petits groupes de 1 à 4 personnes pour une attention personnalisée. Profitez à votre rythme."
+      },
+      {
+        "title": "Support multilingue",
+        "body": "Support en anglais, coréen, chinois traditionnel et français. Support client LINE disponible."
+      }
+    ]
+  },
+  "flow": {
+    "eyebrow": "Réservation",
+    "heading": "Comment réserver",
+    "lead": "Sept étapes claires, du choix de l'expérience à l'avis final.",
+    "phases": [
+      "Réservation en ligne",
+      "Vérification et paiement",
+      "Le jour J et après"
+    ],
+    "stepLabel": "Étape",
+    "cta": "Commencer la réservation",
+    "steps": [
+      {
+        "title": "Choisir l'expérience",
+        "body": "Choisissez votre préférée parmi 3 expériences. Sélectionnez la date et le nombre de personnes."
+      },
+      {
+        "title": "Saisir vos informations",
+        "body": "Entrez nom, date de naissance, nationalité et informations de contact."
+      },
+      {
+        "title": "Envoyer votre pièce d'identité",
+        "body": "Téléchargez une image de passeport, carte de séjour ou permis de conduire. Crypté et stocké en toute sécurité (automatiquement supprimé après 30 jours)."
+      },
+      {
+        "title": "Paiement",
+        "body": "Paiement intégral par carte de crédit, LINE Pay, Apple Pay ou Google Pay."
+      },
+      {
+        "title": "Confirmation de réservation",
+        "body": "Email de confirmation envoyé. Rappel LINE la veille de l'expérience."
+      },
+      {
+        "title": "Vivre l'expérience",
+        "body": "Rencontrez votre hôte le jour même. Profitez pleinement de l'expérience."
+      },
+      {
+        "title": "Laisser un avis",
+        "body": "Soumettez un avis après l'expérience. Obtenez un coupon de réduction pour la prochaine fois."
+      }
+    ]
+  },
+  "notices": {
+    "eyebrow": "À savoir",
+    "heading": "Avis importants avant la réservation",
+    "lead": "À lire avant de réserver.",
+    "groups": [
+      {
+        "icon": "id",
+        "title": "Conditions requises",
+        "items": [
+          "Pièce d'identité obligatoire pour tous les participants (passeport, carte de séjour, permis de conduire ou carte My Number).",
+          "Shopping vintage et cuisine familiale : 18 ans et plus.",
+          "Expérience voiture JDM : 20 ans et plus (permis de conduire requis).",
+          "Paiement intégral à la réservation. La politique d'annulation s'applique.",
+          "Annulation gratuite jusqu'à 48 h avant l'expérience ; 50 % ensuite ; 100 % le jour même."
+        ]
+      },
+      {
+        "icon": "health",
+        "title": "Santé et allergies",
+        "items": [
+          "Cuisine familiale : les allergies et restrictions religieuses doivent être déclarées à l'avance.",
+          "Expérience voiture JDM : les conditions préexistantes et l'utilisation de médicaments doivent être déclarées à l'avance."
+        ]
+      },
+      {
+        "icon": "camera",
+        "title": "Photos et vidéos",
+        "items": [
+          "La prise de photos et vidéos pendant l'expérience nécessite la permission de l'hôte.",
+          "La publication sur les réseaux sociaux nécessite un consentement individuel."
+        ]
+      },
+      {
+        "icon": "shield",
+        "title": "Règles de conduite",
+        "intro": "Les comportements suivants sont interdits pendant toutes les expériences :",
+        "items": [
+          "Alcool et drogues",
+          "Violence et menaces",
+          "Photos ou enregistrements non autorisés",
+          "Vol et dégradations",
+          "Harcèlement sexuel",
+          "Sollicitation politique ou religieuse",
+          "Activité commerciale"
+        ]
+      }
+    ]
+  },
+  "faq": {
+    "eyebrow": "FAQ",
+    "heading": "Questions fréquemment posées",
+    "lead": "Une question en suspens ? Commencez ici.",
+    "items": [
+      {
+        "q": "La pièce d'identité est-elle obligatoire ?",
+        "a": "Oui, la soumission d'identité est requise pour tous les participants pour la sécurité. Veuillez soumettre un passeport, une carte de séjour, un permis de conduire ou une carte My Number."
+      },
+      {
+        "q": "Puis-je annuler ?",
+        "a": "Annulation gratuite jusqu'à 48 heures avant l'expérience. Frais d'annulation de 50 % après, 100 % le jour même."
+      },
+      {
+        "q": "Quelles langues sont prises en charge ?",
+        "a": "Anglais, coréen, chinois traditionnel et français. Le support client LINE est également disponible."
+      },
+      {
+        "q": "Est-ce un petit groupe ?",
+        "a": "Oui, petits groupes de 1 à 4 personnes pour une attention personnalisée."
+      },
+      {
+        "q": "Que se passe-t-il en cas de pluie ?",
+        "a": "Le shopping vintage et l'expérience voiture JDM seront changés en plans axés sur l'intérieur. La cuisine familiale est à l'intérieur, donc aucun impact."
+      },
+      {
+        "q": "J'ai des allergies, pouvez-vous vous adapter ?",
+        "a": "Oui, veuillez déclarer les allergies lors de la réservation. L'hôte ajustera les ingrédients."
+      },
+      {
+        "q": "Puis-je prendre des photos ?",
+        "a": "Oui, la prise de photos pendant l'expérience est possible. Cependant, la permission de l'hôte est requise, et un consentement individuel est obtenu pour la publication sur les réseaux sociaux."
+      },
+      {
+        "q": "Quels modes de paiement sont acceptés ?",
+        "a": "Cartes de crédit (Visa, Mastercard, JCB, Amex), LINE Pay, Apple Pay, Google Pay."
+      }
+    ]
+  },
+  "finalCta": {
+    "heading": "Prêt à quitter les sentiers touristiques ?",
+    "body": "Trois expériences. Petits groupes. De vraies personnes qui vivent ici.",
+    "button": "Réserver une expérience"
+  },
+  "footer": {
+    "tagline": "Pas du tourisme. Rejoignez la vie quotidienne au Japon.",
+    "legalHeading": "Informations légales",
+    "legal": [
+      "Conditions d'utilisation",
+      "Politique de confidentialité",
+      "Politique d'annulation",
+      "Règles de conduite",
+      "Avertissement",
+      "Nous contacter"
+    ],
+    "followHeading": "Suivez-nous",
+    "social": ["Instagram", "TikTok", "X (Twitter)", "LINE"],
+    "copyright": "© 2026 REAL JAPAN NOW. All rights reserved."
+  }
+}

@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Illustration of a Japanese home-cooked meal laid out on a wooden table">
+  <defs>
+    <linearGradient id="c-table" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#e9d8bf"/><stop offset="1" stop-color="#d8c2a2"/>
+    </linearGradient>
+    <radialGradient id="c-light" cx="0.5" cy="0.18" r="0.75">
+      <stop offset="0" stop-color="#fff6e2" stop-opacity=".85"/><stop offset="1" stop-color="#fff6e2" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="c-rice" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#f0eadf"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="400" height="300" fill="url(#c-table)"/>
+  <g stroke="#c8ad88" stroke-width="1" opacity=".55">
+    <path d="M0 58h400M0 132h400M0 214h400M0 272h400"/>
+  </g>
+  <rect width="400" height="300" fill="url(#c-light)"/>
+
+  <!-- placemat -->
+  <rect x="34" y="74" width="332" height="176" rx="10" fill="#f4ece0" opacity=".85"/>
+  <rect x="34" y="74" width="332" height="176" rx="10" fill="none" stroke="#c8ad88" stroke-width="1.5" stroke-dasharray="6 5"/>
+
+  <!-- rice bowl -->
+  <g>
+    <ellipse cx="112" cy="196" rx="46" ry="13" fill="#00000012"/>
+    <path d="M66 156h92c-4 26-22 40-46 40s-42-14-46-40z" fill="#2f4a6b"/>
+    <ellipse cx="112" cy="156" rx="46" ry="12" fill="#3c5c82"/>
+    <ellipse cx="112" cy="155" rx="39" ry="9.5" fill="url(#c-rice)"/>
+    <path d="M88 152c8-4 16-5 24-5s16 1 24 5" stroke="#e2dbcd" stroke-width="1.4" fill="none"/>
+  </g>
+
+  <!-- miso soup bowl -->
+  <g>
+    <ellipse cx="232" cy="192" rx="40" ry="11" fill="#00000012"/>
+    <path d="M192 158h80c-3 23-19 35-40 35s-37-12-40-35z" fill="#7a3b2e"/>
+    <ellipse cx="232" cy="158" rx="40" ry="10.5" fill="#964a39"/>
+    <ellipse cx="232" cy="157" rx="33" ry="8" fill="#b5793f"/>
+    <g fill="#3f5b3a"><circle cx="220" cy="156" r="3"/><circle cx="240" cy="159" r="2.4"/></g>
+    <rect x="228" y="152" width="9" height="9" rx="1.5" fill="#f2ead6"/>
+  </g>
+
+  <!-- grilled fish on rectangular plate -->
+  <g>
+    <rect x="286" y="140" width="88" height="52" rx="6" fill="#eef1f3" stroke="#cdd4da" stroke-width="1.5"/>
+    <path d="M296 168c14-14 40-16 56-6l14-8-6 14 6 14-14-8c-16 10-42 8-56-6z" fill="#c9b08a"/>
+    <path d="M306 162c10-6 24-6 34 0M306 174c10 6 24 6 34 0" stroke="#a98d63" stroke-width="1.6" fill="none"/>
+    <circle cx="312" cy="166" r="2" fill="#4a4038"/>
+    <path d="M292 186h30" stroke="#9fb08a" stroke-width="4" stroke-linecap="round"/>
+  </g>
+
+  <!-- small side dishes -->
+  <g>
+    <circle cx="86" cy="112" r="22" fill="#eef1f3" stroke="#cdd4da" stroke-width="1.5"/>
+    <path d="M74 112c6-6 18-6 24 0-6 7-18 7-24 0z" fill="#6f8f5c"/>
+    <circle cx="86" cy="106" r="3" fill="#e0b13c"/>
+  </g>
+  <g>
+    <circle cx="150" cy="106" r="19" fill="#f6efe2" stroke="#d8c2a2" stroke-width="1.5"/>
+    <g fill="#c96f4a"><circle cx="145" cy="104" r="4.5"/><circle cx="155" cy="108" r="4"/><circle cx="152" cy="99" r="3.4"/></g>
+  </g>
+
+  <!-- chopsticks on rest -->
+  <g transform="rotate(-6 250 232)">
+    <rect x="182" y="228" width="132" height="4" rx="2" fill="#8f5a3c"/>
+    <rect x="182" y="236" width="132" height="4" rx="2" fill="#8f5a3c"/>
+    <rect x="286" y="224" width="18" height="20" rx="9" fill="#e2e7ea" stroke="#cdd4da" stroke-width="1.4"/>
+  </g>
+
+  <!-- teacup -->
+  <g>
+    <ellipse cx="332" cy="228" rx="24" ry="7" fill="#00000010"/>
+    <path d="M310 212h44c-2 14-11 22-22 22s-20-8-22-22z" fill="#3f5b3a"/>
+    <ellipse cx="332" cy="212" rx="22" ry="6" fill="#557a4d"/>
+    <ellipse cx="332" cy="211" rx="17" ry="4.6" fill="#8fae6a"/>
+  </g>
+
+  <!-- steam -->
+  <g stroke="#ffffff" stroke-width="3" stroke-linecap="round" fill="none" opacity=".7">
+    <path d="M104 132c-7-8 7-14 0-22"/>
+    <path d="M124 130c-7-8 7-13 0-20"/>
+    <path d="M226 136c-7-8 7-14 0-22"/>
+  </g>
+</svg>
