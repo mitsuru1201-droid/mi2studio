@@ -1,0 +1,542 @@
+<title>営業管理 画面試作</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+/* レイアウト：スマホは1カラム＋下タブ、PCは左メニュー＋本文。案件ボードは横スクロールの列 */
+:root{
+  --bg:#f3f5f8; --surface:#ffffff; --surface-2:#eef1f6; --line:#d9dee7;
+  --fg:#18202c; --muted:#5d6878; --accent:#1d5b8f; --accent-soft:#e3edf7;
+  --danger:#b4232c; --danger-soft:#fbe7e8; --warn:#9a5b00; --warn-soft:#fdf1dc;
+  --ok:#1f7a4d; --ok-soft:#e2f3ea; --shadow:0 1px 2px rgba(20,30,50,.06),0 2px 8px rgba(20,30,50,.05);
+  --font:"IBM Plex Sans JP","Hiragino Sans","Noto Sans JP",system-ui,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0f141b; --surface:#171e28; --surface-2:#1f2834; --line:#2c3746;
+  --fg:#e6ebf2; --muted:#98a4b5; --accent:#7fb3e3; --accent-soft:#1c3046;
+  --danger:#f08a8f; --danger-soft:#3a1d21; --warn:#e9b766; --warn-soft:#3a2d17;
+  --ok:#73cf9f; --ok-soft:#163327; --shadow:none; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0f141b; --surface:#171e28; --surface-2:#1f2834; --line:#2c3746;
+  --fg:#e6ebf2; --muted:#98a4b5; --accent:#7fb3e3; --accent-soft:#1c3046;
+  --danger:#f08a8f; --danger-soft:#3a1d21; --warn:#e9b766; --warn-soft:#3a2d17;
+  --ok:#73cf9f; --ok-soft:#163327; --shadow:none; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:var(--font);font-size:15px;line-height:1.6}
+button,input,select,textarea{font:inherit;color:inherit}
+button{cursor:pointer}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.num{font-family:var(--mono);font-variant-numeric:tabular-nums}
+
+.banner{background:var(--accent-soft);color:var(--accent);font-size:12.5px;padding-block:6px;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.shell{display:flex;min-height:100vh}
+.side{display:none}
+.main{flex:1;min-width:0;padding-block:16px 96px;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.tabbar{position:fixed;left:0;right:0;bottom:0;z-index:20;background:var(--surface);border-top:1px solid var(--line);
+  display:grid;grid-template-columns:repeat(4,1fr);padding-bottom:env(safe-area-inset-bottom,0px);
+  padding-left:env(safe-area-inset-left,0px);padding-right:env(safe-area-inset-right,0px)}
+.tabbar button{background:none;border:0;padding:8px 0 6px;font-size:11.5px;color:var(--muted);display:flex;flex-direction:column;align-items:center;gap:2px}
+.tabbar button[aria-current="page"]{color:var(--accent);font-weight:600}
+.tabbar svg,.side svg{width:22px;height:22px}
+.tabbar .rec span.dot{background:var(--accent);color:#fff;border-radius:999px;width:34px;height:34px;display:grid;place-items:center;margin-top:-4px}
+:root[data-theme="dark"] .tabbar .rec span.dot{color:#0f141b}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .tabbar .rec span.dot{color:#0f141b}}
+@media (min-width:860px){
+  .side{display:flex;flex-direction:column;gap:4px;width:220px;flex-shrink:0;background:var(--surface);border-right:1px solid var(--line);padding:20px 12px;position:sticky;top:0;height:100vh}
+  .side .brand{font-weight:700;font-size:17px;padding:0 10px 14px}
+  .side button{display:flex;gap:10px;align-items:center;background:none;border:0;text-align:left;padding:9px 10px;border-radius:8px;color:var(--fg)}
+  .side button[aria-current="page"]{background:var(--accent-soft);color:var(--accent);font-weight:600}
+  .side .who{margin-top:auto;font-size:13px;color:var(--muted);padding:10px;border-top:1px solid var(--line)}
+  .tabbar{display:none}
+  .main{padding-block:24px 40px;padding-left:32px;padding-right:32px}
+}
+
+h1{font-size:20px;margin:0;text-wrap:balance}
+h2{font-size:15px;margin:0 0 10px;color:var(--muted);font-weight:600;letter-spacing:.02em}
+.head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px;flex-wrap:wrap}
+.sub{color:var(--muted);font-size:13px}
+.btn{border:1px solid var(--line);background:var(--surface);border-radius:8px;padding:8px 14px;font-weight:500}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+:root[data-theme="dark"] .btn.primary{color:#0f141b}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .btn.primary{color:#0f141b}}
+.btn:disabled{opacity:.45;cursor:not-allowed}
+.link{background:none;border:0;color:var(--accent);padding:0;text-decoration:underline;text-underline-offset:3px}
+
+/* 集計ストリップ */
+.strip{display:flex;gap:8px;overflow-x:auto;margin-bottom:14px;padding-bottom:2px}
+.stat{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:8px 12px;flex-shrink:0;min-width:128px}
+.stat b{display:block;font-size:17px}
+.stat span{font-size:11.5px;color:var(--muted)}
+
+/* 案件ボード */
+.chips{display:flex;gap:6px;overflow-x:auto;margin-bottom:10px;padding-bottom:2px}
+.chip{flex-shrink:0;border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:4px 12px;font-size:13px}
+.chip[aria-pressed="true"]{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+.board-wrap{overflow-x:auto;scroll-snap-type:x mandatory;margin-inline:-4px;padding-inline:4px}
+.board{display:grid;grid-auto-flow:column;grid-auto-columns:86%;gap:12px}
+@media (min-width:860px){.board{grid-auto-columns:264px}}
+.col{scroll-snap-align:start;background:var(--surface-2);border-radius:12px;padding:10px;min-width:0}
+.col-h{display:flex;justify-content:space-between;align-items:baseline;font-weight:600;font-size:14px;padding:2px 4px 8px}
+.col-h small{color:var(--muted);font-weight:500}
+.cards{display:flex;flex-direction:column;gap:8px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:10px 12px;text-align:left;width:100%;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:4px}
+.card .t{font-weight:600}
+.card .row{display:flex;justify-content:space-between;gap:8px;font-size:13px;color:var(--muted)}
+.empty{color:var(--muted);font-size:13px;padding:8px 4px}
+.pill{display:inline-block;border-radius:999px;padding:1px 8px;font-size:12px;font-weight:600;white-space:nowrap}
+.p90{background:var(--ok-soft);color:var(--ok)} .p70{background:var(--accent-soft);color:var(--accent)}
+.p50,.p30,.p10{background:var(--surface-2);color:var(--muted)}
+.due{font-size:12.5px;display:flex;gap:6px;align-items:center}
+.due.over{color:var(--danger)} .due.soon{color:var(--warn)}
+.tag{font-size:11px;font-weight:700;border-radius:4px;padding:0 5px;white-space:nowrap;flex-shrink:0;margin-top:2px}
+.due{align-items:flex-start}
+.col{align-self:start}
+.due.over .tag{background:var(--danger-soft)} .due.soon .tag{background:var(--warn-soft)}
+
+/* 詳細 */
+.back{margin-bottom:10px}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin-bottom:14px}
+.steps{display:flex;gap:4px;overflow-x:auto;margin:10px 0 2px}
+.steps span{flex:1;min-width:52px;text-align:center;font-size:11.5px;padding:4px 2px;border-radius:6px;background:var(--surface-2);color:var(--muted)}
+.steps span.done{background:var(--accent-soft);color:var(--accent)}
+.steps span.now{background:var(--accent);color:#fff;font-weight:600}
+:root[data-theme="dark"] .steps span.now{color:#0f141b}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .steps span.now{color:#0f141b}}
+.kv{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px 16px}
+.kv div{min-width:0}
+.kv dt{font-size:12px;color:var(--muted)} .kv dd{margin:0;font-weight:500;overflow-wrap:anywhere}
+.cols2{display:grid;gap:14px}
+@media (min-width:1100px){.cols2{grid-template-columns:1.1fr 1fr;align-items:start}}
+.field{display:flex;flex-direction:column;gap:4px;min-width:0}
+.field label{font-size:12.5px;color:var(--muted);font-weight:500}
+.field input,.field select,.field textarea{border:1px solid var(--line);background:var(--surface);border-radius:8px;padding:9px 10px;width:100%;font-size:16px}
+.field textarea{min-height:64px;resize:vertical}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.note{font-size:12.5px;color:var(--muted)}
+.lock{font-size:12.5px;background:var(--warn-soft);color:var(--warn);border-radius:8px;padding:6px 10px;margin-bottom:10px}
+.err{font-size:12.5px;color:var(--danger)}
+
+.tl{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px}
+.tl li{border-left:2px solid var(--line);padding-left:12px}
+.tl .meta{font-size:12.5px;color:var(--muted)}
+.tl .sum{font-weight:600;margin:2px 0}
+.tl details{font-size:13.5px}
+.tl summary{color:var(--accent);cursor:pointer;font-size:13px}
+.hear{display:grid;gap:4px;margin-top:6px}
+.hear b{font-size:12px;color:var(--muted);font-weight:500;display:block}
+
+/* 顧客一覧 */
+.search{display:flex;gap:8px;margin-bottom:10px}
+.search input{flex:1;min-width:0;border:1px solid var(--line);background:var(--surface);border-radius:8px;padding:9px 12px;font-size:16px}
+.list{display:flex;flex-direction:column;gap:8px}
+.cust{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:10px 12px;text-align:left;width:100%;display:grid;grid-template-columns:auto 1fr auto;gap:4px 10px;align-items:center}
+.prio{width:28px;height:28px;border-radius:7px;display:grid;place-items:center;font-weight:700;font-size:13px;grid-row:span 2}
+.prioA{background:var(--danger-soft);color:var(--danger)} .prioB{background:var(--warn-soft);color:var(--warn)} .prioC{background:var(--surface-2);color:var(--muted)}
+.cust .n{font-weight:600;min-width:0;overflow-wrap:anywhere}
+.cust .m{font-size:12.5px;color:var(--muted);grid-column:2 / 4}
+.cust .o{font-size:12.5px;color:var(--muted);text-align:right}
+.warnbox{background:var(--warn-soft);color:var(--warn);border-radius:8px;padding:8px 10px;font-size:13px}
+
+/* 下から出るシート */
+.sheet-bg{position:fixed;inset:0;background:rgba(10,15,25,.45);z-index:30;display:flex;align-items:flex-end;justify-content:center}
+.sheet{background:var(--bg);width:100%;max-width:640px;max-height:92vh;overflow-y:auto;border-radius:16px 16px 0 0;
+  padding-block:16px calc(16px + env(safe-area-inset-bottom,0px));padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+@media (min-width:860px){.sheet-bg{align-items:center}.sheet{border-radius:16px}}
+.sheet form{display:flex;flex-direction:column;gap:12px}
+.sheet fieldset{border:1px solid var(--line);border-radius:10px;padding:10px 12px;display:flex;flex-direction:column;gap:10px;margin:0;min-width:0}
+.sheet legend{font-size:13px;font-weight:600;padding:0 4px}
+.toast{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(84px + env(safe-area-inset-bottom,0px));background:var(--fg);color:var(--bg);padding:8px 16px;border-radius:999px;font-size:13.5px;z-index:40}
+@media (prefers-reduced-motion:no-preference){.sheet{animation:up .18s ease-out}@keyframes up{from{transform:translateY(24px);opacity:.6}}}
+</style>
+
+<div class="banner">画面の試作です。データはすべてダミーで、保存されません。金額はすべて税別です。</div>
+<div class="shell">
+  <nav class="side" id="side" aria-label="メインメニュー"></nav>
+  <main class="main" id="view"></main>
+</div>
+<nav class="tabbar" id="tabbar" aria-label="メインメニュー"></nav>
+<div id="overlay"></div>
+
+<script>
+// ---------- ダミーデータ（実在しない店舗・人物のみ） ----------
+const TODAY = new Date("2026-11-11T00:00:00");
+const USERS = [
+  {id:"u1",name:"ダミー部長",role:"manager"},
+  {id:"u2",name:"ダミー運用管理者",role:"admin"},
+  {id:"u3",name:"ダミー営業A",role:"sales"},
+  {id:"u4",name:"ダミー営業B",role:"sales"},
+  {id:"u5",name:"ダミー制作",role:"production"},
+];
+const ROLE = {manager:"部長",admin:"運用管理者",sales:"営業",production:"制作"};
+const STATUSES = ["未接触","アプローチ","面談","提案","見積","受注","失注","保留"];
+const FLOW = ["未接触","アプローチ","面談","提案","見積","受注"];
+const PROBS = [90,70,50,30,10];
+const PLANS = [{id:"p1",name:"月1企画",price:70000},{id:"p3",name:"月3企画",price:150000},{id:"p5",name:"月5企画",price:200000}];
+let me = "u3";
+
+const customers = [
+  {id:"c1",name:"サンプルモータース",ind:"車両販売店",area:"東京都 多摩",contact:"ダミー店長",phone:"042-000-0001",email:"info@sample-motors.example",portal:true,ig:"instagram.com/sample_motors",igDate:"2026-10-02",existing:false,prio:"A",owner:"u3",memo:"輸入SUVの在庫が多い。若手スタッフがSNS担当。"},
+  {id:"c2",name:"テストオート商会",ind:"車両販売店",area:"神奈川県 相模原",contact:"ダミー専務",phone:"042-000-0002",email:"",portal:true,ig:"",igDate:"",existing:false,prio:"A",owner:"u3",memo:""},
+  {id:"c3",name:"ダミーカスタム工房",ind:"カスタムショップ",area:"埼玉県 所沢",contact:"ダミー代表",phone:"04-0000-0003",email:"",portal:false,ig:"instagram.com/dummy_custom",igDate:"2026-11-08",existing:true,prio:"B",owner:"u4",memo:"既存の写真撮影案件あり。"},
+  {id:"c4",name:"サンプルパーツ製作所",ind:"パーツメーカー",area:"千葉県 柏",contact:"ダミー課長",phone:"04-0000-0004",email:"",portal:false,ig:"instagram.com/sample_parts",igDate:"2026-06-15",existing:false,prio:"B",owner:"u4",memo:""},
+  {id:"c5",name:"モデルカーズ販売",ind:"車両販売店",area:"東京都 練馬",contact:"ダミー店長",phone:"03-0000-0005",email:"",portal:true,ig:"",igDate:"",existing:false,prio:"C",owner:"u3",memo:""},
+  {id:"c6",name:"架空モータース",ind:"車両販売店",area:"東京都 八王子",contact:"ダミー社長",phone:"042-000-0006",email:"",portal:true,ig:"instagram.com/kakuu_motors",igDate:"2026-09-20",existing:false,prio:"A",owner:"u4",memo:""},
+  {id:"c7",name:"サンプル輸入車センター",ind:"車両販売店",area:"神奈川県 横浜",contact:"ダミー部長代理",phone:"045-000-0007",email:"",portal:true,ig:"instagram.com/sample_import",igDate:"2026-11-01",existing:false,prio:"B",owner:"u3",memo:""},
+  {id:"c8",name:"テスト二輪ショップ",ind:"カスタムショップ",area:"東京都 府中",contact:"ダミー店主",phone:"042-000-0008",email:"",portal:false,ig:"",igDate:"",existing:false,prio:"C",owner:"u4",memo:""},
+];
+const deals = [
+  {id:"d1",cust:"c1",status:"見積",prob:70,plan:"p3",monthly:150000,months:3,start:"2026-12",next:"見積書の回答を確認する電話",due:"2026-11-10",owner:"u3"},
+  {id:"d2",cust:"c2",status:"面談",prob:30,plan:"p1",monthly:70000,months:3,start:"2027-01",next:"2回目面談で事例動画を見せる",due:"2026-11-13",owner:"u3"},
+  {id:"d3",cust:"c3",status:"受注",prob:90,plan:"p5",monthly:200000,months:3,start:"2026-11",next:"",due:"",owner:"u4",wonAt:"2026-10-28"},
+  {id:"d4",cust:"c4",status:"提案",prob:50,plan:"p3",monthly:150000,months:3,start:"2027-01",next:"提案資料の修正版を送付",due:"2026-11-18",owner:"u4"},
+  {id:"d5",cust:"c5",status:"アプローチ",prob:10,plan:"p1",monthly:70000,months:3,start:"",next:"店長に電話でアポ取り",due:"2026-11-07",owner:"u3"},
+  {id:"d6",cust:"c6",status:"提案",prob:70,plan:"p5",monthly:180000,months:3,start:"2026-12",next:"社長同席の提案日を確定",due:"2026-11-12",owner:"u4"},
+  {id:"d7",cust:"c7",status:"未接触",prob:10,plan:"p1",monthly:70000,months:3,start:"",next:"紹介元から状況をヒアリング",due:"2026-11-20",owner:"u3"},
+  {id:"d8",cust:"c8",status:"保留",prob:10,plan:"p1",monthly:70000,months:3,start:"2027-04",next:"春の繁忙期前に再連絡",due:"2027-02-01",owner:"u4",hold:"予算確定が3月"},
+  {id:"d9",cust:"c1",status:"失注",prob:10,plan:"p1",monthly:70000,months:3,start:"",next:"",due:"",owner:"u3",lost:"他社で契約済み（2025年）"},
+];
+const activities = [
+  {id:"a1",deal:"d1",type:"面談",at:"2026-11-05 14:00",by:"u3",summary:"見積提示。月3企画で前向き",
+    h:{channels:"ポータル掲載のみ（月約8万円）。来店の7割がポータル経由",sns:"週1回程度の写真投稿。動画はなし",strengths:"輸入SUVの在庫30台前後。整備工場併設",decision:"社長が最終決定。12月の会議で判断",budget:"月15万円までなら可",reaction:"動画の効果は知りたい。反論：社内で撮影する時間がない",promise:"11/10に電話で回答をもらう"}},
+  {id:"a2",deal:"d1",type:"電話",at:"2026-10-28 11:30",by:"u3",summary:"面談日程を確定",h:{}},
+  {id:"a3",deal:"d2",type:"面談",at:"2026-11-04 16:00",by:"u3",summary:"初回面談。SNSは未着手",
+    h:{channels:"チラシと紹介中心",sns:"アカウントなし",strengths:"軽自動車の在庫が豊富",decision:"専務と社長の2名",budget:"未定",reaction:"効果が数字で見えるなら検討",promise:"他店の事例を次回見せる"}},
+];
+
+// ---------- 補助関数 ----------
+const $ = s => document.querySelector(s);
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const yen = n => "¥" + Number(n).toLocaleString("ja-JP");
+const user = id => USERS.find(u => u.id === id);
+const cust = id => customers.find(c => c.id === id);
+const plan = id => PLANS.find(p => p.id === id);
+const meU = () => user(me);
+const isAdmin = () => ["manager","admin"].includes(meU().role);
+// 編集できるか：部長・運用管理者は全件、営業は自分の担当のみ、制作は不可
+const canEdit = owner => isAdmin() || (meU().role === "sales" && owner === me);
+// 制作は受注案件のみ閲覧
+const visibleDeals = () => meU().role === "production" ? deals.filter(d => d.status === "受注") : deals;
+const daysUntil = d => Math.round((new Date(d + "T00:00:00") - TODAY) / 86400000);
+const fmtDate = d => { if(!d) return "—"; const [y,m,dd] = d.split("-"); return `${+m}/${+dd}`; };
+function dueHtml(d){
+  if(!d.due) return "";
+  const n = daysUntil(d.due);
+  const cls = n < 0 ? "over" : n <= 3 ? "soon" : "";
+  const tag = n < 0 ? `<span class="tag">${-n}日超過</span>` : n <= 3 ? `<span class="tag">${n === 0 ? "今日" : "あと" + n + "日"}</span>` : "";
+  return `<div class="due ${cls}">${tag}<span>${fmtDate(d.due)}　${esc(d.next)}</span></div>`;
+}
+const total = d => d.monthly * d.months;
+const norm = s => String(s||"").normalize("NFKC").replace(/株式会社|有限会社|\(株\)|（株）|\s|-|ー/g,"").toLowerCase();
+
+let statusFilter = "進行中";
+let custQuery = "", custPrio = "すべて";
+
+// ---------- ナビ ----------
+const ICON = {
+  deals:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="5" height="16" rx="1.5"/><rect x="10" y="4" width="5" height="11" rx="1.5"/><rect x="17" y="4" width="4" height="7" rx="1.5"/></svg>',
+  customers:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 10l1.5-5h13L20 10M4 10v9h16v-9M4 10h16M9 19v-5h6v5"/></svg>',
+  rec:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 5v14M5 12h14"/></svg>',
+  menu:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 7h16M4 12h16M4 17h16"/></svg>',
+};
+function renderNav(active){
+  const items = [["deals","案件"],["customers","顧客"],["rec","記録する"],["menu","メニュー"]];
+  $("#tabbar").innerHTML = items.map(([k,l]) =>
+    `<button data-nav="${k}" class="${k==="rec"?"rec":""}" ${k===active?'aria-current="page"':""}>${k==="rec"?`<span class="dot">${ICON.rec}</span>`:ICON[k]}<span>${l}</span></button>`).join("");
+  $("#side").innerHTML = `<div class="brand">営業管理</div>` + items.filter(i=>i[0]!=="rec").map(([k,l]) =>
+    `<button data-nav="${k}" ${k===active?'aria-current="page"':""}>${ICON[k]}${l}</button>`).join("")
+    + `<button data-nav="rec">${ICON.rec}活動を記録</button>`
+    + `<div class="who">${esc(meU().name)}<br>${ROLE[meU().role]}</div>`;
+}
+document.addEventListener("click", e => {
+  const n = e.target.closest("[data-nav]");
+  if(n){ const k = n.dataset.nav; if(k === "rec") openRecord(null); else location.hash = k; }
+  const g = e.target.closest("[data-go]"); if(g) location.hash = g.dataset.go;
+});
+
+// ---------- 案件ボード ----------
+function renderDeals(){
+  renderNav("deals");
+  const list = visibleDeals();
+  const active = list.filter(d => !["受注","失注","保留"].includes(d.status));
+  const forecast = active.reduce((s,d) => s + total(d) * d.prob / 100, 0);
+  const wonThisMonth = list.filter(d => d.status === "受注" && (d.wonAt||"").startsWith("2026-11")).reduce((s,d)=>s+total(d),0);
+  const over = active.filter(d => d.due && daysUntil(d.due) < 0).length;
+  const soon = active.filter(d => d.due && daysUntil(d.due) >= 0 && daysUntil(d.due) <= 3).length;
+  const filters = ["進行中","すべて","自分の担当"];
+  let cols = statusFilter === "進行中" ? ["未接触","アプローチ","面談","提案","見積"] : STATUSES;
+  const src = statusFilter === "自分の担当" ? list.filter(d => d.owner === me) : list;
+  if(meU().role === "production") cols = ["受注"];
+  $("#view").innerHTML = `
+    <div class="head"><h1>案件ボード</h1>${meU().role!=="production"?`<button class="btn primary" id="newDeal">＋ 新規案件</button>`:""}</div>
+    <div class="strip">
+      <div class="stat"><span>進行中の案件</span><b class="num">${active.length}件</b></div>
+      <div class="stat"><span>受注見込み（確度加重）</span><b class="num">${yen(Math.round(forecast))}</b></div>
+      <div class="stat"><span>期限超過</span><b class="num" style="color:var(--danger)">${over}件</b></div>
+      <div class="stat"><span>3日以内</span><b class="num" style="color:var(--warn)">${soon}件</b></div>
+    </div>
+    ${meU().role!=="production"?`<div class="chips">${filters.map(f=>`<button class="chip" data-f="${f}" aria-pressed="${f===statusFilter}">${f}</button>`).join("")}</div>`:`<p class="lock">制作の役割では、受注した案件だけが表示されます。</p>`}
+    <div class="board-wrap"><div class="board">
+      ${cols.map(st => { const ds = src.filter(d => d.status === st);
+        const sum = ds.reduce((s,d)=>s+total(d),0);
+        return `<section class="col"><div class="col-h">${st} <small>${ds.length}件・<span class="num">${yen(sum)}</span></small></div>
+          <div class="cards">${ds.length ? ds.map(cardHtml).join("") : `<div class="empty">案件はありません</div>`}</div></section>`; }).join("")}
+    </div></div>
+    <p class="note" style="margin-top:10px">スマホでは左右にスワイプして列を移動します。金額は「月額×契約月数」（税別）。</p>`;
+  document.querySelectorAll("[data-f]").forEach(b => b.onclick = () => { statusFilter = b.dataset.f; renderDeals(); });
+  const nd = $("#newDeal"); if(nd) nd.onclick = () => toast("新規案件の登録画面は実装時に作ります");
+}
+function cardHtml(d){
+  const c = cust(d.cust);
+  return `<button class="card" data-go="deal-${d.id}">
+    <div class="row"><span class="t" style="color:var(--fg)">${esc(c.name)}</span><span class="pill p${d.prob}">${d.prob}%</span></div>
+    <div class="row"><span>${plan(d.plan).name}・${d.months}ヶ月</span><span class="num">${yen(total(d))}</span></div>
+    ${dueHtml(d)}
+    ${d.status==="失注"?`<div class="due">失注理由：${esc(d.lost)}</div>`:""}
+    ${d.status==="保留"?`<div class="due">保留理由：${esc(d.hold)}</div>`:""}
+    <div class="row"><span>担当：${esc(user(d.owner).name)}</span></div>
+  </button>`;
+}
+
+// ---------- 案件詳細 ----------
+function renderDeal(id){
+  renderNav("deals");
+  const d = deals.find(x => x.id === id);
+  if(!d || !visibleDeals().includes(d)) { $("#view").innerHTML = `<p>この案件は表示できません。</p>`; return; }
+  const c = cust(d.cust), edit = canEdit(d.owner);
+  const idx = FLOW.indexOf(d.status);
+  const acts = activities.filter(a => a.deal === d.id).sort((a,b)=>b.at.localeCompare(a.at));
+  $("#view").innerHTML = `
+    <div class="back"><button class="link" data-go="deals">← 案件ボード</button></div>
+    <div class="head"><div><h1>${esc(c.name)}</h1><div class="sub">${esc(c.ind)}・${esc(c.area)}・担当 ${esc(user(d.owner).name)}</div></div>
+      ${edit?`<button class="btn primary" id="recBtn">活動を記録</button>`:""}</div>
+    ${!edit?`<div class="lock">閲覧のみです（${meU().role==="production"?"制作の役割は編集できません":"担当者ではないため編集できません"}）。</div>`:""}
+    <div class="steps">${FLOW.map((s,i)=>`<span class="${idx<0?"":i<idx?"done":i===idx?"now":""}">${s}</span>`).join("")}</div>
+    ${idx<0?`<p class="note">現在のステータス：<b>${d.status}</b></p>`:""}
+    <div class="cols2" style="margin-top:12px">
+      <div>
+        <div class="panel">
+          <h2>案件の状況</h2>
+          <div class="grid2">
+            <div class="field"><label for="st">ステータス</label><select id="st" ${edit?"":"disabled"}>${STATUSES.map(s=>`<option ${s===d.status?"selected":""}>${s}</option>`).join("")}</select></div>
+            <div class="field"><label for="pb">確度</label><select id="pb" ${edit?"":"disabled"}>${PROBS.map(p=>`<option value="${p}" ${p===d.prob?"selected":""}>${p}%</option>`).join("")}</select></div>
+          </div>
+          <div class="grid2" style="margin-top:10px">
+            <div class="field"><label for="nx">次回アクション（必須）</label><input id="nx" value="${esc(d.next)}" ${edit?"":"disabled"}></div>
+            <div class="field"><label for="du">期限（必須）</label><input id="du" type="date" value="${d.due}" ${edit?"":"disabled"}></div>
+          </div>
+          <p class="err" id="dealErr" hidden></p>
+          ${edit?`<div style="margin-top:10px"><button class="btn primary" id="saveDeal">変更を保存</button></div>`:""}
+        </div>
+        <div class="panel">
+          <h2>金額・プラン（税別）</h2>
+          <dl class="kv">
+            <div><dt>想定プラン</dt><dd>${plan(d.plan).name}</dd></div>
+            <div><dt>月額</dt><dd class="num">${yen(d.monthly)}</dd></div>
+            <div><dt>契約月数</dt><dd>${d.months}ヶ月</dd></div>
+            <div><dt>想定金額</dt><dd class="num">${yen(total(d))}</dd></div>
+            <div><dt>受注見込み（×確度）</dt><dd class="num">${yen(Math.round(total(d)*d.prob/100))}</dd></div>
+            <div><dt>開始希望月</dt><dd>${d.start ? d.start.replace("-","年")+"月" : "—"}</dd></div>
+          </dl>
+        </div>
+        <div class="panel">
+          <h2>顧客</h2>
+          <dl class="kv">
+            <div><dt>店舗担当者</dt><dd>${esc(c.contact)}</dd></div>
+            <div><dt>電話</dt><dd class="num">${esc(c.phone)}</dd></div>
+            <div><dt>優先度</dt><dd>${c.prio}</dd></div>
+          </dl>
+          <p style="margin:10px 0 0"><button class="link" data-go="customer-${c.id}">顧客の詳細を見る</button></p>
+        </div>
+      </div>
+      <div class="panel">
+        <h2>活動記録</h2>
+        ${acts.length ? `<ul class="tl">${acts.map(actHtml).join("")}</ul>` : `<p class="note">まだ記録がありません。</p>`}
+      </div>
+    </div>`;
+  const rb = $("#recBtn"); if(rb) rb.onclick = () => openRecord(d.id);
+  const sb = $("#saveDeal"); if(sb) sb.onclick = () => {
+    const st = $("#st").value, nx = $("#nx").value.trim(), du = $("#du").value;
+    const needNext = !["受注","失注"].includes(st);
+    if(needNext && (!nx || !du)) { const e = $("#dealErr"); e.textContent = "次回アクションと期限を入力してください（受注・失注のときは不要です）。"; e.hidden = false; return; }
+    Object.assign(d, {status:st, prob:+$("#pb").value, next:nx, due:du});
+    toast("保存しました"); renderDeal(id);
+  };
+}
+function actHtml(a){
+  const H = [["channels","現在の集客経路と費用"],["sns","SNSの現状"],["strengths","在庫と強み"],["decision","意思決定者と検討スケジュール"],["budget","予算感"],["reaction","反応と反論"],["promise","次の約束"]];
+  const filled = H.filter(([k]) => a.h && a.h[k]);
+  return `<li><div class="meta">${a.at.replace(/^2026-/,"").replace("-","/")}・${a.type}・${esc(user(a.by).name)}</div>
+    <div class="sum">${esc(a.summary)}</div>
+    ${filled.length?`<details><summary>ヒアリング内容（${filled.length}項目）</summary><div class="hear">${filled.map(([k,l])=>`<div><b>${l}</b>${esc(a.h[k])}</div>`).join("")}</div></details>`:""}</li>`;
+}
+
+// ---------- 活動を記録（シート） ----------
+function openRecord(dealId){
+  const mine = visibleDeals().filter(d => canEdit(d.owner) && !["失注"].includes(d.status));
+  if(!mine.length){ toast("記録できる案件がありません（閲覧のみの役割です）"); return; }
+  const cur = dealId ? deals.find(d=>d.id===dealId) : mine[0];
+  $("#overlay").innerHTML = `<div class="sheet-bg" id="bg"><div class="sheet" role="dialog" aria-label="活動を記録">
+    <div class="head"><h1>活動を記録</h1><button class="btn" id="close">閉じる</button></div>
+    <form id="recForm">
+      <div class="field"><label for="rd">案件</label><select id="rd">${mine.map(d=>`<option value="${d.id}" ${d===cur?"selected":""}>${esc(cust(d.cust).name)}（${d.status}）</option>`).join("")}</select></div>
+      <div class="grid2">
+        <div class="field"><label for="rt">種類</label><select id="rt">${["面談","電話","訪問","オンライン","メール","その他"].map(t=>`<option>${t}</option>`).join("")}</select></div>
+        <div class="field"><label for="ra">実施日時</label><input id="ra" type="datetime-local" value="2026-11-11T10:00"></div>
+      </div>
+      <div class="field"><label for="rs">概要</label><input id="rs" placeholder="例：2回目の面談。事例動画を見せた"></div>
+      <fieldset><legend>ヒアリング項目（分かった分だけでOK）</legend>
+        <div class="field"><label for="h1">現在の集客経路と費用</label><textarea id="h1"></textarea></div>
+        <div class="field"><label for="h2">SNSの現状</label><textarea id="h2"></textarea></div>
+        <div class="field"><label for="h3">在庫と強み</label><textarea id="h3"></textarea></div>
+        <div class="field"><label for="h4">意思決定者と検討スケジュール</label><textarea id="h4"></textarea></div>
+        <div class="field"><label for="h5">予算感</label><textarea id="h5"></textarea></div>
+        <div class="field"><label for="h6">反応と反論</label><textarea id="h6"></textarea></div>
+        <div class="field"><label for="h7">次の約束</label><textarea id="h7"></textarea></div>
+      </fieldset>
+      <fieldset><legend>次回アクションも更新</legend>
+        <div class="field"><label for="rn">次回アクション（必須）</label><input id="rn" value="${esc(cur.next)}"></div>
+        <div class="field"><label for="rdue">期限（必須）</label><input id="rdue" type="date" value="${cur.due}"></div>
+      </fieldset>
+      <p class="err" id="recErr" hidden></p>
+      <button class="btn primary" type="submit">記録する</button>
+    </form></div></div>`;
+  const close = () => $("#overlay").innerHTML = "";
+  $("#close").onclick = close;
+  $("#bg").onclick = e => { if(e.target.id === "bg") close(); };
+  $("#rd").onchange = () => { const d = deals.find(x=>x.id===$("#rd").value); $("#rn").value = d.next; $("#rdue").value = d.due; };
+  $("#recForm").onsubmit = e => {
+    e.preventDefault();
+    const err = $("#recErr");
+    if(!$("#rs").value.trim()){ err.textContent = "概要を入力してください。"; err.hidden = false; return; }
+    if(!$("#rn").value.trim() || !$("#rdue").value){ err.textContent = "次回アクションと期限を入力してください。"; err.hidden = false; return; }
+    const d = deals.find(x=>x.id===$("#rd").value);
+    const keys = ["channels","sns","strengths","decision","budget","reaction","promise"];
+    const h = {}; keys.forEach((k,i)=>{ const v = $("#h"+(i+1)).value.trim(); if(v) h[k]=v; });
+    activities.push({id:"a"+Date.now(),deal:d.id,type:$("#rt").value,at:$("#ra").value.replace("T"," "),by:me,summary:$("#rs").value.trim(),h});
+    d.next = $("#rn").value.trim(); d.due = $("#rdue").value;
+    close(); toast("記録しました"); location.hash = "deal-" + d.id; route();
+  };
+}
+
+// ---------- 顧客一覧 ----------
+function renderCustomers(){
+  renderNav("customers");
+  const visibleCust = meU().role === "production" ? customers.filter(c => deals.some(d => d.cust===c.id && d.status==="受注")) : customers;
+  const q = norm(custQuery);
+  const list = visibleCust.filter(c => (custPrio==="すべて"||c.prio===custPrio) && (!q || norm(c.name+c.area+c.ind).includes(q)));
+  $("#view").innerHTML = `
+    <div class="head"><h1>顧客一覧</h1>${meU().role!=="production"?`<div style="display:flex;gap:8px"><button class="btn" id="csv">CSV取り込み</button><button class="btn primary" id="newCust">＋ 新規顧客</button></div>`:""}</div>
+    <div class="search"><input id="q" type="search" placeholder="店舗名・エリア・業種で検索" value="${esc(custQuery)}"></div>
+    <div class="chips">${["すべて","A","B","C"].map(p=>`<button class="chip" data-p="${p}" aria-pressed="${p===custPrio}">${p==="すべて"?p:"優先度 "+p}</button>`).join("")}</div>
+    <p class="sub">${list.length}件</p>
+    <div class="list">${list.map(c => {
+      const stale = c.igDate && daysUntil(c.igDate) < -30;
+      return `<button class="cust" data-go="customer-${c.id}">
+        <span class="prio prio${c.prio}">${c.prio}</span>
+        <span class="n">${esc(c.name)}</span><span class="o">${esc(user(c.owner).name)}</span>
+        <span class="m">${esc(c.ind)}・${esc(c.area)}　IG ${c.ig ? (stale ? `<span style="color:var(--warn)">${fmtDate(c.igDate)} 更新（30日以上止まっている）</span>` : fmtDate(c.igDate)+" 更新") : "なし"}</span>
+      </button>`;}).join("") || `<p class="note">該当する顧客がありません。</p>`}</div>`;
+  const qi = $("#q"); qi.oninput = () => { custQuery = qi.value; const pos = qi.selectionStart; renderCustomers(); const n = $("#q"); n.focus(); n.setSelectionRange(pos,pos); };
+  document.querySelectorAll("[data-p]").forEach(b => b.onclick = () => { custPrio = b.dataset.p; renderCustomers(); });
+  const nc = $("#newCust"); if(nc) nc.onclick = openNewCustomer;
+  const cv = $("#csv"); if(cv) cv.onclick = () => toast("CSV取り込みは実装時に作ります（プレビュー→重複確認→取り込み）");
+}
+
+// ---------- 新規顧客（重複チェックの見本） ----------
+function openNewCustomer(){
+  $("#overlay").innerHTML = `<div class="sheet-bg" id="bg"><div class="sheet" role="dialog" aria-label="新規顧客">
+    <div class="head"><h1>新規顧客</h1><button class="btn" id="close">閉じる</button></div>
+    <form id="cf">
+      <p class="note">試しに「サンプル モータース」や電話「0420000001」と入れると、重複の警告が出ます。</p>
+      <div class="field"><label for="cn">店舗名（必須）</label><input id="cn"></div>
+      <div class="grid2">
+        <div class="field"><label for="cph">電話</label><input id="cph" inputmode="tel"></div>
+        <div class="field"><label for="cig">Instagram URL</label><input id="cig"></div>
+      </div>
+      <div id="dup"></div>
+      <div class="grid2">
+        <div class="field"><label for="cind">業種</label><select id="cind"><option>車両販売店</option><option>カスタムショップ</option><option>パーツメーカー</option></select></div>
+        <div class="field"><label for="cpr">優先度</label><select id="cpr"><option>A</option><option selected>B</option><option>C</option></select></div>
+      </div>
+      <p class="err" id="cerr" hidden></p>
+      <button class="btn primary" type="submit">登録する</button>
+    </form></div></div>`;
+  const close = () => $("#overlay").innerHTML = "";
+  $("#close").onclick = close; $("#bg").onclick = e => { if(e.target.id==="bg") close(); };
+  const check = () => {
+    const n = norm($("#cn").value), p = $("#cph").value.replace(/\D/g,""), ig = norm($("#cig").value);
+    const hits = customers.filter(c => (n && norm(c.name) === n) || (p.length >= 8 && c.phone.replace(/\D/g,"") === p) || (ig && c.ig && norm(c.ig).includes(ig.replace(/^https?:\/\/(www\.)?/,""))));
+    $("#dup").innerHTML = hits.length ? `<div class="warnbox">重複の可能性があります：${hits.map(c=>`<b>${esc(c.name)}</b>（担当 ${esc(user(c.owner).name)}）`).join("、")}。同じ店舗なら登録せず、既存の顧客を使ってください。</div>` : "";
+    return hits;
+  };
+  ["#cn","#cph","#cig"].forEach(s => $(s).oninput = check);
+  $("#cf").onsubmit = e => { e.preventDefault();
+    if(!$("#cn").value.trim()){ const er=$("#cerr"); er.textContent="店舗名を入力してください。"; er.hidden=false; return; }
+    const id = "c" + Date.now();
+    customers.push({id,name:$("#cn").value.trim(),ind:$("#cind").value,area:"—",contact:"",phone:$("#cph").value,email:"",portal:false,ig:$("#cig").value,igDate:"",existing:false,prio:$("#cpr").value,owner:me,memo:""});
+    close(); toast(check().length ? "重複の可能性ありのまま登録しました" : "登録しました"); location.hash = "customer-" + id;
+  };
+}
+
+// ---------- 顧客詳細 ----------
+function renderCustomer(id){
+  renderNav("customers");
+  const c = cust(id); if(!c){ $("#view").innerHTML = "<p>見つかりません。</p>"; return; }
+  const ds = visibleDeals().filter(d => d.cust === id);
+  const acts = activities.filter(a => ds.some(d => d.id === a.deal)).sort((a,b)=>b.at.localeCompare(a.at));
+  $("#view").innerHTML = `
+    <div class="back"><button class="link" data-go="customers">← 顧客一覧</button></div>
+    <div class="head"><div><h1>${esc(c.name)}</h1><div class="sub">${esc(c.ind)}・${esc(c.area)}</div></div>
+      <span class="prio prio${c.prio}" style="width:auto;padding:2px 10px">優先度 ${c.prio}</span></div>
+    ${!canEdit(c.owner)?`<div class="lock">閲覧のみです（担当：${esc(user(c.owner).name)}）。</div>`:""}
+    <div class="cols2">
+      <div class="panel"><h2>基本情報</h2><dl class="kv">
+        <div><dt>店舗担当者</dt><dd>${esc(c.contact)||"—"}</dd></div>
+        <div><dt>電話</dt><dd class="num">${esc(c.phone)||"—"}</dd></div>
+        <div><dt>メール</dt><dd>${esc(c.email)||"—"}</dd></div>
+        <div><dt>ポータル掲載</dt><dd>${c.portal?"あり":"なし"}</dd></div>
+        <div><dt>Instagram</dt><dd>${esc(c.ig)||"なし"}</dd></div>
+        <div><dt>IG最終更新日</dt><dd>${c.igDate?fmtDate(c.igDate):"—"}</dd></div>
+        <div><dt>既存取引</dt><dd>${c.existing?"あり":"なし"}</dd></div>
+        <div><dt>営業担当</dt><dd>${esc(user(c.owner).name)}</dd></div>
+      </dl>${c.memo?`<p style="margin:12px 0 0"><span class="note">メモ</span><br>${esc(c.memo)}</p>`:""}</div>
+      <div>
+        <div class="panel"><h2>案件（${ds.length}件）</h2><div class="cards">${ds.map(d=>`<button class="card" data-go="deal-${d.id}"><div class="row"><span class="t" style="color:var(--fg)">${d.status}</span><span class="pill p${d.prob}">${d.prob}%</span></div><div class="row"><span>${plan(d.plan).name}</span><span class="num">${yen(total(d))}</span></div>${dueHtml(d)}</button>`).join("")||`<p class="note">案件はありません。</p>`}</div></div>
+        <div class="panel"><h2>活動タイムライン</h2>${acts.length?`<ul class="tl">${acts.map(actHtml).join("")}</ul>`:`<p class="note">まだ記録がありません。</p>`}</div>
+      </div>
+    </div>`;
+}
+
+// ---------- メニュー（役割の切替） ----------
+function renderMenu(){
+  renderNav("menu");
+  $("#view").innerHTML = `
+    <div class="head"><h1>メニュー</h1></div>
+    <div class="panel"><h2>試作用：ログインする人を切り替える</h2>
+      <p class="note" style="margin-top:0">役割ごとに、見える範囲と編集できる範囲が変わります。</p>
+      <div class="list">${USERS.map(u=>`<button class="cust" data-u="${u.id}" style="${u.id===me?"border-color:var(--accent)":""}"><span class="prio prioC">${u.id===me?"✓":""}</span><span class="n">${esc(u.name)}</span><span class="o">${ROLE[u.role]}</span><span class="m">${{manager:"全件の閲覧・編集、マスタ管理",admin:"全件の閲覧・編集、マスタ管理",sales:"全件を閲覧、自分の担当だけ編集",production:"受注案件だけ閲覧"}[u.role]}</span></button>`).join("")}</div>
+    </div>
+    ${isAdmin()?`<div class="panel"><h2>マスタ管理</h2><p class="note" style="margin:0">業種・エリア・プラン・失注理由・利用者の役割（次の段階で作成）</p></div>`:""}
+    <div class="panel"><h2>この試作に含まれないもの</h2><p class="note" style="margin:0">ダッシュボード、リマインド一覧、契約・制作進捗は後続の段階で追加します。</p></div>`;
+  document.querySelectorAll("[data-u]").forEach(b => b.onclick = () => { me = b.dataset.u; statusFilter = "進行中"; toast(`${user(me).name}（${ROLE[user(me).role]}）に切り替えました`); renderMenu(); });
+}
+
+let toastT;
+function toast(msg){ clearTimeout(toastT); let t = $(".toast"); if(!t){ t = document.createElement("div"); t.className="toast"; t.setAttribute("role","status"); document.body.appendChild(t);} t.textContent = msg; toastT = setTimeout(()=>t.remove(), 2200); }
+
+// ---------- ルーティング（#deals / #deal-d1 / #customers / #customer-c1 / #menu） ----------
+function route(){
+  const h = location.hash.slice(1);
+  window.scrollTo(0,0);
+  if(h.startsWith("deal-")) renderDeal(h.slice(5));
+  else if(h.startsWith("customer-")) renderCustomer(h.slice(9));
+  else if(h === "customers") renderCustomers();
+  else if(h === "menu") renderMenu();
+  else renderDeals();
+}
+window.addEventListener("hashchange", route);
+route();
+</script>
