@@ -1,0 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* iPhone のホームバー分の余白（下タブが隠れないように） */
+.pb-safe {
+  padding-bottom: env(safe-area-inset-bottom);
+}
